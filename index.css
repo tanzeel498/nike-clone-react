@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+  /* letter-spacing: -6px; */
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.swiper-scrollbar {
+  left: 0 !important;
+  right: 0 !important;
+  height: 7px !important;
+  background: transparent !important;
+}
+
+::-webkit-calendar-picker-indicator {
+  scale: 1.5;
+  cursor: pointer;
+}
+
+/* Styling of Checkbox with class checkbox-wrapper
+ https://getcssscan.com/css-checkboxes-examples 
+ #46 by Andreas  Storm */
+
+input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox-wrapper label {
+  margin: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.checkbox-wrapper label span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper label span:first-child {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  transform: scale(1);
+  vertical-align: middle;
+  border: 1px solid #9098a9;
+  transition: all 0.2s ease;
+}
+.checkbox-wrapper label span:first-child svg {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 15px;
+  stroke-dashoffset: 15px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper label span:last-child {
+  padding-left: 1rem;
+}
+.checkbox-wrapper label:hover span:first-child {
+  border-color: black;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + label span:first-child {
+  background: black;
+  border-color: black;
+}
+.checkbox-wrapper input[type="checkbox"]:checked + label span:first-child svg,
+.color-wrapper input[type="checkbox"]:checked + label span:first-child svg {
+  stroke-dashoffset: 0;
+}
+
+/* styling of Color checkbox with class color-wrapper */
+.color-wrapper label {
+  display: flex;
+  flex-direction: column;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  width: 56px;
+  align-items: center;
+}
+.color-wrapper label span:first-child {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+}
+.color-wrapper input[type="checkbox"]:checked + label span:first-child {
+  animation: bounce 0.3s ease forwards;
+}
+
+#black + label span:first-child {
+  background-color: black;
+}
+#blue + label span:first-child {
+  background-color: #1790c8;
+}
+#brown + label span:first-child {
+  background-color: #825d41;
+}
+#green + label span:first-child {
+  background-color: green;
+}
+#grey + label span:first-child {
+  background-color: grey;
+}
+#orange + label span:first-child {
+  background-color: #f36b26;
+}
+#pink + label span:first-child {
+  background-color: #f0728f;
+}
+#purple + label span:first-child {
+  background-color: #8d429f;
+}
+#red + label span:first-child {
+  background-color: #e7352b;
+}
+#white + label span:first-child {
+  background-color: white;
+  border: 1px solid lightgray;
+}
+#yellow + label span:first-child {
+  background-color: #fed533;
+}
+
+.color-wrapper label span:first-child svg {
+  position: absolute;
+  top: 9px;
+  left: 8px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 15px;
+  stroke-dashoffset: 15px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+
+#white + label span:first-child svg,
+#yellow + label span:first-child svg {
+  stroke: black;
+}
+
+@keyframes bounce {
+  50% {
+    transform: scale(80%);
+  }
+}
+
+/* custom scroll-bar code for filterBar */
+.filter-bar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.filter-bar::-webkit-scrollbar-thumb {
+  background-color: #737373;
+  border-radius: 100px;
+}

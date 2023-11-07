@@ -1,0 +1,36 @@
+{
+  "id": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+  "productId": "1013249074",
+  "mainColor": false,
+  "productRollup": {
+    "type": "Standard",
+    "key": "v0FbJt"
+  },
+  "styleColor": "CZ0790-161",
+  "styleCode": "CZ0790",
+  "category": "Lifestyle",
+  "sportTags": [
+    "Lifestyle"
+  ],
+  "genders": [
+    "MEN",
+    "WOMEN"
+  ],
+  "brand": "Jordan",
+  "productGroupId": "14423278",
+  "status": "ACTIVE",
+  "subTitle": "Shoes",
+  "fullTitle": "Air Jordan 1 Low OG Shoes",
+  "colorDescription": "White/White/University Red",
+  "description": "<div class=\"pi-tier3\"><div class=\"pi-pdpmainbody\"><p><b class=\"headline-5\">TIMELESS STYLE ICON.</b></p><br><p>The Air Jordan 1 Low OG remakes the classic sneaker with new colors and textures. Premium materials and accents give fresh expression to an all-time favorite.</p><br><p><b class=\"headline-5\">Benefits</b></p><ul><li>Encapsulated Air unit provides lightweight cushioning.</li><li>Leather and textile materials in the upper are light and durable.</li></ul><br><p><b class=\"headline-5\">Product Details</b></p><ul><li>Wings logo on heel</li><li>Perforated toe</li><li>Foam midsole</li><li>Rubber traction<li>Shown: White/White/University Red</li><li>Style: CZ0790-161</li></li></ul></div></div>",
+  "descriptionPreview": "The Air Jordan 1 Low OG remakes the classic sneaker with new colors and textures. Premium materials and accents give fresh expression to an all-time favorite.",
+  "discounted": false,
+  "fullPrice": 140,
+  "currentPrice": 140,
+  "employeePrice": 84,
+  "currency": "USD",
+  "title": "Air Jordan 1 Low OG",
+  "firstImageUrl": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/feb1679d-8e8c-47ac-bd4d-862d9706823a/air-jordan-1-low-og-shoes-v0FbJt.png",
+  "firstImageAltText": "Air Jordan 1 Low OG Shoes",
+  "sizeChartUrl": "https://www.nike.com/size-fit/unisex-footwear-mens-based",
+}
