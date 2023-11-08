@@ -62,7 +62,9 @@ function ProductDetails({ product, setColor, activeColor }) {
       </div>
 
       <div className="my-10">
-        <Button size="large">Add to Bag</Button>
+        <Button size="large" to="/cart">
+          Add to Bag
+        </Button>
       </div>
 
       <div className="description">

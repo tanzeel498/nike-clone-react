@@ -10,7 +10,7 @@ function DesktopMenuItem({ title, to }) {
         {title}
       </Link>
 
-      <div className="absolute left-0 top-[calc(100%+1px)] hidden h-72 w-screen bg-white group-hover:block">
+      <div className="absolute left-0 top-full hidden h-72 w-screen border-t-2 bg-white group-hover:block">
         <h1>{title + " Links will go here"}</h1>
       </div>
       <div className="relative h-[3px]">

@@ -5,43 +5,60 @@ import HeaderIcon from "./HeaderIcon";
 import SearchBar from "./SearchBar";
 import CartIcon from "../features/cart/CartIcon";
 import DesktopMenuItem from "./DesktopMenuItem";
+import { useState } from "react";
+import ButtonLink from "./ButtonLink";
 
 function Navbar() {
+  const [expandSearch, setExpandSearch] = useState(false);
+
   return (
-    <header className="sticky top-0 z-10 flex items-center justify-between overflow-x-clip border-b-[1px] border-stone-200 bg-white px-6 tablet:px-14">
-      <div className="relative z-20 h-16">
+    <header className="sticky top-0 z-20 flex items-center justify-between border-stone-200 bg-white px-6 shadow-md tablet:px-14">
+      <div className="relative z-50">
         <Logo />
       </div>
 
-      <div className="relative flex grow items-center justify-center">
-        <ul className="hidden items-center justify-center font-semibold tablet:flex">
-          <li className="group h-16">
-            <DesktopMenuItem title="Men" to="/men" />
-          </li>
-          <li className="group h-16">
-            <DesktopMenuItem title="Women" to="/women" />
-          </li>
-          <li className="group h-16">
-            <DesktopMenuItem title="Kids" to="/kids" />
-          </li>
-        </ul>
-        <SearchBar />
+      <div className="relative flex grow items-center justify-center duration-200">
+        {!expandSearch && (
+          <ul className="hidden items-center justify-center font-semibold tablet:flex">
+            <li className="group h-16">
+              <DesktopMenuItem title="Men" to="/men" />
+            </li>
+            <li className="group h-16">
+              <DesktopMenuItem title="Women" to="/women" />
+            </li>
+            <li className="group h-16">
+              <DesktopMenuItem title="Kids" to="/kids" />
+            </li>
+          </ul>
+        )}
+        <SearchBar
+          expandSearch={expandSearch}
+          setExpandSearch={setExpandSearch}
+        />
       </div>
 
-      <div className="flex items-center justify-end">
-        <HeaderIcon hideAfterTablet={true}>
-          <IoSearch className="text-2xl" />
-        </HeaderIcon>
+      <div className="flex items-center justify-end gap-4">
+        {expandSearch ? (
+          <ButtonLink onClick={() => setExpandSearch((s) => !s)} border={false}>
+            Cancel
+          </ButtonLink>
+        ) : (
+          <div>
+            <HeaderIcon hideAfterTablet={true}>
+              <IoSearch className="text-2xl" />
+            </HeaderIcon>
 
-        <CartIcon />
+            <CartIcon />
 
-        <HeaderIcon to="accounts/login" hideAfterTablet={true}>
-          <FiUser className="text-2xl" />
-        </HeaderIcon>
+            <HeaderIcon to="accounts/login" hideAfterTablet={true}>
+              <FiUser className="text-2xl" />
+            </HeaderIcon>
 
-        <HeaderIcon to="/" hideAfterTablet={true}>
-          <FiMenu className="text-2xl" />
-        </HeaderIcon>
+            <HeaderIcon to="/" hideAfterTablet={true}>
+              <FiMenu className="text-2xl" />
+            </HeaderIcon>
+          </div>
+        )}
       </div>
     </header>
   );
