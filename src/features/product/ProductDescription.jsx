@@ -1,5 +1,5 @@
 import { formatCurrency } from "../../utils/helpers";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 
 function ProductDescription({ description, imgSrc, title, currentPrice }) {
   return (
@@ -11,7 +11,7 @@ function ProductDescription({ description, imgSrc, title, currentPrice }) {
           <p>{formatCurrency(currentPrice)}</p>
         </div>
       </div>
-      {ReactHtmlParser(description)}
+      {parse(description)}
     </div>
   );
 }

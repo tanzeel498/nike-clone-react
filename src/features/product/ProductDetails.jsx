@@ -50,6 +50,7 @@ function ProductDetails({ product, setColor, activeColor }) {
         <div className="flex flex-wrap justify-between gap-2">
           {skus.map((sku) => (
             <SizeButton
+              key={sku.id}
               item={sku}
               size={size}
               perRow="17"

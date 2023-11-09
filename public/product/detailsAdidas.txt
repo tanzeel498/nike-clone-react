@@ -1,0 +1,416 @@
+{
+  "id": "IE8546",
+  "product_type": "inline",
+  "model_number": "NIT47",
+  "name": "Savage x Ivy Park Trainers",
+  "meta_data": {
+    "canonical": "//www.adidas.com/us/savage-x-ivy-park-trainers/IE8546.html",
+    "description": "Shop the Savage x Ivy Park Trainers - White at adidas.com/us! See all the styles and colors of Savage x Ivy Park Trainers - White at the official adidas online shop.",
+    "keywords": "Savage x Ivy Park Trainers",
+    "page_title": "adidas Savage x Ivy Park Trainers - White | Unisex Lifestyle | adidas US",
+    "site_name": "adidas United States"
+  },
+  "view_list": [
+    {
+      "type": "other",
+      "source": "CLOUDINARY",
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/cefc5f497fe2475ab1c26f78ab510932_faec/Savage_x_Ivy_Park_Trainers_White_IE8546_HM1.jpg",
+      "metadata": {
+        "asset_usage": [
+          "pdp",
+          "plp"
+        ],
+        "asset_category": "Photography",
+        "imageStyle": "On Model",
+        "view": "HeroMrktng View 1",
+        "usageTerms": "eCommerceExclusive",
+        "sortOrder": "0",
+        "subjects": []
+      },
+      "file_revision_date": "2023-09-20T16:16:45Z"
+    },
+    {
+      "type": "other",
+      "source": "CLOUDINARY",
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/11a172ccff684d49aa8e1625457798f5_faec/Savage_x_Ivy_Park_Trainers_White_IE8546_HM3_hover.jpg",
+      "metadata": {
+        "asset_usage": [
+          "pdp",
+          "plp"
+        ],
+        "asset_category": "Photography",
+        "imageStyle": "On Model",
+        "view": "HeroMrktng View 3",
+        "usageTerms": "eCommerceExclusive",
+        "sortOrder": "1",
+        "subjects": []
+      },
+      "file_revision_date": "2023-09-20T19:51:41Z"
+    },
+    {
+      "type": "other",
+      "source": "CLOUDINARY",
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/e8fca250e21046f99d46462f47c3d76f_faec/Savage_x_Ivy_Park_Trainers_White_IE8546_HM4.jpg",
+      "metadata": {
+        "asset_usage": [
+          "pdp"
+        ],
+        "asset_category": "Photography",
+        "imageStyle": "On Model",
+        "view": "HeroMrktng View 4",
+        "usageTerms": "eCommerceExclusive",
+        "sortOrder": "2",
+        "subjects": []
+      },
+      "file_revision_date": "2023-09-20T19:49:34Z"
+    },
+    {
+      "type": "other",
+      "source": "CLOUDINARY",
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/a47fef8fb8564fde8d8bf944b95c2718_faec/Savage_x_Ivy_Park_Trainers_White_IE8546_HM16.jpg",
+      "metadata": {
+        "asset_usage": [
+          "pdp"
+        ],
+        "asset_category": "Photography",
+        "imageStyle": "Standard",
+        "view": "HeroMrktng View 16",
+        "usageTerms": "eCommerceExclusive",
+        "sortOrder": "3",
+        "subjects": []
+      },
+      "file_revision_date": "2023-09-20T15:52:21Z"
+    },
+    {
+      "type": "other",
+      "source": "CLOUDINARY",
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/19098423e5f24f8fbf38b8565b75f689_faec/Savage_x_Ivy_Park_Trainers_White_IE8546_HM17.jpg",
+      "metadata": {
+        "asset_usage": [
+          "pdp"
+        ],
+        "asset_category": "Photography",
+        "imageStyle": "Standard",
+        "view": "HeroMrktng View 17",
+        "usageTerms": "eCommerceExclusive",
+        "sortOrder": "4",
+        "subjects": []
+      },
+      "file_revision_date": "2023-09-20T15:52:53Z"
+    },
+    {
+      "type": "other",
+      "source": "CLOUDINARY",
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/83140c2b98a743429ed3f40343ee5f43_faec/Savage_x_Ivy_Park_Trainers_White_IE8546_HM18.jpg",
+      "metadata": {
+        "asset_usage": [
+          "pdp"
+        ],
+        "asset_category": "Photography",
+        "imageStyle": "Standard",
+        "view": "HeroMrktng View 18",
+        "usageTerms": "eCommerceExclusive",
+        "sortOrder": "5",
+        "subjects": []
+      },
+      "file_revision_date": "2023-09-20T15:55:55Z"
+    },
+    {
+      "type": "other",
+      "source": "CLOUDINARY",
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/af28c45796a443c0a9cd9ebb6e759cc4_faec/Savage_x_Ivy_Park_Trainers_White_IE8546_HM19.jpg",
+      "metadata": {
+        "asset_usage": [
+          "pdp"
+        ],
+        "asset_category": "Photography",
+        "imageStyle": "Standard",
+        "view": "HeroMrktng View 19",
+        "usageTerms": "eCommerceExclusive",
+        "sortOrder": "6",
+        "subjects": []
+      },
+      "file_revision_date": "2023-09-20T15:53:40Z"
+    },
+    {
+      "type": "other",
+      "source": "CLOUDINARY",
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/98f3da3eb5d944fc95c27a2482bf36fb_faec/Savage_x_Ivy_Park_Trainers_White_IE8546_HM20.jpg",
+      "metadata": {
+        "asset_usage": [
+          "pdp"
+        ],
+        "asset_category": "Photography",
+        "imageStyle": "Standard",
+        "view": "HeroMrktng View 20",
+        "usageTerms": "eCommerceExclusive",
+        "sortOrder": "7",
+        "subjects": []
+      },
+      "file_revision_date": "2023-09-20T15:55:14Z"
+    }
+  ],
+  "attribute_list": {
+    "sale": false,
+    "brand": "Originals",
+    "color": "Off White / Off White / Cloud White",
+    "gender": "U",
+    "outlet": false,
+    "sport": [
+      "Lifestyle"
+    ],
+    "closure": [
+      "Laces"
+    ],
+    "category": "Shoes",
+    "size_page": "MWS1",
+    "sport_ids": [
+      "Lifestyle"
+    ],
+    "productfit": [
+      "Regular"
+    ],
+    "collection": [
+      "buy",
+      "browse",
+      "Best Sellers"
+    ],
+    "search_color": "White",
+    "base_material": [
+      "Textile Upper"
+    ],
+    "productType": [
+      "Athletic & Sneakers"
+    ],
+    "midsole_offset": "0.000",
+    "product_fit_ids": [
+      "Regular"
+    ],
+    "personalizable": false,
+    "toe_stack_height": "0.00",
+    "heel_stack_height": "0.00",
+    "isCnCRestricted": false,
+    "key_category_code": "00163",
+    "mandatory_personalization": false,
+    "customizable": false,
+    "badge_style": "custom",
+    "badge_text": "Best Seller",
+    "search_color_raw": "White",
+    "is_orderable": true,
+    "isWaitingRoomProduct": false,
+    "isInPreview": false,
+    "specialLaunch": false,
+    "special_launch_type": "NONE",
+    "sizeTypes": {},
+    "is_flash": false,
+    "is_made_to_be_remade": false,
+    "product_sizing_category": "shoe",
+    "size_chart_id": "size-chart-size-shoes",
+    "size_chart_link": "/on/demandware.store/Sites-adidas-US-Site/en_US/Page-Include?cid=size-chart-size-shoes"
+  },
+  "breadcrumb_list": [
+    {
+      "text": "Originals",
+      "link": "/us/originals"
+    },
+    {
+      "text": "Shoes",
+      "link": "/us/originals-shoes"
+    }
+  ],
+  "callouts": {
+    "callout_top_stack": [
+      {
+        "id": "pdp-promo-nodiscount",
+        "sub_title": "This product is excluded from all promotional discounts and offers.",
+        "body": "This product is excluded from all promotional discounts codes and other offers."
+      }
+    ]
+  },
+  "pricing_information": {
+    "currentPrice": 180,
+    "standard_price": 180,
+    "standard_price_no_vat": 180
+  },
+  "tax_class_id": "PC040147",
+  "product_description": {
+    "title": "Savage x Ivy Park Trainers",
+    "text": "Comfort meets style in these adidas x IVY PARK trainers. The continuous, no-stitch mesh piece creates a snug, sleek, futuristic fit. The grip on the rubber outsole is strong enough to take you wherever you want to go, with Adiprene cushioning along for the ride to keep you comfortable the whole time. Oval eyelets are the final detail to the look.",
+    "subtitle": "Minimally branded shoes with a molded, textural design.",
+    "usps": [
+      "Regular fit",
+      "Lace closure",
+      "Synthetic molded mesh upper",
+      "Textile lining",
+      "Adiprene cushioning",
+      "Rubber outsole",
+      "Ivy Park logo",
+      "Imported"
+    ],
+    "wash_care_instructions": {
+      "care_instructions": []
+    },
+    "description_assets": {
+      "image_url": "https://assets.adidas.com/images/w_600,f_auto,q_auto/11a172ccff684d49aa8e1625457798f5_faec/Savage_x_Ivy_Park_Trainers_White_IE8546.jpg",
+      "video_url": null,
+      "poster_url": null
+    }
+  },
+  "recommendationsEnabled": true,
+  "product_link_list": [
+    {
+      "type": "complete-the-look",
+      "productId": "IK9627",
+      "name": "Racerback Tank Top (All Gender)",
+      "url": "/us/racerback-tank-top-all-gender/IK9627.html",
+      "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/63b47d5e7fc9467bb286b48c4b7e8146_faec/Racerback_Tank_Top_All_Gender_Black_IK9627_HM1.jpg",
+      "altImage": "https://assets.adidas.com/images/w_600,f_auto,q_auto/63b47d5e7fc9467bb286b48c4b7e8146_faec/Racerback_Tank_Top_All_Gender_Black_IK9627_HM1.jpg",
+      "pricing_information": {
+        "standard_price": 55
+      },
+      "badge_style": "custom",
+      "badge_text": "Best Seller",
+      "search_color": "Black",
+      "default_color": "Black",
+      "source": "CLOUDINARY"
+    },
+    {
+      "type": "complete-the-look",
+      "productId": "IK9633",
+      "name": "Snap Sweat Pants (All Gender)",
+      "url": "/us/snap-sweat-pants-all-gender/IK9633.html",
+      "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/5914aae070754fd5bab69106e0bb6ad4_faec/Snap_Sweat_Pants_All_Gender_Black_IK9633_HM1.jpg",
+      "altImage": "https://assets.adidas.com/images/w_600,f_auto,q_auto/5914aae070754fd5bab69106e0bb6ad4_faec/Snap_Sweat_Pants_All_Gender_Black_IK9633_HM1.jpg",
+      "pricing_information": {
+        "standard_price": 100
+      },
+      "badge_style": "custom",
+      "badge_text": "Best Seller",
+      "search_color": "Black",
+      "default_color": "Black",
+      "source": "CLOUDINARY"
+    },
+    {
+      "type": "complete-the-look",
+      "productId": "IK9647",
+      "name": "Snap-Neck Hoodie (All Gender)",
+      "url": "/us/snap-neck-hoodie-all-gender/IK9647.html",
+      "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/c8f1d5835cdd4d10b1078b5c015855ee_faec/Snap-Neck_Hoodie_All_Gender_Black_IK9647_HM1.jpg",
+      "altImage": "https://assets.adidas.com/images/w_600,f_auto,q_auto/c8f1d5835cdd4d10b1078b5c015855ee_faec/Snap-Neck_Hoodie_All_Gender_Black_IK9647_HM1.jpg",
+      "pricing_information": {
+        "standard_price": 100
+      },
+      "badge_style": "custom",
+      "badge_text": "Best Seller",
+      "search_color": "Black",
+      "default_color": "Black",
+      "source": "CLOUDINARY"
+    },
+    {
+      "type": "complete-the-look",
+      "productId": "IX9227",
+      "name": "3D Knit Bralette",
+      "url": "/us/3d-knit-bralette/IX9227.html",
+      "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/ebe61b178dd547408c8404dfad8ad019_faec/3D_Knit_Bralette_Black_IX9227_HM1.jpg",
+      "altImage": "https://assets.adidas.com/images/w_600,f_auto,q_auto/ebe61b178dd547408c8404dfad8ad019_faec/3D_Knit_Bralette_Black_IX9227_HM1.jpg",
+      "pricing_information": {
+        "standard_price": 75
+      },
+      "badge_style": "custom",
+      "badge_text": "Best Seller",
+      "search_color": "Black",
+      "default_color": "Black",
+      "source": "CLOUDINARY"
+    }
+  ],
+  "partners": [
+    "Beyonce",
+    "Ivy Park"
+  ],
+  "variation_list": [
+    {
+      "sku": "IE8546_530",
+      "size": "M 4 / W 5"
+    },
+    {
+      "sku": "IE8546_540",
+      "size": "M 4.5 / W 5.5"
+    },
+    {
+      "sku": "IE8546_550",
+      "size": "M 5 / W 6"
+    },
+    {
+      "sku": "IE8546_560",
+      "size": "M 5.5 / W 6.5"
+    },
+    {
+      "sku": "IE8546_570",
+      "size": "M 6 / W 7"
+    },
+    {
+      "sku": "IE8546_580",
+      "size": "M 6.5 / W 7.5"
+    },
+    {
+      "sku": "IE8546_590",
+      "size": "M 7 / W 8"
+    },
+    {
+      "sku": "IE8546_600",
+      "size": "M 7.5 / W 8.5"
+    },
+    {
+      "sku": "IE8546_610",
+      "size": "M 8 / W 9"
+    },
+    {
+      "sku": "IE8546_620",
+      "size": "M 8.5 / W 9.5"
+    },
+    {
+      "sku": "IE8546_630",
+      "size": "M 9 / W 10"
+    },
+    {
+      "sku": "IE8546_640",
+      "size": "M 9.5 / W 10.5"
+    },
+    {
+      "sku": "IE8546_650",
+      "size": "M 10 / W 11"
+    },
+    {
+      "sku": "IE8546_660",
+      "size": "M 10.5 / W 11.5"
+    },
+    {
+      "sku": "IE8546_670",
+      "size": "M 11 / W 12"
+    },
+    {
+      "sku": "IE8546_680",
+      "size": "M 11.5 / W 12.5"
+    },
+    {
+      "sku": "IE8546_690",
+      "size": "M 12 / W 13"
+    },
+    {
+      "sku": "IE8546_700",
+      "size": "M 12.5 / W 13.5"
+    },
+    {
+      "sku": "IE8546_710",
+      "size": "M 13 / W 14"
+    },
+    {
+      "sku": "IE8546_720",
+      "size": "M 13.5 / W 14.5"
+    },
+    {
+      "sku": "IE8546_730",
+      "size": "M 14 / W 15"
+    }
+  ]
+}

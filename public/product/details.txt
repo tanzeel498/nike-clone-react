@@ -34,3 +34,1122 @@
   "firstImageAltText": "Air Jordan 1 Low OG Shoes",
   "sizeChartUrl": "https://www.nike.com/size-fit/unisex-footwear-mens-based",
 }
+
+
+
+thumbs: 320x400 --> render size: width: 60px
+colorPickerThumb: 70px x 70px
+
+{
+  "id": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+  "threadId": "f4ea62ff-ae1d-43d8-aafb-71d0e3411fb9",
+  "productId": "1013249074",
+  "mainColor": false,
+  "productRollup": {
+    "type": "Standard",
+    "key": "v0FbJt"
+  },
+  "width": null,
+  "athletes": [],
+  "styleColor": "CZ0790-161",
+  "styleCode": "CZ0790",
+  "category": "Lifestyle",
+  "pid": "1013249074",
+  "preOrder": false,
+  "preorderAvailabilityDate": "",
+  "commerceStartDate": "2023-10-13T14:00:00.000Z",
+  "isNYBCountDown": false,
+  "countdown": -1,
+  "hardLaunch": true,
+  "sportTags": [
+    "Lifestyle"
+  ],
+  "genders": [
+    "MEN",
+    "WOMEN"
+  ],
+  "brand": "Jordan",
+  "productType": "FOOTWEAR",
+  "nikeIdStyleCode": "",
+  "productGroupId": "14423278",
+  "styleType": "INLINE",
+  "status": "ACTIVE",
+  "displayOrder": "",
+  "subTitle": "Shoes",
+  "fullTitle": "Air Jordan 1 Low OG Shoes",
+  "additionalInfo": null,
+  "sizeChart": null,
+  "langLocale": "en_US",
+  "marketing": "",
+  "origin": [],
+  "colorDescription": "White/White/University Red",
+  "description": "<div class=\"pi-tier3\"><div class=\"pi-pdpmainbody\"><p><b class=\"headline-5\">TIMELESS STYLE ICON.</b></p><br><p>The Air Jordan 1 Low OG remakes the classic sneaker with new colors and textures. Premium materials and accents give fresh expression to an all-time favorite.</p><br><p><b class=\"headline-5\">Benefits</b></p><ul><li>Encapsulated Air unit provides lightweight cushioning.</li><li>Leather and textile materials in the upper are light and durable.</li></ul><br><p><b class=\"headline-5\">Product Details</b></p><ul><li>Wings logo on heel</li><li>Perforated toe</li><li>Foam midsole</li><li>Rubber traction<li>Shown: White/White/University Red</li><li>Style: CZ0790-161</li></li></ul></div></div>",
+  "descriptionPreview": "The Air Jordan 1 Low OG remakes the classic sneaker with new colors and textures. Premium materials and accents give fresh expression to an all-time favorite.",
+  "nbyContentCopy": {},
+  "prebuildId": "",
+  "mainPrebuild": "",
+  "isNikeID": false,
+  "isNBYDesign": false,
+  "updatedNBYDesignKey": "",
+  "piid": "",
+  "pathName": "",
+  "vas": [
+    {
+      "id": "0cba9a6c-ac96-5e0a-8bd9-0d31d5095a7c",
+      "vasType": "GIFT_MESSAGE"
+    },
+    {
+      "id": "3d62c037-56f3-59d5-81d3-88ce17f7fb99",
+      "vasType": "GIFT_WRAP"
+    }
+  ],
+  "nbyCustomMessage": "",
+  "seoProductDescription": "Find the Air Jordan 1 Low OG at Nike.com. ",
+  "seoProductAvailability": true,
+  "seoProductReleaseDate": "2023-10-13T14:00:00.000Z",
+  "discounted": false,
+  "fullPrice": 140,
+  "currentPrice": 140,
+  "employeePrice": 84,
+  "currency": "USD",
+  "skus": [
+    {
+      "id": "29811156",
+      "nikeSize": "3.5",
+      "skuId": "dc95652d-cf7e-5ec4-b0c1-4b259e709008",
+      "localizedSize": "M 3.5 / W 5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049164",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811165",
+      "nikeSize": "4",
+      "skuId": "78d59c26-723f-5437-ba9f-250b907eb128",
+      "localizedSize": "M 4 / W 5.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049171",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811157",
+      "nikeSize": "4.5",
+      "skuId": "710660e8-5178-5097-aae1-61dd526214e6",
+      "localizedSize": "M 4.5 / W 6",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049188",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811162",
+      "nikeSize": "5",
+      "skuId": "41c3c56f-8b55-5798-a33c-b0a16d181764",
+      "localizedSize": "M 5 / W 6.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049195",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811155",
+      "nikeSize": "5.5",
+      "skuId": "ee907471-1aa5-59b4-87f5-247116fc4061",
+      "localizedSize": "M 5.5 / W 7",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049201",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811152",
+      "nikeSize": "6",
+      "skuId": "eef93d6d-1907-5a51-b1db-51f7362c884c",
+      "localizedSize": "M 6 / W 7.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049218",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811149",
+      "nikeSize": "6.5",
+      "skuId": "b11993ca-c2b2-571a-80df-134af061a3a3",
+      "localizedSize": "M 6.5 / W 8",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049225",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811164",
+      "nikeSize": "7",
+      "skuId": "514780c6-1ceb-5b80-a6f1-daa21f224aa8",
+      "localizedSize": "M 7 / W 8.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049232",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811150",
+      "nikeSize": "7.5",
+      "skuId": "c5d977a2-12fe-554e-bd43-ed051eae1f8a",
+      "localizedSize": "M 7.5 / W 9",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049249",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811159",
+      "nikeSize": "8",
+      "skuId": "6b8797aa-7a83-5290-8e73-049cbcda5ca3",
+      "localizedSize": "M 8 / W 9.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049256",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811166",
+      "nikeSize": "8.5",
+      "skuId": "a368e12e-f33a-5d13-85c3-ffc069d57c7e",
+      "localizedSize": "M 8.5 / W 10",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049263",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811169",
+      "nikeSize": "9",
+      "skuId": "cb2be677-5c0e-5683-9ccf-ae8485fbbafb",
+      "localizedSize": "M 9 / W 10.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049270",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811147",
+      "nikeSize": "9.5",
+      "skuId": "59a51781-a94d-5f5e-acb0-fcbc948cd9f1",
+      "localizedSize": "M 9.5 / W 11",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049287",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811158",
+      "nikeSize": "10",
+      "skuId": "2d0ad035-1804-585a-844a-2b216c23a23d",
+      "localizedSize": "M 10 / W 11.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049294",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811161",
+      "nikeSize": "10.5",
+      "skuId": "39809505-b721-53c5-bfc1-5af430725055",
+      "localizedSize": "M 10.5 / W 12",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049300",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811146",
+      "nikeSize": "11",
+      "skuId": "8fedfc2d-087e-52cf-9763-56d7bf6b598d",
+      "localizedSize": "M 11 / W 12.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049317",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811151",
+      "nikeSize": "11.5",
+      "skuId": "33ad4892-59d3-5979-bc1d-04390b97a4d2",
+      "localizedSize": "M 11.5 / W 13",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049324",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811168",
+      "nikeSize": "12",
+      "skuId": "c8e5c5a4-1af4-53e2-b03a-2f61c2986d17",
+      "localizedSize": "M 12 / W 13.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049331",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811148",
+      "nikeSize": "12.5",
+      "skuId": "658a7bd9-1dff-5829-8006-438361e81354",
+      "localizedSize": "M 12.5 / W 14",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049348",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811145",
+      "nikeSize": "13",
+      "skuId": "c1e953e7-ebb7-5acd-87f3-2ad62a7bf72c",
+      "localizedSize": "M 13 / W 14.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049355",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811153",
+      "nikeSize": "14",
+      "skuId": "f5a356ab-3b6a-5353-a196-4753b07938da",
+      "localizedSize": "M 14 / W 15.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049362",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811154",
+      "nikeSize": "15",
+      "skuId": "40c69c48-3654-5136-9131-0a70ed52263e",
+      "localizedSize": "M 15 / W 16.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049379",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811163",
+      "nikeSize": "16",
+      "skuId": "89f65f34-8742-5902-abd8-01b1721418eb",
+      "localizedSize": "M 16 / W 17.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049386",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811160",
+      "nikeSize": "17",
+      "skuId": "e654550f-b044-5404-a0ab-255b7f8673e2",
+      "localizedSize": "M 17 / W 18.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049393",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    },
+    {
+      "id": "29811167",
+      "nikeSize": "18",
+      "skuId": "6d02fd6a-f9cb-5ebb-bff6-9b07d897f4a1",
+      "localizedSize": "M 18 / W 19.5",
+      "localizedSizePrefix": "",
+      "gtin": "00196969049409",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6"
+    }
+  ],
+  "title": "Air Jordan 1 Low OG",
+  "nodes": [
+    {
+      "analytics": {
+        "hashKey": "c062e34390dad6509ed8bad088cdcfc9bdb345ec6fdd982a8673d211b224fb89"
+      },
+      "nodes": [
+        {
+          "analytics": {
+            "hashKey": "b879443f9119945fca012170cf3b8eb697b6a8e3069d3b0e6f369cdb772885f0"
+          },
+          "subType": "image",
+          "id": "baa71e47-626b-4fe2-8348-8650feda770a",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "367b8bf4-5f4b-4914-941e-aae922ce6d8c",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/feb1679d-8e8c-47ac-bd4d-862d9706823a/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/367b8bf4-5f4b-4914-941e-aae922ce6d8c/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "A",
+              "aspectRatio": 1,
+              "id": "feb1679d-8e8c-47ac-bd4d-862d9706823a",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/feb1679d-8e8c-47ac-bd4d-862d9706823a/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "A",
+              "aspectRatio": 0.8,
+              "id": "367b8bf4-5f4b-4914-941e-aae922ce6d8c",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/367b8bf4-5f4b-4914-941e-aae922ce6d8c/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "feb1679d-8e8c-47ac-bd4d-862d9706823a",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        },
+        {
+          "analytics": {
+            "hashKey": "5f0c9b0226f85e8fb8aa4fb9623519b28b20d45511a3f54121080f4231989f97"
+          },
+          "subType": "image",
+          "id": "e2f7ff9e-31fd-461c-a9e0-b26a886b7508",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "a3ceee83-e784-49b0-b679-db59ab0877f3",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/734d4457-aeb8-4017-a308-90527e2fa74d/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a3ceee83-e784-49b0-b679-db59ab0877f3/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "B",
+              "aspectRatio": 1,
+              "id": "734d4457-aeb8-4017-a308-90527e2fa74d",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/734d4457-aeb8-4017-a308-90527e2fa74d/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "B",
+              "aspectRatio": 0.8,
+              "id": "a3ceee83-e784-49b0-b679-db59ab0877f3",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a3ceee83-e784-49b0-b679-db59ab0877f3/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "734d4457-aeb8-4017-a308-90527e2fa74d",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        },
+        {
+          "analytics": {
+            "hashKey": "c57df233529333cfa102cf6232ce9af8c9dd707961652bfd5cc05bbbd5a12ad2"
+          },
+          "subType": "image",
+          "id": "6f2d6dde-6fd2-4514-8e44-d10819b05fc8",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "9b83ba25-bcf4-4033-8c57-9d4bed6a9a3d",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/aacc3d5d-9eef-4519-9d4b-801166dba17e/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9b83ba25-bcf4-4033-8c57-9d4bed6a9a3d/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "C",
+              "aspectRatio": 1,
+              "id": "aacc3d5d-9eef-4519-9d4b-801166dba17e",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/aacc3d5d-9eef-4519-9d4b-801166dba17e/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "C",
+              "aspectRatio": 0.8,
+              "id": "9b83ba25-bcf4-4033-8c57-9d4bed6a9a3d",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9b83ba25-bcf4-4033-8c57-9d4bed6a9a3d/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "aacc3d5d-9eef-4519-9d4b-801166dba17e",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        },
+        {
+          "analytics": {
+            "hashKey": "28f9bddcefe393ab42a3d9cca81c14769b574c2f4ce570ab2b87381289be6940"
+          },
+          "subType": "image",
+          "id": "9de0f49c-938c-417e-a916-425cc5cafaf6",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "12877352-8129-4be2-a59a-46f1d84216f7",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c5b36426-7bf9-4b06-9a7a-5d12bf387bd0/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/12877352-8129-4be2-a59a-46f1d84216f7/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "D",
+              "aspectRatio": 1,
+              "id": "c5b36426-7bf9-4b06-9a7a-5d12bf387bd0",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c5b36426-7bf9-4b06-9a7a-5d12bf387bd0/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "D",
+              "aspectRatio": 0.8,
+              "id": "12877352-8129-4be2-a59a-46f1d84216f7",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/12877352-8129-4be2-a59a-46f1d84216f7/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "c5b36426-7bf9-4b06-9a7a-5d12bf387bd0",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        },
+        {
+          "analytics": {
+            "hashKey": "6182c7dcadc12f3c11f78b030c8f322074857c34824109e72aca0b43c25b20c5"
+          },
+          "subType": "image",
+          "id": "eaba14cb-6ede-4ecc-9f61-c5761c9f7d14",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "89deaf20-fda8-4d28-82ed-5c727feedd95",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/731240ea-c59e-4491-8690-aa0c0eb7177e/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/89deaf20-fda8-4d28-82ed-5c727feedd95/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "E",
+              "aspectRatio": 1,
+              "id": "731240ea-c59e-4491-8690-aa0c0eb7177e",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/731240ea-c59e-4491-8690-aa0c0eb7177e/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "E",
+              "aspectRatio": 0.8,
+              "id": "89deaf20-fda8-4d28-82ed-5c727feedd95",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/89deaf20-fda8-4d28-82ed-5c727feedd95/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "731240ea-c59e-4491-8690-aa0c0eb7177e",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        },
+        {
+          "analytics": {
+            "hashKey": "cb2d79d7226d763e387376cdfa314494bdf367a65737fc7090455028085b399d"
+          },
+          "subType": "image",
+          "id": "77669387-8b9b-4ea1-9973-c446aab1e094",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "d31db42a-1624-445a-ac24-a8e369326b51",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3ad29f9d-160e-4cc6-8d05-9596331cf8d7/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d31db42a-1624-445a-ac24-a8e369326b51/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "F",
+              "aspectRatio": 1,
+              "id": "3ad29f9d-160e-4cc6-8d05-9596331cf8d7",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3ad29f9d-160e-4cc6-8d05-9596331cf8d7/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "F",
+              "aspectRatio": 0.8,
+              "id": "d31db42a-1624-445a-ac24-a8e369326b51",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d31db42a-1624-445a-ac24-a8e369326b51/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "3ad29f9d-160e-4cc6-8d05-9596331cf8d7",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        },
+        {
+          "analytics": {
+            "hashKey": "d934e20282ab82e7d251fe93e47ce5c2d35e8deb4cc5e362340589ad980ff114"
+          },
+          "subType": "image",
+          "id": "6de7f389-2b86-4f8f-b562-9a6ba78c4eca",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "2e0180b2-7506-485a-9309-11dcdbc1dad0",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f14da09c-5e47-41b4-8172-c3968ed06158/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2e0180b2-7506-485a-9309-11dcdbc1dad0/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "H",
+              "aspectRatio": 1,
+              "id": "f14da09c-5e47-41b4-8172-c3968ed06158",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f14da09c-5e47-41b4-8172-c3968ed06158/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "H",
+              "aspectRatio": 0.8,
+              "id": "2e0180b2-7506-485a-9309-11dcdbc1dad0",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2e0180b2-7506-485a-9309-11dcdbc1dad0/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "f14da09c-5e47-41b4-8172-c3968ed06158",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        },
+        {
+          "analytics": {
+            "hashKey": "766c4bdddf81c55af8f796dd85987c34edd52c9df2e7bcef7f0acfae1b1abb32"
+          },
+          "subType": "image",
+          "id": "ff9971b6-8981-4994-b63c-9a68bcd15748",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "4e018f1a-4170-4196-8957-25e413306840",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/608faa42-bc29-4315-810d-fd02955d616e/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4e018f1a-4170-4196-8957-25e413306840/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "K",
+              "aspectRatio": 1,
+              "id": "608faa42-bc29-4315-810d-fd02955d616e",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/608faa42-bc29-4315-810d-fd02955d616e/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "K",
+              "aspectRatio": 0.8,
+              "id": "4e018f1a-4170-4196-8957-25e413306840",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4e018f1a-4170-4196-8957-25e413306840/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "608faa42-bc29-4315-810d-fd02955d616e",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        },
+        {
+          "analytics": {
+            "hashKey": "154da797e5f1e1e82351f0facc7ff0a3ab13d394e9713102af5f4d23ecb9f4e7"
+          },
+          "subType": "image",
+          "id": "71a47a1b-4e9c-4d9f-8f21-689152c6a6b5",
+          "type": "card",
+          "version": "1697822192449",
+          "properties": {
+            "portraitId": "b7c19655-dbc7-41ef-b919-0ec406073592",
+            "squarishURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/012ba27f-3182-4377-af6c-4ec62eb1669b/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeId": "",
+            "altText": "Air Jordan 1 Low OG Shoes",
+            "portraitURL": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7c19655-dbc7-41ef-b919-0ec406073592/air-jordan-1-low-og-shoes-v0FbJt.png",
+            "landscapeURL": "",
+            "title": "",
+            "squarish": {
+              "view": "P",
+              "aspectRatio": 1,
+              "id": "012ba27f-3182-4377-af6c-4ec62eb1669b",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/012ba27f-3182-4377-af6c-4ec62eb1669b/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "portrait": {
+              "view": "P",
+              "aspectRatio": 0.8,
+              "id": "b7c19655-dbc7-41ef-b919-0ec406073592",
+              "type": "product",
+              "url": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7c19655-dbc7-41ef-b919-0ec406073592/air-jordan-1-low-og-shoes-v0FbJt.png"
+            },
+            "seoName": "",
+            "squarishId": "012ba27f-3182-4377-af6c-4ec62eb1669b",
+            "subtitle": "",
+            "colorTheme": "dark"
+          }
+        }
+      ],
+      "subType": "carousel",
+      "id": "e197224d-fcf8-4f33-a1ad-3873c6938c21",
+      "type": "card",
+      "version": "1697822192449",
+      "properties": {
+        "loop": false,
+        "containerType": "grid",
+        "subtitle": "",
+        "colorTheme": "dark",
+        "body": "",
+        "autoPlay": false,
+        "title": "",
+        "speed": 6000
+      }
+    }
+  ],
+  "layoutCards": [],
+  "firstImageUrl": "https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/feb1679d-8e8c-47ac-bd4d-862d9706823a/air-jordan-1-low-og-shoes-v0FbJt.png",
+  "firstImageAltText": "Air Jordan 1 Low OG Shoes",
+  "sustainabilityMessage": [],
+  "descriptionPreviewBullets": "",
+  "moreInfoMessages": [],
+  "sizeFitMessages": [],
+  "hubMessages": [],
+  "language": "en",
+  "marketplace": "US",
+  "availableSkus": [
+    {
+      "id": "dc95652d-cf7e-5ec4-b0c1-4b259e709008",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/dc95652d-cf7e-5ec4-b0c1-4b259e709008"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "dc95652d-cf7e-5ec4-b0c1-4b259e709008"
+    },
+    {
+      "id": "78d59c26-723f-5437-ba9f-250b907eb128",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/78d59c26-723f-5437-ba9f-250b907eb128"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "78d59c26-723f-5437-ba9f-250b907eb128"
+    },
+    {
+      "id": "710660e8-5178-5097-aae1-61dd526214e6",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/710660e8-5178-5097-aae1-61dd526214e6"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "710660e8-5178-5097-aae1-61dd526214e6"
+    },
+    {
+      "id": "41c3c56f-8b55-5798-a33c-b0a16d181764",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/41c3c56f-8b55-5798-a33c-b0a16d181764"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "41c3c56f-8b55-5798-a33c-b0a16d181764"
+    },
+    {
+      "id": "ee907471-1aa5-59b4-87f5-247116fc4061",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/ee907471-1aa5-59b4-87f5-247116fc4061"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "ee907471-1aa5-59b4-87f5-247116fc4061"
+    },
+    {
+      "id": "eef93d6d-1907-5a51-b1db-51f7362c884c",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/eef93d6d-1907-5a51-b1db-51f7362c884c"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "eef93d6d-1907-5a51-b1db-51f7362c884c"
+    },
+    {
+      "id": "b11993ca-c2b2-571a-80df-134af061a3a3",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/b11993ca-c2b2-571a-80df-134af061a3a3"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "b11993ca-c2b2-571a-80df-134af061a3a3"
+    },
+    {
+      "id": "514780c6-1ceb-5b80-a6f1-daa21f224aa8",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/514780c6-1ceb-5b80-a6f1-daa21f224aa8"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "514780c6-1ceb-5b80-a6f1-daa21f224aa8"
+    },
+    {
+      "id": "c5d977a2-12fe-554e-bd43-ed051eae1f8a",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/c5d977a2-12fe-554e-bd43-ed051eae1f8a"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "c5d977a2-12fe-554e-bd43-ed051eae1f8a"
+    },
+    {
+      "id": "6b8797aa-7a83-5290-8e73-049cbcda5ca3",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/6b8797aa-7a83-5290-8e73-049cbcda5ca3"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "6b8797aa-7a83-5290-8e73-049cbcda5ca3"
+    },
+    {
+      "id": "a368e12e-f33a-5d13-85c3-ffc069d57c7e",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/a368e12e-f33a-5d13-85c3-ffc069d57c7e"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "a368e12e-f33a-5d13-85c3-ffc069d57c7e"
+    },
+    {
+      "id": "cb2be677-5c0e-5683-9ccf-ae8485fbbafb",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/cb2be677-5c0e-5683-9ccf-ae8485fbbafb"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "cb2be677-5c0e-5683-9ccf-ae8485fbbafb"
+    },
+    {
+      "id": "59a51781-a94d-5f5e-acb0-fcbc948cd9f1",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/59a51781-a94d-5f5e-acb0-fcbc948cd9f1"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "59a51781-a94d-5f5e-acb0-fcbc948cd9f1"
+    },
+    {
+      "id": "2d0ad035-1804-585a-844a-2b216c23a23d",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/2d0ad035-1804-585a-844a-2b216c23a23d"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "2d0ad035-1804-585a-844a-2b216c23a23d"
+    },
+    {
+      "id": "39809505-b721-53c5-bfc1-5af430725055",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/39809505-b721-53c5-bfc1-5af430725055"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "39809505-b721-53c5-bfc1-5af430725055"
+    },
+    {
+      "id": "8fedfc2d-087e-52cf-9763-56d7bf6b598d",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/8fedfc2d-087e-52cf-9763-56d7bf6b598d"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "8fedfc2d-087e-52cf-9763-56d7bf6b598d"
+    },
+    {
+      "id": "33ad4892-59d3-5979-bc1d-04390b97a4d2",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/33ad4892-59d3-5979-bc1d-04390b97a4d2"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "33ad4892-59d3-5979-bc1d-04390b97a4d2"
+    },
+    {
+      "id": "c8e5c5a4-1af4-53e2-b03a-2f61c2986d17",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/c8e5c5a4-1af4-53e2-b03a-2f61c2986d17"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "c8e5c5a4-1af4-53e2-b03a-2f61c2986d17"
+    },
+    {
+      "id": "658a7bd9-1dff-5829-8006-438361e81354",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/658a7bd9-1dff-5829-8006-438361e81354"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "658a7bd9-1dff-5829-8006-438361e81354"
+    },
+    {
+      "id": "c1e953e7-ebb7-5acd-87f3-2ad62a7bf72c",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/c1e953e7-ebb7-5acd-87f3-2ad62a7bf72c"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "c1e953e7-ebb7-5acd-87f3-2ad62a7bf72c"
+    },
+    {
+      "id": "f5a356ab-3b6a-5353-a196-4753b07938da",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/f5a356ab-3b6a-5353-a196-4753b07938da"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "f5a356ab-3b6a-5353-a196-4753b07938da"
+    },
+    {
+      "id": "40c69c48-3654-5136-9131-0a70ed52263e",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/40c69c48-3654-5136-9131-0a70ed52263e"
+        }
+      },
+      "available": true,
+      "level": "HIGH",
+      "skuId": "40c69c48-3654-5136-9131-0a70ed52263e"
+    },
+    {
+      "id": "89f65f34-8742-5902-abd8-01b1721418eb",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/89f65f34-8742-5902-abd8-01b1721418eb"
+        }
+      },
+      "available": true,
+      "level": "MEDIUM",
+      "skuId": "89f65f34-8742-5902-abd8-01b1721418eb"
+    },
+    {
+      "id": "e654550f-b044-5404-a0ab-255b7f8673e2",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/e654550f-b044-5404-a0ab-255b7f8673e2"
+        }
+      },
+      "available": true,
+      "level": "LOW",
+      "skuId": "e654550f-b044-5404-a0ab-255b7f8673e2"
+    },
+    {
+      "id": "6d02fd6a-f9cb-5ebb-bff6-9b07d897f4a1",
+      "productId": "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+      "resourceType": "availableSkus",
+      "links": {
+        "self": {
+          "ref": "/deliver/available_skus/v1/6d02fd6a-f9cb-5ebb-bff6-9b07d897f4a1"
+        }
+      },
+      "available": true,
+      "level": "LOW",
+      "skuId": "6d02fd6a-f9cb-5ebb-bff6-9b07d897f4a1"
+    }
+  ],
+  "publishType": "FLOW",
+  "isLaunchView": false,
+  "launchView": null,
+  "isForPixleeABTesting": false,
+  "isForNumberOfImagesABTesting": false,
+  "isMinimumAdvertisedPrice": false,
+  "collectionTermIds": [
+    "a1f1c9c4-4b1b-4bc3-a397-dd3dfbf23d3a",
+    "08bf6f79-a44d-49c7-a209-3cf4e6210556",
+    "d6987e27-51fd-4432-9806-9b97fcd6b3cb",
+    "0d17e0df-9083-4e44-b263-71c2565d4783",
+    "2617fd79-8cd7-4437-a469-3b4282a6ac92",
+    "9fb68948-9647-4679-8b29-304c16a59b71",
+    "4be7e5d7-7e5b-460d-b3d7-41396b3fa985",
+    "ee8b6c2c-fdfc-4cb0-8cc1-ea1989ea665b"
+  ],
+  "conceptIds": [
+    "292efae5-2d9a-44a3-a529-cda684a47c44",
+    "d984f2d7-84d4-37c9-b860-1c89d499358f",
+    "f18f5202-0b04-4f33-b024-60e832db14ab",
+    "f85e32d7-13a0-33f8-94f7-d9d0b037d1f3",
+    "848bddbb-341c-3c70-8b77-05fe5d862c14",
+    "498ac76f-4c2c-4b55-bbdc-dd37011887b1",
+    "f5cdf573-63b1-3d72-bc11-e4173c20c09f",
+    "c2d2d6af-fc26-38c1-97d0-75ee010af4ac",
+    "1f497f51-bf0b-35fb-ab50-571f29a4daf1",
+    "25681ef3-6dec-3029-98fc-98da0a431aac",
+    "14656d89-985b-3f7a-9c4d-0b800fc082f4",
+    "ce920033-3ed0-3855-a3d9-e82dde5776c7",
+    "6e7e4809-fccb-4e82-8a7b-047125398076",
+    "4e88e9fa-02c9-31da-ad82-ebab53b54891",
+    "0f64ecc7-d624-4e91-b171-b83a03dd8550",
+    "a52c1989-14c9-32c2-a07d-aaacc3a3beba",
+    "37734db6-efb3-39b9-bd03-fe43d8f87daf",
+    "6783ca67-e5df-32ce-bc59-a5c8fd3a4dae",
+    "fd271500-77b7-3553-9cde-2fb03391f223",
+    "7cf5846a-5c1e-3be6-bbff-74de4f88e7f0",
+    "b0a98271-206e-3a5c-ba51-51de7b0df907",
+    "c6709307-0293-31bb-93a5-25dc36fac4fa",
+    "3622c403-7151-3db8-ac44-d0fbeee71197",
+    "fd811e2b-30de-3e11-a2c4-603994ea42e4",
+    "918e3967-2990-3a54-a8d9-83d0704c1b95",
+    "a19080d2-a9de-3523-a98d-0ffaddb287fd",
+    "527f2d29-89bd-422d-a53a-cdb52784a8a9",
+    "10f9af5a-58d2-480a-a72d-5a65bd374850",
+    "244ef9d2-4a84-4569-9541-bb98118cda7f",
+    "cb09fd63-b7c0-3aef-a9a6-040218d4b4e4",
+    "2dcff554-e5ff-3b40-b222-4bc50947c1c2",
+    "101dab6f-2967-3a8c-99c0-b29512627141",
+    "60fe2e14-d325-365f-9ca2-9a5c2c77fda9",
+    "2057952b-1a72-368e-b4b1-f67091ff1799",
+    "11873a21-5755-3ab1-9d43-43154f0866f6",
+    "193af413-39b0-4d7e-ae34-558821381d3f",
+    "2443afcf-9172-3071-b8f5-c749f899026c",
+    "d23dd206-e459-3d50-b3fe-5ca4426137d3",
+    "f5c24c6d-bcb8-31ec-a177-b8d75e902d1b",
+    "2b509152-bff4-3c00-8718-138115e47a4d",
+    "37a4f06f-eb0e-4ef0-8926-629ebc55ba14",
+    "c046d34b-f46a-39a4-a70e-d038112952f6",
+    "f3e53c71-c423-401a-98d8-58ab7c5ead07",
+    "12dfa6f8-bf97-333f-bf8a-e7e2b4b03917",
+    "618e0e56-f642-3b7e-b1a9-1ec3d14a4bb0",
+    "5c357820-4cff-37a6-b815-984753484f06",
+    "7af3d3c5-a8cf-39aa-a8da-e5ec24c016de",
+    "0cca4c26-47fe-40fc-bbce-738801fda390",
+    "bcab1a4e-d080-3e6d-9a2e-5d9538064d60",
+    "2397c175-cf5b-3a6c-91ea-72b19973a550",
+    "2d375fdb-39a1-4982-842f-3f4a357ec32b",
+    "dcffb0b5-5ecd-3f1f-b5e6-bd205cd21cc7",
+    "67063381-90eb-4763-8f87-acc30b392f38",
+    "539c6c43-d060-30b0-be5b-47c47f7c7658",
+    "7baf216c-acc6-4452-9e07-39c2ca77ba32",
+    "99cc8748-91e5-3265-926a-2eb2468c3c87",
+    "63b97c64-c4e8-4ba2-8e2e-0814e6eaf9b7",
+    "489c797e-8a71-3dad-8861-7006ad9c36b2",
+    "7abdd901-856d-3601-94bf-14313cee8354",
+    "228e2ef4-2666-3c82-a26e-d5ce14eed6aa",
+    "c030f969-024a-3791-83ac-6e505b324861",
+    "7a223c0d-276a-3ce4-ade6-cc5c8d636bfa",
+    "cd1a7ebe-d3f5-38a6-91c3-11204bb9bf36",
+    "a2244eab-52ab-3039-9df3-f264504b2c3e",
+    "0af553b6-7079-331b-a9d4-934c3966f7d1",
+    "c9e7dcc3-4306-3b50-90f8-7b2f60952873",
+    "16c989da-980c-32dd-a5f5-710e44410455",
+    "234b2baf-d96d-362d-ae12-bde2eee3c8b5",
+    "837857d6-5b87-3a76-b5ab-2ee55a7082e7",
+    "856c7c6e-9ef9-3a30-a251-c46f5b9522da",
+    "7702dda3-62ca-3410-b4f3-97025be1089d",
+    "6631b5c3-937a-4174-942e-3ab3c5b16642",
+    "7f4a6937-eb06-31c3-b4d8-a985366ec99b",
+    "758f6b44-e5a7-46be-b288-bac9c3ebe83f",
+    "86100864-8775-456d-9647-0bb7d36da3ac",
+    "699b34a6-1950-3458-8322-910b695fccb7",
+    "b6635f29-bb01-3ccd-9ade-dae66cf82e4c",
+    "9f483c28-b828-327b-9e6b-8b12441a1b16",
+    "6de391eb-ab3d-4625-a5e7-d537e87f2bfa",
+    "6ce9ce75-1082-3d6e-8a11-e7bf707fca92",
+    "0a937561-8633-3ea1-8ae3-8509f50f4127",
+    "01097ea6-0c27-3c83-91eb-d7757ac196e3",
+    "97ea50fe-970f-3816-8ce6-90e79890d2f7",
+    "88bf76a5-32b1-4660-a431-701f7126a317",
+    "14ec075e-24c4-33c2-8ae5-55b1e2fb5bfa",
+    "9e5e6948-8820-4a24-a4d3-01cdb5dc8291",
+    "abb0cf06-d7c2-41b7-97ba-c6d5ef5f43ed",
+    "4a528b33-a71b-342c-baa2-616a89985fef",
+    "7a1af8aa-7163-34a2-bf12-c2c7bc01b85c",
+    "66fd0467-2345-3d11-9c0e-17101482a5a9",
+    "2e0b5ce6-1e53-377c-ad44-9f504f7d226a",
+    "e39388f2-5325-3bdf-ad80-effb489f19f8",
+    "632af0e8-c475-31e8-9844-06d32ed81a7e",
+    "b5cd158b-b105-490c-b777-652943e742b0",
+    "d2a8e032-cab9-4cc3-a25c-2fef22879590",
+    "16633190-45e5-4830-a068-232ac7aea82c",
+    "a69a29b5-4dbd-3df9-a010-5d71b2a24682",
+    "568f7ffc-ee7f-49ed-98eb-0b94708d6e88",
+    "0ba21a73-e751-3354-b408-42e35d56e50b"
+  ],
+  "sizeChartUrl": "https://www.nike.com/size-fit/unisex-footwear-mens-based",
+  "catalogId": 1,
+  "selectedSkuId": {},
+  "sizeAndFitDescription": "",
+  "exclusiveAccess": false,
+  "notifyMeIndicator": false,
+  "promoExclusionAccess": true,
+  "useFeedsPromoExclusionMessage": false,
+  "jerseyIdPathName": "",
+  "nbyHubMessages": [],
+  "state": "IN_STOCK"
+}

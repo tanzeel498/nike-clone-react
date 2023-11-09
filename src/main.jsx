@@ -16,6 +16,12 @@ import SignUpForm from "./features/user/SignUpForm.jsx";
 import CheckoutLayout from "./pages/CheckoutLayout.jsx";
 import Tunnel from "./features/checkout/Tunnel.jsx";
 import Checkout from "./features/checkout/Checkout.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { staleTime: 100 } },
+});
 
 const router = createBrowserRouter([
   {
@@ -48,5 +54,8 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />,
+  <QueryClientProvider client={queryClient}>
+    <RouterProvider router={router} />
+    <ReactQueryDevtools initialIsOpen={false} />
+  </QueryClientProvider>,
 );

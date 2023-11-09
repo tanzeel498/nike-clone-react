@@ -2,17 +2,21 @@ import Button from "../../ui/Button";
 import { useForm } from "react-hook-form";
 import ButtonLink from "../../ui/ButtonLink";
 import InputField from "../../ui/InputField";
+import { useLogin } from "./useLogin";
+import PasswordField from "./PasswordField";
+import Message from "../../ui/Message";
 
 function LoginForm() {
+  const { login, isPending, error: loginError } = useLogin();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "all" });
-  console.log(errors);
 
-  function handleFormSubmit(data) {
-    console.log(data);
+  function handleFormSubmit({ email, password }) {
+    login({ email, password });
   }
   return (
     <div>
@@ -20,7 +24,13 @@ function LoginForm() {
         Enter your email to join us or sign in.
       </h2>
 
-      <form method="POST" onSubmit={handleSubmit(handleFormSubmit)} noValidate>
+      <form
+        className="flex flex-col gap-7"
+        method="POST"
+        onSubmit={handleSubmit(handleFormSubmit)}
+        noValidate
+      >
+        {loginError && <Message type="error">{loginError.message}</Message>}
         <InputField
           validation={register("email", {
             required: "Required",
@@ -34,8 +44,18 @@ function LoginForm() {
           label="Email"
           error={errors?.email}
         />
+        <PasswordField>
+          <InputField
+            id="password"
+            validation={register("password", {
+              required: "Required",
+            })}
+            label="Password"
+            error={errors?.password}
+          />
+        </PasswordField>
 
-        <p className="my-7 w-96 text-sm font-medium leading-6 text-stone-500">
+        <p className="w-96 text-sm font-medium leading-6 text-stone-500">
           By continuing, I agree to Nike's{" "}
           <ButtonLink underline={true} to="/" color="stone-500">
             Privacy Policy
@@ -46,7 +66,9 @@ function LoginForm() {
           </ButtonLink>
         </p>
         <div className="flex justify-end">
-          <Button type="submit">Continue</Button>
+          <Button disabled={isPending}>
+            {isPending ? <span className="loader"></span> : "Continue"}
+          </Button>
         </div>
       </form>
     </div>
