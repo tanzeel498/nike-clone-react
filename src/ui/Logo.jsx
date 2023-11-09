@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Logo() {
   return (
-    <div>
+    <div className="inline-block">
       <Link to="/">
         <img
           className={`aspect-square h-16 hover:opacity-60`}
