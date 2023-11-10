@@ -15,15 +15,15 @@ function Carousel() {
   const nextRef = useRef(null);
 
   return (
-    <section className="mobile:ml-0 mb-28 ml-6">
-      <h2 className="tablet:ml-14 mobile:ml-6 mb-6">Always Iconic</h2>
+    <section className="mb-28 ml-6 mobile:ml-0">
+      <h2 className="mb-6 mobile:ml-6 tablet:ml-14">Always Iconic</h2>
       <Swiper
         className="relative"
         modules={[Navigation]}
         spaceBetween={10}
         slidesPerView={1.2}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSwiper={(swiper) => console.log(swiper)}
         navigation={{ nextEl: nextRef.current, prevEl: prevRef.current }}
         loop={true}
         onBeforeInit={(swiper) => {

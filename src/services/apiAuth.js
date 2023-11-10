@@ -1,10 +1,39 @@
 import supabase from "./supabase";
 
-export async function signUp({ fullName, password, email }) {
+export async function signUp({ password, email, options }) {
   const { data, error } = await supabase.auth.signUp({
-    email: "someone@email.com",
-    password: "some-secure-password",
+    email,
+    password,
+    options: { data: { ...options } },
   });
+
+  if (data.user && data.user.identities.length === 0)
+    throw new Error("User Already exists");
+  else if (error) throw new Error(error.message);
+
+  return data;
+}
+
+export async function verifyOtp({ email, token }) {
+  const { data, error } = await supabase.auth.verifyOtp({
+    email,
+    token,
+    type: "email",
+  });
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export async function updateUser({ email, password, ...options }) {
+  const { data, error } = await supabase.auth.updateUser({
+    email,
+    password,
+    data: { ...options },
+  });
+
+  if (error) throw new Error(error.message);
+  return data;
 }
 
 export async function login({ email, password }) {

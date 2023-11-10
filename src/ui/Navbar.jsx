@@ -35,7 +35,7 @@ function Navbar() {
 
         <CartIcon />
 
-        <HeaderIcon to="accounts/login" hideAfterTablet={true}>
+        <HeaderIcon to="accounts/join" hideAfterTablet={true}>
           <FiUser className="text-2xl" />
         </HeaderIcon>
 

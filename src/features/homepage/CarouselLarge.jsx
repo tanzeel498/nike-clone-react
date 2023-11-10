@@ -77,7 +77,7 @@ function CarouselLarge() {
           setIsBeginning(swiper.isBeginning);
           setIsEnd(swiper.isEnd);
         }}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSwiper={(swiper) => console.log(swiper)}
         navigation={{ nextEl: nextRef.current, prevEl: prevRef.current }}
         scrollbar={{ draggable: true }}
         onBeforeInit={(swiper) => {

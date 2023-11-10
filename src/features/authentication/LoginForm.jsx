@@ -2,26 +2,43 @@ import Button from "../../ui/Button";
 import { useForm } from "react-hook-form";
 import ButtonLink from "../../ui/ButtonLink";
 import InputField from "../../ui/InputField";
-import { useLogin } from "./useLogin";
-import PasswordField from "./PasswordField";
+import useSignUp from "./useSignUp";
 import Message from "../../ui/Message";
+import { useNavigate } from "react-router-dom";
+import { useEmailAuth } from "../context/EmailContextAuth";
 
 function LoginForm() {
-  const { login, isPending, error: loginError } = useLogin();
-
+  const { isPending, error: signUpError, signUp } = useSignUp();
+  const { setEmail } = useEmailAuth();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "all" });
 
-  function handleFormSubmit({ email, password }) {
-    login({ email, password });
+  function handleFormSubmit({ email }) {
+    signUp(
+      { email, password: "F--_j*dkK)(*^%7865_U" },
+      {
+        onSuccess: (data) => {
+          setEmail(email);
+          navigate("/accounts/signup");
+        },
+        onError: (err) => {
+          if (err.message === "User Already exists") {
+            setEmail(email);
+            navigate("/accounts/password");
+          }
+        },
+      },
+    );
   }
+
   return (
     <div>
       <h2 className="mb-8 tracking-tight">
-        Enter your email to join us or sign in.
+        Enter your email to sign in or join us.
       </h2>
 
       <form
@@ -30,7 +47,8 @@ function LoginForm() {
         onSubmit={handleSubmit(handleFormSubmit)}
         noValidate
       >
-        {loginError && <Message type="error">{loginError.message}</Message>}
+        {signUpError && <Message type="error">{signUpError.message}</Message>}
+
         <InputField
           validation={register("email", {
             required: "Required",
@@ -44,16 +62,6 @@ function LoginForm() {
           label="Email"
           error={errors?.email}
         />
-        <PasswordField>
-          <InputField
-            id="password"
-            validation={register("password", {
-              required: "Required",
-            })}
-            label="Password"
-            error={errors?.password}
-          />
-        </PasswordField>
 
         <p className="w-96 text-sm font-medium leading-6 text-stone-500">
           By continuing, I agree to Nike's{" "}
@@ -66,7 +74,7 @@ function LoginForm() {
           </ButtonLink>
         </p>
         <div className="flex justify-end">
-          <Button disabled={isPending}>
+          <Button>
             {isPending ? <span className="loader"></span> : "Continue"}
           </Button>
         </div>

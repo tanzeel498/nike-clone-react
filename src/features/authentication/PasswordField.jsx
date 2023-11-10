@@ -19,17 +19,17 @@ function PasswordField({ children }) {
 
   return cloneElement(children, {
     children: (
-      <button
+      <span
         ref={inputRef}
         id="eye-button"
-        className="mr-3 text-xl"
+        className="mr-3 cursor-pointer text-xl"
         onClick={(e) => {
           e.preventDefault();
           setShowPassword((s) => !s);
         }}
       >
         {showPassword ? <FiEyeOff /> : <FiEye />}
-      </button>
+      </span>
     ),
     type: showPassword ? "text" : "password",
   });

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import LogoJordan from "./LogoJordan";
-import useUser from "../features/user/useUser";
+import useUser from "../features/authentication/useUser";
 import HeaderIcon from "./HeaderIcon";
 import { FiUser } from "react-icons/fi";
 import ButtonLink from "./ButtonLink";
-import useLogout from "../features/user/useLogout";
+import useLogout from "../features/authentication/useLogout";
 
 function BrandHeader() {
   const { user } = useUser();
@@ -29,15 +29,11 @@ function BrandHeader() {
 
       {user ? (
         <ul className="flex items-center gap-3 text-xs font-semibold">
-          <li className="hover:opacity-60">
-            <Link to="/accounts/login">Join Us</Link>
-          </li>
-          <li>|</li>
           <li>
-            <HeaderIcon to="accounts/login">
-              <span className="mr-2">Hi, {user.email} </span>
-              <FiUser className="text-xl" />
-            </HeaderIcon>
+            <Link to="accounts/join" className="flex items-center gap-2">
+              <span>Hi, {user.user_metadata.firstName} </span>
+              <FiUser className="text-lg" />
+            </Link>
           </li>
           <li>|</li>
           <li>
@@ -49,11 +45,11 @@ function BrandHeader() {
       ) : (
         <ul className="flex items-center gap-3 text-xs font-semibold">
           <li className="hover:opacity-60">
-            <Link to="/accounts/login">Join Us</Link>
+            <Link to="/accounts/join">Join Us</Link>
           </li>
           <li>|</li>
           <li className="hover:opacity-60">
-            <Link to="/accounts/login">Sign In</Link>
+            <Link to="/accounts/join">Sign In</Link>
           </li>
         </ul>
       )}

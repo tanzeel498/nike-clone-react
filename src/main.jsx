@@ -10,9 +10,9 @@ import Cart from "./pages/Cart.jsx";
 import Jordan from "./pages/Jordan.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import Accounts from "./pages/Accounts.jsx";
-import LoginForm from "./features/user/LoginForm.jsx";
-import PasswordForm from "./features/user/PasswordForm.jsx";
-import SignUpForm from "./features/user/SignUpForm.jsx";
+import LoginForm from "./features/authentication/LoginForm.jsx";
+import PasswordForm from "./features/authentication/PasswordForm.jsx";
+import SignUpForm from "./features/authentication/SignUpForm.jsx";
 import CheckoutLayout from "./pages/CheckoutLayout.jsx";
 import Tunnel from "./features/checkout/Tunnel.jsx";
 import Checkout from "./features/checkout/Checkout.jsx";
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     path: "accounts",
     element: <Accounts />,
     children: [
-      { path: "login", element: <LoginForm /> },
+      { path: "join", element: <LoginForm /> },
       { path: "password", element: <PasswordForm /> },
       { path: "signup", element: <SignUpForm /> },
     ],
