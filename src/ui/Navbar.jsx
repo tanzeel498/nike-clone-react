@@ -8,8 +8,8 @@ import DesktopMenuItem from "./DesktopMenuItem";
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-20 flex items-center justify-between border-stone-200 bg-white px-6 shadow-md tablet:grid tablet:grid-cols-9 tablet:px-14">
-      <div className="tablet:col-span-2">
+    <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-stone-200 bg-white px-6 shadow-md tablet:grid tablet:grid-cols-9 tablet:px-14">
+      <div className="max-h-16 tablet:col-span-2">
         <Logo />
       </div>
 

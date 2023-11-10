@@ -17,10 +17,10 @@ function SignUpForm() {
     mode: "all",
   });
 
-  console.log(errors);
   function handleFormSubmit(data) {
     console.log(data);
   }
+
   return (
     <div>
       <div className="mb-8">

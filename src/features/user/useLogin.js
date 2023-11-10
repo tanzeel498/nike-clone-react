@@ -12,8 +12,8 @@ export function useLogin() {
     error,
   } = useMutation({
     mutationFn: (data) => loginApi(data),
-    onSuccess: (data) => {
-      queryClient.setQueryData(["user", data]);
+    onSuccess: ({ user }) => {
+      queryClient.setQueryData(["user"], user);
       navigate("/");
     },
   });

@@ -1,4 +1,4 @@
-import BrandHeader from "../features/homepage/BrandHeader";
+import BrandHeader from "./BrandHeader";
 import Navbar from "./Navbar";
 
 function Header() {
