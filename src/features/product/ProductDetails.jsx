@@ -8,7 +8,6 @@ import Modal from "../../ui/Modal";
 import ProductDescription from "./ProductDescription";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import SizeButton from "../../ui/sizeButton";
 
 function ProductDetails({ product, setColor, activeColor }) {
   //fetch data of activeColor from server
