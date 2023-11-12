@@ -65,11 +65,23 @@ function LoginForm() {
 
         <p className="w-96 text-sm font-medium leading-6 text-stone-500">
           By continuing, I agree to Nike's{" "}
-          <ButtonLink underline={true} to="/" color="stone-500">
+          <ButtonLink
+            underline={true}
+            to="https://agreementservice.svs.nike.com/rest/agreement?agreementType=privacyPolicy&country=PK&language=en&requestType=redirect&uxId=4fd2d5e7db76e0f85a6bb56721bd51df"
+            color="stone-500"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Privacy Policy
           </ButtonLink>{" "}
           and{" "}
-          <ButtonLink underline={true} to="/" color="stone-500">
+          <ButtonLink
+            underline={true}
+            to="https://agreementservice.svs.nike.com/rest/agreement?agreementType=termsOfUse&country=PK&language=en&requestType=redirect&uxId=4fd2d5e7db76e0f85a6bb56721bd51df"
+            color="stone-500"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Terms of Use.
           </ButtonLink>
         </p>

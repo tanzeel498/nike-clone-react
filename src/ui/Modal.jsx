@@ -2,6 +2,7 @@ import { cloneElement, createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { IoClose } from "react-icons/io5";
 import useOutsideClick from "../hooks/useOutsideClick";
+import HeaderIcon from "./HeaderIcon";
 
 const ModalContext = createContext();
 
@@ -36,12 +37,12 @@ function Window({ children, name }) {
         ref={modalRef}
         className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white px-8 py-6 shadow-xl duration-300"
       >
-        <button
-          className="absolute right-4 top-3 rounded-full p-1 text-2xl duration-200 hover:bg-stone-200"
-          onClick={close}
-        >
-          <IoClose />
-        </button>
+        <div className="absolute right-4 top-3">
+          <HeaderIcon onClick={close}>
+            <IoClose className="text-2xl" />
+          </HeaderIcon>
+        </div>
+
         {children}
       </div>
     </div>,

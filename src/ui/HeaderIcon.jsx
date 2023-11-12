@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function HeaderIcon({ children, to, hideAfterTablet = false, onClick }) {
-  const styles = `relative flex items-center justify-center rounded-full p-2 before:absolute before:-z-10 before:h-full before:w-full before:scale-0 before:rounded-full before:bg-slate-200 before:duration-200 hover:before:scale-110 ${
+  const styles = `relative flex items-center justify-center rounded-full p-2 before:absolute before:-z-10 before:h-full before:w-full before:scale-0 before:rounded-full before:bg-slate-200 before:duration-200 hover:before:scale-100 ${
     hideAfterTablet === true ? "tablet:hidden" : ""
   }`;
 

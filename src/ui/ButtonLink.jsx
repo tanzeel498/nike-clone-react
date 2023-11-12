@@ -7,6 +7,7 @@ function ButtonLink({
   underline,
   border = underline ? false : true,
   onClick = () => {},
+  ...props
 }) {
   const style = `inline-block ${
     underline ? "underline" : "font-semibold"
@@ -16,13 +17,13 @@ function ButtonLink({
 
   if (to)
     return (
-      <Link to={to} className={style}>
+      <Link to={to} className={style} {...props}>
         {children}
       </Link>
     );
 
   return (
-    <button className={style} onClick={onClick}>
+    <button className={style} onClick={onClick} {...props}>
       {children}
     </button>
   );
