@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import LogoJordan from "./LogoJordan";
 import useUser from "../features/authentication/useUser";
-import HeaderIcon from "./HeaderIcon";
 import { FiUser } from "react-icons/fi";
 import ButtonLink from "./ButtonLink";
 import useLogout from "../features/authentication/useLogout";
