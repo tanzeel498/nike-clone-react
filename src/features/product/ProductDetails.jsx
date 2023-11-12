@@ -8,7 +8,7 @@ import Modal from "../../ui/Modal";
 import ProductDescription from "./ProductDescription";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import SizeButton from "../../ui/sizeButton";
+//import SizeButton from "../../ui/sizeButton";
 
 function ProductDetails({ product, setColor, activeColor }) {
   //fetch data of activeColor from server
@@ -47,7 +47,7 @@ function ProductDetails({ product, setColor, activeColor }) {
             Size Guide
           </Link>
         </div>
-        <div className="flex flex-wrap justify-between gap-2">
+{/*         <div className="flex flex-wrap justify-between gap-2">
           {skus.map((sku) => (
             <SizeButton
               key={sku.id}
@@ -59,7 +59,7 @@ function ProductDetails({ product, setColor, activeColor }) {
               {sku.nikeSize}
             </SizeButton>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="my-10">
