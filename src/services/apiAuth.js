@@ -1,13 +1,12 @@
 import supabase from "./supabase";
 
-export async function signUp({ password, email, options }) {
+export async function signUp({ password, email }) {
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { ...options } },
   });
 
-  if (data.user && data.user.identities.length === 0)
+  if (data.user?.identities.length === 0)
     throw new Error("User Already exists");
   else if (error) throw new Error(error.message);
 
