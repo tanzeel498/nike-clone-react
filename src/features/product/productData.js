@@ -1,5 +1,5 @@
 export const product = {
-  id: "aae4f28a-7f02-5b90-92f7-b79954307fb6",
+  // id: "aae4f28a-7f02-5b90-92f7-b79954307fb6",
   productId: "1013249074",
   mainColor: false,
   styleColor: "CZ0790-161",
