@@ -7,7 +7,6 @@ export const product = {
   category: "Lifestyle",
   sportTags: ["Lifestyle"],
   genders: ["MEN", "WOMEN"],
-  genders: ["MEN", "WOMEN"],
   brand: "Jordan",
   productType: "FOOTWEAR",
   status: "ACTIVE",
