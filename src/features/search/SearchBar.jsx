@@ -33,7 +33,7 @@ function SearchBar() {
         placeholder="Search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full rounded-full bg-stone-100 py-2 pl-4 pr-10 outline-none ring-stone-900 focus:ring-1"
+        className="w-full rounded-full bg-stone-100 py-2 pl-4 pr-10 outline-none ring-1 ring-stone-300 duration-100 focus:ring-stone-900"
       />
 
       <span className="absolute right-0.5 z-10 h-9">
