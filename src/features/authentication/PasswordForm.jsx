@@ -2,7 +2,7 @@ import Button from "../../ui/Button";
 import { useForm } from "react-hook-form";
 import ButtonLink from "../../ui/ButtonLink";
 import InputField from "../../ui/InputField";
-import { useEmailAuth } from "../context/EmailContextAuth";
+import { useEmailAuth } from "../context/EmailAuthContext";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "./useLogin";
 import Message from "../../ui/Message";

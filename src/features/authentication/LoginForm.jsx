@@ -5,7 +5,7 @@ import InputField from "../../ui/InputField";
 import useSignUp from "./useSignUp";
 import Message from "../../ui/Message";
 import { useNavigate } from "react-router-dom";
-import { useEmailAuth } from "../context/EmailContextAuth";
+import { useEmailAuth } from "../context/EmailAuthContext";
 
 function LoginForm() {
   const { isPending, error: signUpError, signUp } = useSignUp();

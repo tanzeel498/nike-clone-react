@@ -9,7 +9,7 @@ import CodeCounter from "./CodeCounter";
 import Message from "../../ui/Message";
 import { useNavigate } from "react-router-dom";
 import useVerifyOtp from "./useVerifyOtp";
-import { useEmailAuth } from "../context/EmailContextAuth";
+import { useEmailAuth } from "../context/EmailAuthContext";
 import useUpdateUser from "./useUpdateUser";
 
 function SignUpForm() {

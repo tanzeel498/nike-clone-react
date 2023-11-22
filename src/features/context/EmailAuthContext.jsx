@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 const EmailContext = createContext();
 
-function EmailProviderAuth({ children }) {
+function EmailAuthProvider({ children }) {
   const [email, setEmail] = useState(null);
 
   return (
@@ -19,4 +19,4 @@ function useEmailAuth() {
   return context;
 }
 
-export { useEmailAuth, EmailProviderAuth };
+export { useEmailAuth, EmailAuthProvider };
