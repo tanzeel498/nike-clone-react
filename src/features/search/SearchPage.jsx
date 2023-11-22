@@ -9,15 +9,14 @@ function SearchPage({ showSearchPage, handleToggleSearchPage }) {
         showSearchPage ? "left-0" : "left-full"
       }`}
     >
-      <span className="absolute left-6 top-6">
+      <span className="absolute left-6 top-5">
         <HeaderIcon onClick={handleToggleSearchPage}>
-          <IoChevronBack className="text-xl" />
+          <IoChevronBack className="text-2xl" />
         </HeaderIcon>
       </span>
       <div className="w-4/5">
         <SearchBar />
       </div>
-      Search Page here
     </div>
   );
 }
