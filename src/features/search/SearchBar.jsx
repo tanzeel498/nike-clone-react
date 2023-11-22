@@ -33,7 +33,7 @@ function SearchBar() {
         placeholder="Search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-56 max-w-[230px] rounded-full border-stone-900 bg-stone-100 py-2 pl-4 pr-10 outline-none duration-100 focus:border-[1px]"
+        className="w-full rounded-full bg-stone-100 py-2 pl-4 pr-10 outline-none ring-stone-900 focus:ring-1"
       />
 
       <span className="absolute right-0.5 z-10 h-9">
@@ -41,7 +41,7 @@ function SearchBar() {
           {searchTerm ? (
             <IoClose className="text-xl" onClick={handleSearchClear} />
           ) : (
-            <IoSearch className="text-xl" onClick={(e) => e.preventDefault()} />
+            <IoSearch className="text-xl" />
           )}
         </HeaderIcon>
       </span>

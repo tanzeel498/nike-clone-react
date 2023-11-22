@@ -28,7 +28,9 @@ function Navbar() {
       </div>
 
       <div className="flex items-center justify-end gap-4 tablet:col-span-2">
-        <SearchBar />
+        <span className="hidden w-56 tablet:block">
+          <SearchBar />
+        </span>
         <HeaderIcon hideAfterTablet={true}>
           <IoSearch className="text-2xl" />
         </HeaderIcon>
