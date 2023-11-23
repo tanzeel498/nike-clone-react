@@ -1,11 +1,15 @@
 import Bag from "../features/cart/Bag";
 import Summary from "../features/cart/Summary";
+import PageTitle from "../features/checkout/PageTitle";
 
 function Cart() {
   return (
-    <div className="mx-auto flex w-[1100px] justify-center gap-6 pt-10">
-      <Bag />
-      <Summary />
+    <div className="mx-auto flex w-full flex-col justify-center px-6 tablet:max-w-[1200px] tablet:px-14">
+      <PageTitle title="Bag" numItems={4} />
+      <div className="flex flex-col gap-12 tablet:flex-row">
+        <Bag />
+        <Summary />
+      </div>
     </div>
   );
 }

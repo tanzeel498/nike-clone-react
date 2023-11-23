@@ -28,13 +28,15 @@ function ProductDetails({ product, setColor, activeColor }) {
     description,
   } = product;
   return (
-    <div className="max-w-[400px]">
-      <ProductTitle
-        title={title}
-        subTitle={subTitle}
-        fullPrice={fullPrice}
-        currentPrice={currentPrice}
-      />
+    <div className="w-full px-6 tablet:max-w-[400px] tablet:px-0">
+      <div className="hidden tablet:block">
+        <ProductTitle
+          title={title}
+          subTitle={subTitle}
+          fullPrice={fullPrice}
+          currentPrice={currentPrice}
+        />
+      </div>
       <ProductColor
         activeColor={activeColor}
         setColor={setColor}

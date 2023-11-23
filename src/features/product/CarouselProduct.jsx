@@ -28,32 +28,34 @@ function CarouselProduct({ activeColor }) {
   }
 
   return (
-    <div className="sticky top-16 flex h-[696px] justify-end gap-4">
-      <div className="thumbsContainer flex w-16 flex-shrink-0 flex-col gap-2 overflow-y-auto">
+    <div className="top-16 flex h-[700px] gap-4 tablet:sticky tablet:w-2/5 tablet:justify-end">
+      <div className="thumbsContainer hidden w-16 flex-shrink-0 flex-col gap-2 overflow-y-auto tablet:flex">
         {imagesLink.map((src, index) => (
           <div key={index} className="thumb">
             <img
               src={src}
               alt=""
-              className="h-16 w-16 rounded-md object-cover"
+              className={`h-16 w-16 rounded-md border-stone-900 object-cover duration-100 ${
+                thumbActive === index ? "border-[1px]" : ""
+              }`}
               onMouseEnter={() => setThumbActive(index)}
             />
           </div>
         ))}
       </div>
-      <div className="imageContainer relative h-full min-w-[535px] overflow-clip rounded-lg">
+      <div className="imageContainer relative flex h-full w-screen grow items-center justify-center overflow-clip tablet:w-full tablet:rounded-lg">
         <img
           src={imagesLink.at(thumbActive)}
           alt=""
-          className="h-full object-cover"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute bottom-6 right-5 flex gap-2">
-          <div className="scale-90">
+        <div className="absolute flex w-11/12 justify-between tablet:bottom-6 tablet:right-5 tablet:w-[15%]">
+          <div className="scale-105 opacity-70 duration-200 hover:opacity-100 tablet:scale-90">
             <CarouselButton onClick={handlePrev}>
               <IoChevronBack />
             </CarouselButton>
           </div>
-          <div className="scale-90">
+          <div className="scale-105 opacity-70 duration-200 hover:opacity-100 tablet:scale-90">
             <CarouselButton onClick={handleNext}>
               <IoChevronForward />
             </CarouselButton>

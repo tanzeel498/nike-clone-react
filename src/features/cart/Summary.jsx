@@ -4,8 +4,8 @@ import { formatCurrency } from "../../utils/helpers";
 
 function Summary() {
   return (
-    <div className="w-1/3">
-      <h2 className="text-3xl">Summary</h2>
+    <div className="w-full border-t-[1px] tablet:w-1/3 tablet:border-0">
+      <h2 className="my-5 tablet:my-0">Summary</h2>
       <div className="mb-9 mt-6 flex flex-col gap-3">
         <div>
           <Collapsible initialExpand={false}>
@@ -40,12 +40,20 @@ function Summary() {
           <p>{formatCurrency(226.97)}</p>
         </div>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="hidden flex-col gap-3 tablet:flex">
         <Button size="large" to="/checkout">
           Checkout
         </Button>
-        <Button size="large" type="secondary">
-          <img className="w-16" src="/paypal.svg" alt="paypal" />
+
+        <span className="hidden tablet:block">
+          <Button size="large" type="secondary">
+            <img className="w-16" src="/paypal.svg" alt="paypal" />
+          </Button>
+        </span>
+      </div>
+      <div className="fixed bottom-0 left-0 right-0 border-t-[1px] bg-white px-6 py-4 tablet:hidden">
+        <Button size="large" to="/checkout">
+          Go to Checkout
         </Button>
       </div>
     </div>
