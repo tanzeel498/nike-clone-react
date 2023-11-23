@@ -1,14 +1,14 @@
 import Logo from "./Logo";
-import { IoSearch } from "react-icons/io5";
 import { FiMenu, FiUser } from "react-icons/fi";
 import HeaderIcon from "./HeaderIcon";
-import SearchBar from "../features/search/SearchBar";
+import SearchBarDesktop from "../features/search/SearchBarDesktop";
 import CartIcon from "../features/cart/CartIcon";
 import DesktopMenuItem from "./DesktopMenuItem";
+import SearchIcon from "../features/search/SearchIcon";
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-stone-200 bg-white px-6 shadow-md tablet:grid tablet:grid-cols-9 tablet:px-14">
+    <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-stone-200 bg-white px-6 shadow-md tablet:grid tablet:grid-cols-9 tablet:px-14">
       <div className="max-h-16 tablet:col-span-2">
         <Logo />
       </div>
@@ -29,12 +29,10 @@ function Navbar() {
 
       <div className="flex items-center justify-end gap-4 tablet:col-span-2">
         <span className="hidden w-56 tablet:block">
-          <SearchBar />
+          <SearchBarDesktop />
         </span>
-        <HeaderIcon hideAfterTablet={true}>
-          <IoSearch className="text-2xl" />
-        </HeaderIcon>
 
+        <SearchIcon />
         <CartIcon />
 
         <HeaderIcon to="accounts/join" hideAfterTablet={true}>
