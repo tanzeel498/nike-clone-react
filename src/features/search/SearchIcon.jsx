@@ -15,19 +15,15 @@ function SearchIcon() {
     [showSearchPage],
   );
 
-  function handleToggleSearchPage() {
-    setShowSearchPage((s) => !s);
-  }
-
   return (
     <div className="tablet:hidden">
-      <HeaderIcon onClick={handleToggleSearchPage}>
+      <HeaderIcon onClick={() => setShowSearchPage(true)}>
         <IoSearch className="text-2xl" />
       </HeaderIcon>
       {createPortal(
         <SearchPage
           showSearchPage={showSearchPage}
-          handleToggleSearchPage={handleToggleSearchPage}
+          hideSearchPage={() => setShowSearchPage(false)}
         />,
         document.body,
       )}

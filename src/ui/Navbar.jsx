@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 import { FiMenu, FiUser } from "react-icons/fi";
 import HeaderIcon from "./HeaderIcon";
-import SearchBar from "../features/search/SearchBar";
+import SearchBarDesktop from "../features/search/SearchBarDesktop";
 import CartIcon from "../features/cart/CartIcon";
 import DesktopMenuItem from "./DesktopMenuItem";
 import SearchIcon from "../features/search/SearchIcon";
@@ -29,7 +29,7 @@ function Navbar() {
 
       <div className="flex items-center justify-end gap-4 tablet:col-span-2">
         <span className="hidden w-56 tablet:block">
-          <SearchBar />
+          <SearchBarDesktop />
         </span>
 
         <SearchIcon />
