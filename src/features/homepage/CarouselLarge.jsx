@@ -53,16 +53,20 @@ function CarouselLarge() {
       <div className="mb-7 flex items-center justify-between">
         <h2 className="text-2xl font-semibold">Shop by Sport</h2>
 
-        <div className="flex gap-6 mobile:mr-14">
-          <div ref={prevRef} className="scale-125">
-            <CarouselButton bg="bg-stone-200" disabled={isBeginning}>
-              <IoChevronBack />
+        <div className="flex gap-4">
+          <div ref={prevRef}>
+            <CarouselButton
+              size="medium"
+              bg="bg-stone-200"
+              disabled={isBeginning}
+            >
+              <IoChevronBack className="text-xl" />
             </CarouselButton>
           </div>
 
-          <div ref={nextRef} className="scale-125">
-            <CarouselButton bg="bg-stone-200" disabled={isEnd}>
-              <IoChevronForward />
+          <div ref={nextRef}>
+            <CarouselButton size="medium" bg="bg-stone-200" disabled={isEnd}>
+              <IoChevronForward className="text-xl" />
             </CarouselButton>
           </div>
         </div>
