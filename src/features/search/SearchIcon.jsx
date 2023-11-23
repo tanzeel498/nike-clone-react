@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderIcon from "../../ui/HeaderIcon";
 import { IoSearch } from "react-icons/io5";
 import SearchPage from "./SearchPage";
@@ -6,6 +6,14 @@ import { createPortal } from "react-dom";
 
 function SearchIcon() {
   const [showSearchPage, setShowSearchPage] = useState(false);
+
+  useEffect(
+    function () {
+      if (showSearchPage) document.body.style.overflow = "hidden";
+      else document.body.style.overflow = "auto";
+    },
+    [showSearchPage],
+  );
 
   function handleToggleSearchPage() {
     setShowSearchPage((s) => !s);
