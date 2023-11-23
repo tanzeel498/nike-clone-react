@@ -18,49 +18,52 @@ function BagItem() {
             alt=""
           />
         </Link>
-        <div className="flex grow flex-col justify-between font-semibold text-stone-500">
-          <div className="flex justify-between">
-            <Link
-              className="text-stone-900"
-              to={`https://www.nike.com${data[0].url}`}
-            >
-              <h4>{data[0].title}</h4>
-            </Link>
-
-            <div className="flex gap-3">
-              {data[0].cartFullPrice !== data[0].cartTotal && (
-                <h4 className="line-through">
-                  {formatCurrency(data[0].cartFullPrice)}
+        <div className="flex grow flex-col justify-between">
+          <div className="flex flex-col gap-1 font-medium text-stone-500">
+            <div className="flex flex-col gap-1 mobile:flex-row-reverse mobile:justify-between">
+              <div className="flex gap-3">
+                {data[0].cartFullPrice !== data[0].cartTotal && (
+                  <h4 className="line-through">
+                    {formatCurrency(data[0].cartFullPrice)}
+                  </h4>
+                )}
+                <h4 className="text-stone-900">
+                  {formatCurrency(data[0].cartTotal)}
                 </h4>
-              )}
-              <h4 className="text-stone-900">
-                {formatCurrency(data[0].cartTotal)}
-              </h4>
+              </div>
+              <Link
+                className="text-stone-900"
+                to={`https://www.nike.com${data[0].url}`}
+              >
+                <h4>{data[0].title}</h4>
+              </Link>
             </div>
-          </div>
-          <span>{data[0].subtitle}</span>
-          <span>{data[0].colorDescription}</span>
-          <div className="flex gap-4">
-            <div>
-              <span>Size </span>
-              <select className="text-sm">
-                {Array.from({ length: 15 }).map((_, i) => (
-                  <option className="text-sm" key={i}>
-                    {i < 12 ? (i + 14) / 2 : i + 1}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <span>{data[0].subtitle}</span>
+            <span className="hidden tablet:flex">
+              {data[0].colorDescription}
+            </span>
+            <div className="flex gap-4">
+              <div>
+                <span>Size </span>
+                <select className="text-sm">
+                  {Array.from({ length: 15 }).map((_, i) => (
+                    <option className="text-sm" key={i}>
+                      {i < 12 ? (i + 14) / 2 : i + 1}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
-            <div>
-              <span>Quantity </span>
-              <select className="text-sm">
-                {Array.from({ length: 10 }).map((_, i) => (
-                  <option className="text-sm" key={i}>
-                    {i + 1}
-                  </option>
-                ))}
-              </select>
+              <div>
+                <span>Quantity </span>
+                <select className="text-sm">
+                  {Array.from({ length: 10 }).map((_, i) => (
+                    <option className="text-sm" key={i}>
+                      {i + 1}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
           <button className="text-2xl text-stone-900">
