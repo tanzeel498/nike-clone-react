@@ -1,4 +1,10 @@
-import { cloneElement, createContext, useContext, useState } from "react";
+import {
+  cloneElement,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { createPortal } from "react-dom";
 import { IoClose } from "react-icons/io5";
 import useOutsideClick from "../hooks/useOutsideClick";
@@ -29,10 +35,18 @@ function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
   const modalRef = useOutsideClick(close);
 
+  useEffect(
+    function () {
+      if (name === openName) document.body.style.overflow = "hidden";
+      else document.body.style.overflow = "auto";
+    },
+    [name, openName],
+  );
+
   if (name !== openName) return null;
 
   return createPortal(
-    <div className="fixed left-0 top-0 z-20 h-screen w-screen bg-neutral-950 bg-opacity-80">
+    <div className="fixed left-0 top-0 z-50 h-screen w-screen bg-neutral-950 bg-opacity-80">
       <div
         ref={modalRef}
         className="fixed left-1/2 top-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white px-8 py-6 shadow-xl duration-300 tablet:w-1/2 tablet:min-w-[900px]"

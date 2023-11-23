@@ -21,7 +21,7 @@ function LoginForm() {
     signUp(
       { email, password: "F--_j*dkK)(*^%7865_U" },
       {
-        onSuccess: (data) => {
+        onSuccess: () => {
           setEmail(email);
           navigate("/accounts/signup");
         },
