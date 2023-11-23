@@ -21,7 +21,7 @@ function ProductTile({ product }) {
         />
 
         {colorsLength > 1 && (
-          <div className="hidden flex-wrap items-center gap-1 group-hover:flex">
+          <div className="hidden flex-wrap items-center gap-1 tablet:group-hover:flex">
             {product.colorways.slice(0, 4).map((color, i) => (
               <img
                 key={color.pid}
@@ -46,7 +46,7 @@ function ProductTile({ product }) {
               .replace("_", " ")}
         </p>
 
-        <div className="product-info mb-4 duration-300 group-hover:hidden">
+        <div className="product-info mb-4 duration-300 tablet:group-hover:hidden">
           <h4 className="my-1">{product.title}</h4>
           <p className="mb-1 text-stone-600">{product.subtitle}</p>
           <p className="text-stone-600">{`${product.colorways.length} ${

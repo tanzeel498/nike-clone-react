@@ -2,7 +2,7 @@ import ProductTile from "./ProductTile";
 
 function ProductsGrid({ products }) {
   return (
-    <div className="grid w-full max-w-full grow grid-cols-3 gap-4 duration-300">
+    <div className="grid w-full max-w-full grow grid-cols-2 gap-4 duration-300 tablet:grid-cols-3">
       {products.map((product) => (
         <ProductTile key={product.pid} product={product} />
       ))}

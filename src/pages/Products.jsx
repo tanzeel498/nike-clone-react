@@ -5,7 +5,7 @@ import FilterBar from "../features/filterBar/FilterBar";
 import ProductsGrid from "../features/products/ProductsGrid";
 
 function Products() {
-  const [showFilterBar, setShowFilterBar] = useState(true);
+  const [showFilters, setShowFilters] = useState(true);
   const { title, resultCount, data } = products;
 
   return (
@@ -13,12 +13,12 @@ function Products() {
       <HeaderProducts
         title={title}
         resultCount={resultCount}
-        showFilterBar={showFilterBar}
-        setShowFilterBar={setShowFilterBar}
+        showFilters={showFilters}
+        setShowFilters={setShowFilters}
       />
       <div className="flex min-h-screen px-6 tablet:px-14">
-        <FilterBar showFilterBar={showFilterBar} />
-        <ProductsGrid products={data} showFilterBar={showFilterBar} />
+        <FilterBar showFilters={showFilters} />
+        <ProductsGrid products={data} />
       </div>
     </div>
   );
