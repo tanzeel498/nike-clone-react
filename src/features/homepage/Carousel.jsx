@@ -38,7 +38,7 @@ function Carousel() {
       >
         {Array.from({ length: 10 }).map((_, i) => (
           <SwiperSlide key={i}>
-            <Link to="/">
+            <Link to="/product">
               <img src={`images/carousel${i}.webp`} alt="carousel" />
             </Link>
           </SwiperSlide>
