@@ -18,12 +18,12 @@ function SearchPage({ showSearchPage, hideSearchPage }) {
         showSearchPage ? "left-0" : "left-full"
       }`}
     >
-      <span className="absolute left-6 top-5">
+      <span className="absolute left-3 top-5 mobile:left-6">
         <HeaderIcon onClick={handleHideSearchPage}>
           <IoChevronBack className="text-2xl" />
         </HeaderIcon>
       </span>
-      <div className="w-4/5">
+      <div className="w-3/4 mobile:w-4/5">
         <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
       {searchTerm.length > 0 && (
