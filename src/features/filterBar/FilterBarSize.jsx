@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SizeButton from "../../ui/sizeButton";
+import SizeButton from "../../ui/SizeButton";
 import Collapsible from "../../ui/Collapsible";
 
 function FilterBarSize() {
