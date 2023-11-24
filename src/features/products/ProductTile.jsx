@@ -2,18 +2,13 @@ import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/helpers";
 import { useState } from "react";
 
-const baseURL = "https://www.nike.com";
-
 function ProductTile({ product }) {
   const [activeColor, setActiveColor] = useState(0);
   const colorsLength = product.colorways.length;
 
   return (
     <div className="col-span-1 mb-10">
-      <Link
-        className={`${colorsLength > 1 ? "group" : ""}`}
-        to={baseURL + product.colorways[activeColor].pdpUrl.split("}")[1]}
-      >
+      <Link className={`${colorsLength > 1 ? "group" : ""}`} to="/product">
         <img
           className="mb-4 aspect-square w-full object-cover"
           src={product.colorways[activeColor].images.portraitURL}

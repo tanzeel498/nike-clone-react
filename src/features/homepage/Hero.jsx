@@ -5,7 +5,7 @@ function Hero() {
   return (
     <section className="mx-6 mb-12 mobile:mx-0">
       <figure className="relative">
-        <Link>
+        <Link to="/products">
           <img
             src="images/hero1_1.webp"
             className="hidden h-full min-h-[300px] w-full object-cover mobile:block"
@@ -27,7 +27,7 @@ function Hero() {
             <br className="hidden mobile:inline" />
             select styles. Exclusions apply.
           </p>
-          <Button>Shop Now</Button>
+          <Button to="/products">Shop Now</Button>
         </figcaption>
       </figure>
     </section>

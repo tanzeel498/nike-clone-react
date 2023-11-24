@@ -6,7 +6,7 @@ function Celebration() {
     <section className="mx-6 mb-16 mobile:mx-0">
       <figure>
         <div className="mb-12">
-          <Link>
+          <Link to="/products">
             <img
               src="images/hero2.webp"
               className="hidden h-full min-h-[300px] w-full object-cover mobile:block"
@@ -32,9 +32,9 @@ function Celebration() {
             To stay up-to-date on it all, make sure you have the Nike App.
           </p>
           <div className="flex justify-center gap-1">
-            <Button>Shop the Collection</Button>
-            <Button>Explore the Calender</Button>
-            <Button>Download the Nike App</Button>
+            <Button to="/products">Shop the Collection</Button>
+            <Button to="/products">Explore the Calender</Button>
+            <Button to="/products">Download the Nike App</Button>
           </div>
         </figcaption>
       </figure>
