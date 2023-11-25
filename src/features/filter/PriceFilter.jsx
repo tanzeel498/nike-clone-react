@@ -1,15 +1,15 @@
 import Checkbox from "../../ui/Checkbox";
 import Collapsible from "../../ui/Collapsible";
 
-function FilterBarPrice() {
+function PriceFilter() {
   return (
     <div>
       <Collapsible>
         <Collapsible.Trigger>
-          <p className="py-4 font-medium">Shop by Price (0)</p>
+          <h4 className="py-4">Shop by Price (0)</h4>
         </Collapsible.Trigger>
         <Collapsible.Group>
-          <div className="mb-8 flex flex-col gap-1">
+          <div className="mb-8 flex flex-col gap-3 tablet:gap-1">
             <Checkbox id="0-25">
               <span>$0 - $25</span>
             </Checkbox>
@@ -32,4 +32,4 @@ function FilterBarPrice() {
   );
 }
 
-export default FilterBarPrice;
+export default PriceFilter;

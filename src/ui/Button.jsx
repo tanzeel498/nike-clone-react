@@ -9,7 +9,7 @@ function Button({
   size = "medium",
 }) {
   const sizeStyle = {
-    large: " w-full py-5",
+    large: " w-full py-3.5",
     medium: " min-w-[120px] px-5 py-2.5 mobile:px-6 m-1",
     small: " px-5 mobile:px-6 py-1 m-1",
   };

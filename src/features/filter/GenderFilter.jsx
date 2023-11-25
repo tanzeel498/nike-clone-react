@@ -1,15 +1,15 @@
 import Checkbox from "../../ui/Checkbox";
 import Collapsible from "../../ui/Collapsible";
 
-function FilterBarGender() {
+function GenderFilter() {
   return (
     <div>
       <Collapsible>
         <Collapsible.Trigger>
-          <p className="py-4 font-medium">Genders (3)</p>
+          <h4 className="py-4">Genders (3)</h4>
         </Collapsible.Trigger>
         <Collapsible.Group>
-          <div className="mb-8">
+          <div className="mb-8 flex flex-col gap-3 tablet:gap-1">
             <Checkbox id="men">
               <span>Men</span>
             </Checkbox>
@@ -26,4 +26,4 @@ function FilterBarGender() {
   );
 }
 
-export default FilterBarGender;
+export default GenderFilter;

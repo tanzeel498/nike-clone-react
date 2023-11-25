@@ -27,9 +27,7 @@ function FilterBarLinks() {
       <ButtonLink border={false} to="/">
         Skateboarding
       </ButtonLink>
-      <ButtonLink border={false} to="/">
-        Shoes $100 and under
-      </ButtonLink>
+
       <ButtonLink border={false} to="/">
         ACG
       </ButtonLink>

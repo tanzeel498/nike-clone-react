@@ -1,4 +1,5 @@
 import Button from "../../ui/Button";
+import ButtonFixedBottom from "../../ui/ButtonFixedBottom";
 import Collapsible from "../../ui/Collapsible";
 import { formatCurrency } from "../../utils/helpers";
 
@@ -23,6 +24,7 @@ function Summary() {
             </Collapsible.Group>
           </Collapsible>
         </div>
+
         <div className="flex items-center justify-between">
           <h4>Subtotal</h4>
           <p>{formatCurrency(219.97)}</p>
@@ -51,11 +53,11 @@ function Summary() {
           </Button>
         </span>
       </div>
-      <div className="fixed bottom-0 left-0 right-0 border-t-[1px] bg-white px-6 py-4 tablet:hidden">
+      <ButtonFixedBottom>
         <Button size="large" to="/checkout">
           Go to Checkout
         </Button>
-      </div>
+      </ButtonFixedBottom>
     </div>
   );
 }

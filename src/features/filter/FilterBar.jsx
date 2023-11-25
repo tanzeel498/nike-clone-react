@@ -1,8 +1,8 @@
-import FilterBarColors from "./FilterBarColors";
-import FilterBarGender from "./FilterBarGender";
 import FilterBarLinks from "./FilterBarLinks";
-import FilterBarPrice from "./FilterBarPrice";
-import FilterBarSize from "./FilterBarSize";
+import SizeFilter from "./SizeFilter";
+import GenderFilter from "./GenderFilter";
+import PriceFilter from "./PriceFilter";
+import ColorFilter from "./ColorFilter";
 
 function FilterBar({ showFilters }) {
   return (
@@ -14,10 +14,10 @@ function FilterBar({ showFilters }) {
       }`}
     >
       <FilterBarLinks />
-      <FilterBarGender />
-      <FilterBarSize />
-      <FilterBarPrice />
-      <FilterBarColors />
+      <GenderFilter />
+      <SizeFilter />
+      <PriceFilter />
+      <ColorFilter />
     </div>
   );
 }

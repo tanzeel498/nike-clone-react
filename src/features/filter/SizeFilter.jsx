@@ -2,7 +2,7 @@ import { useState } from "react";
 import SizeButton from "../../ui/SizeButton";
 import Collapsible from "../../ui/Collapsible";
 
-function FilterBarSize() {
+function SizeFilter() {
   const [selectedSize, setSelectedSize] = useState([]);
 
   const sizes = Array.from({ length: 34 }, (_, i) => {
@@ -20,7 +20,7 @@ function FilterBarSize() {
     <div>
       <Collapsible>
         <Collapsible.Trigger>
-          <p className="py-4 font-medium">Size ({selectedSize.length})</p>
+          <h4 className="py-4">Size ({selectedSize.length})</h4>
         </Collapsible.Trigger>
         <Collapsible.Group>
           <div className="mb-8 flex flex-wrap justify-between gap-2">
@@ -42,4 +42,4 @@ function FilterBarSize() {
   );
 }
 
-export default FilterBarSize;
+export default SizeFilter;
