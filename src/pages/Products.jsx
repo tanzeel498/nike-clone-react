@@ -1,17 +1,22 @@
 import { useRef, useState } from "react";
-import { products } from "../features/products/productsData";
+import { createPortal } from "react-dom";
+// import { products } from "../features/products/productsData";
 import HeaderProducts from "../features/products/HeaderProducts";
 import FilterBar from "../features/filter/FilterBar";
 import ProductsGrid from "../features/products/ProductsGrid";
 import FilterPage from "../features/filter/FilterPage";
-import { createPortal } from "react-dom";
+import useProducts from "../features/products/useProducts";
 
 function Products() {
   const windowsWidth = useRef(window.innerWidth);
   const [showFilters, setShowFilters] = useState(
     windowsWidth.current > 960 ? true : false,
   );
-  const { title, resultCount, data } = products;
+  const title = "Men's Shoes and Snickers";
+  const { products, isLoading } = useProducts();
+  const resultCount = products?.length;
+  // const { title, resultCount, data } = products;
+  if (isLoading) return;
 
   return (
     <div className="relative w-full max-w-[1920px]">
@@ -32,7 +37,7 @@ function Products() {
             document.body,
           )}
 
-        <ProductsGrid products={data} />
+        <ProductsGrid products={products} />
       </div>
     </div>
   );
