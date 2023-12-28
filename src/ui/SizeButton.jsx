@@ -1,7 +1,7 @@
 function SizeButton({ perRow, item, onClick, size, children }) {
   let sizeMatched;
-  if (typeof size === "string") sizeMatched = size === item.nikeSize;
-  else sizeMatched = size.includes(item.nikeSize);
+  if (typeof size === "string") sizeMatched = size === item.size;
+  else sizeMatched = size.includes(item.size);
 
   return (
     <button

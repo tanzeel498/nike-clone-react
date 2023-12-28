@@ -9,39 +9,22 @@ import Modal from "../../ui/Modal";
 import ProductReviews from "./ProductReviews";
 import ProductDescription from "./ProductDescription";
 import SizeButton from "../../ui/SizeButton";
+import useProduct from "./useProduct";
 
-function ProductDetails({ product, setColor, activeColor }) {
-  //fetch data of activeColor from server
+function ProductDetails() {
+  const { isLoading, product } = useProduct();
   const [size, setSize] = useState("");
 
-  const {
-    title,
-    subTitle,
-    fullPrice,
-    currentPrice,
-    styleCode,
-    skus,
-    sizeChartUrl,
-    descriptionPreview,
-    styleColor,
-    colorDescription,
-    description,
-  } = product;
+  if (isLoading) return;
+  const { descriptionPreview, sizeChartUrl } = product;
+  const { skus, colorCode, colorDescription } = product.colors.at(0);
+
   return (
     <div className="w-full px-6 tablet:max-w-[400px] tablet:px-0">
       <div className="hidden tablet:block">
-        <ProductTitle
-          title={title}
-          subTitle={subTitle}
-          fullPrice={fullPrice}
-          currentPrice={currentPrice}
-        />
+        <ProductTitle />
       </div>
-      <ProductColor
-        activeColor={activeColor}
-        setColor={setColor}
-        styleCode={styleCode}
-      />
+      <ProductColor />
       <div className="mb-10">
         <div className="my-4 flex items-center justify-between">
           <p className="font-medium">Select Size</p>
@@ -52,13 +35,13 @@ function ProductDetails({ product, setColor, activeColor }) {
         <div className="flex flex-wrap justify-between gap-2">
           {skus.map((sku) => (
             <SizeButton
-              key={sku.id}
+              key={sku._id}
               item={sku}
               size={size}
               perRow="17"
-              onClick={() => setSize(sku.nikeSize)}
+              onClick={() => setSize(sku.size)}
             >
-              {sku.nikeSize}
+              {sku.size}
             </SizeButton>
           ))}
         </div>
@@ -76,7 +59,7 @@ function ProductDetails({ product, setColor, activeColor }) {
         </p>
         <ul className="mb-10 list-disc pl-5 text-base leading-7">
           <li>Shown: {colorDescription}</li>
-          <li>Style: {styleColor}</li>
+          <li>Style: {colorCode}</li>
         </ul>
 
         <Modal>
@@ -84,12 +67,7 @@ function ProductDetails({ product, setColor, activeColor }) {
             <ButtonLink>View Product Details</ButtonLink>
           </Modal.Open>
           <Modal.Window name="description">
-            <ProductDescription
-              description={description}
-              imgSrc={"product/00.webp"}
-              title={title}
-              currentPrice={currentPrice}
-            />
+            <ProductDescription />
           </Modal.Window>
         </Modal>
       </div>

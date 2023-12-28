@@ -10,7 +10,9 @@ function ProductTile({ product }) {
     <div className="col-span-1 mb-10">
       <Link
         className={`${colorsLength > 1 ? "group" : ""}`}
-        to={`/product/${product._id}`}
+        to={`/products/${product._id}?color=${
+          product.colors.at(activeColor).colorCode
+        }`}
       >
         <img
           className="mb-4 aspect-square w-full object-cover"
@@ -22,7 +24,7 @@ function ProductTile({ product }) {
           <div className="hidden flex-wrap items-center gap-1 tablet:group-hover:flex">
             {product.colors.slice(0, 4).map((color, i) => (
               <img
-                key={color.styleColor}
+                key={color.colorCode}
                 className="aspect-square w-9"
                 onMouseEnter={() => setActiveColor(i)}
                 src={color.squarishUrl}
