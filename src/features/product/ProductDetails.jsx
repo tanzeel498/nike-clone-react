@@ -10,14 +10,25 @@ import ProductReviews from "./ProductReviews";
 import ProductDescription from "./ProductDescription";
 import SizeButton from "../../ui/SizeButton";
 import useProduct from "./useProduct";
+import useAddToCart from "./useAddToCart";
 
 function ProductDetails() {
   const { isLoading, product } = useProduct();
-  const [size, setSize] = useState("");
+  const { addToCart, isPending } = useAddToCart();
+  const [size, setSize] = useState(null);
 
-  if (isLoading) return;
+  if (isLoading || isPending) return;
   const { descriptionPreview, sizeChartUrl } = product;
   const { skus, colorCode, colorDescription } = product.colors.at(0);
+
+  function handleAddToCart() {
+    addToCart(
+      { id: product._id, colorCode, size },
+      {
+        onSuccess: (user) => console.log(user),
+      },
+    );
+  }
 
   return (
     <div className="w-full px-6 tablet:max-w-[400px] tablet:px-0">
@@ -36,19 +47,18 @@ function ProductDetails() {
           {skus.map((sku) => (
             <SizeButton
               key={sku._id}
-              item={sku}
-              size={size}
+              size={sku.size}
+              selectedSize={size}
+              available={sku.available}
               perRow="17"
               onClick={() => setSize(sku.size)}
-            >
-              {sku.size}
-            </SizeButton>
+            />
           ))}
         </div>
       </div>
 
       <div className="my-10">
-        <Button size="large" to="/cart">
+        <Button size="large" onClick={handleAddToCart}>
           Add to Bag
         </Button>
       </div>
