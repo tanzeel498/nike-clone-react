@@ -6,9 +6,11 @@ import useSignUp from "./useSignUp";
 import Message from "../../ui/Message";
 import { useNavigate } from "react-router-dom";
 import { useEmailAuth } from "../context/EmailAuthContext";
+import useCheckUser from "./useCheckUser";
 
 function LoginForm() {
-  const { isPending, error: signUpError, signUp } = useSignUp();
+  // const { isPending, error: signUpError, signUp } = useSignUp();
+  const { checkUser, isPending } = useCheckUser();
   const { setEmail } = useEmailAuth();
   const navigate = useNavigate();
   const {
@@ -18,21 +20,33 @@ function LoginForm() {
   } = useForm({ mode: "all" });
 
   function handleFormSubmit({ email }) {
-    signUp(
-      { email, password: "F--_j*dkK)(*^%7865_U" },
-      {
-        onSuccess: () => {
+    checkUser(email, {
+      onSuccess: () => {
+        setEmail(email);
+        navigate("/accounts/password");
+      },
+      onError: (err) => {
+        if (err.message === "User does not exists") {
           setEmail(email);
           navigate("/accounts/signup");
-        },
-        onError: (err) => {
-          if (err.message === "User Already exists") {
-            setEmail(email);
-            navigate("/accounts/password");
-          }
-        },
+        }
       },
-    );
+    });
+    // signUp(
+    //   { email, password: "F--_j*dkK)(*^%7865_U" },
+    //   {
+    //     onSuccess: () => {
+    //       setEmail(email);
+    //       navigate("/accounts/signup");
+    //     },
+    //     onError: (err) => {
+    //       if (err.message === "User Already exists") {
+    //         setEmail(email);
+    //         navigate("/accounts/password");
+    //       }
+    //     },
+    //   },
+    // );
   }
 
   return (
@@ -47,8 +61,6 @@ function LoginForm() {
         onSubmit={handleSubmit(handleFormSubmit)}
         noValidate
       >
-        {signUpError && <Message type="error">{signUpError.message}</Message>}
-
         <InputField
           validation={register("email", {
             required: "Required",

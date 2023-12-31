@@ -1,3 +1,4 @@
+import { SERVER_BASE_URL } from "../utils/constants";
 import supabase from "./supabase";
 
 export async function signUp({ password, email }) {
@@ -56,6 +57,18 @@ export async function getCurrentUser() {
   } = await supabase.auth.getUser();
 
   if (error) throw new Error(error.message);
+  return user;
+}
+export async function checkUser(email) {
+  const res = await fetch(`${SERVER_BASE_URL}/checkUser`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+
+  if (!res.ok) throw new Error(res.statusText);
+  const user = await res.json();
+  if (user === null) throw new Error("User does not exists");
   return user;
 }
 
