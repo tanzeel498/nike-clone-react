@@ -10,16 +10,18 @@ import Message from "../../ui/Message";
 import { useNavigate } from "react-router-dom";
 import useVerifyOtp from "./useVerifyOtp";
 import { useEmailAuth } from "../context/EmailAuthContext";
-import useUpdateUser from "./useUpdateUser";
+// import useUpdateUser from "./useUpdateUser";
+import useSignUp from "./useSignUp";
 
 function SignUpForm() {
   const navigate = useNavigate();
   const { email, setEmail } = useEmailAuth();
-  const {
-    updateUser,
-    isPending: isuserUpdatePending,
-    error: userUpdateError,
-  } = useUpdateUser();
+  const { isPending: isSignUpPending, signUp } = useSignUp();
+  // const {
+  //   updateUser,
+  //   isPending: isuserUpdatePending,
+  //   error: userUpdateError,
+  // } = useUpdateUser();
   const {
     verifyOtp,
     isPending: isVerifyPending,
@@ -34,11 +36,14 @@ function SignUpForm() {
     mode: "all",
   });
 
-  const isPending = isuserUpdatePending || isVerifyPending;
-  const authError = verifyError || userUpdateError;
+  const isPending = isSignUpPending || isVerifyPending;
+  const authError = verifyError || isSignUpPending;
 
   function handleFormSubmit({ token, ...data }) {
-    verifyOtp({ email, token }, { onSuccess: () => updateUser(data) });
+    verifyOtp(
+      { email, token },
+      { onSuccess: () => signUp({ email, ...data }) },
+    );
   }
 
   function handleClearEmail() {
@@ -170,7 +175,7 @@ function SignUpForm() {
 
         {/* 2x Checkbox */}
         <div className="my-5 flex flex-col gap-5">
-          <Checkbox id="emailSignUp" validation={register("emailSignup")}>
+          <Checkbox id="emailSignUp" validation={register("emailSignUp")}>
             <span className="w-11/12">
               Sign up for emails to get updates from Nike on products, offers
               and your Member benefits.

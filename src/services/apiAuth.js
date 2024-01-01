@@ -1,28 +1,31 @@
 import { SERVER_BASE_URL } from "../utils/constants";
 import supabase from "./supabase";
 
-export async function signUp({ password, email }) {
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
+export async function signUp(userData) {
+  const res = await fetch(`${SERVER_BASE_URL}/signUp`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(userData),
+    credentials: "include",
   });
 
-  if (data.user?.identities.length === 0)
-    throw new Error("User Already exists");
-  else if (error) throw new Error(error.message);
-
-  return data;
+  if (!res.ok) throw new Error(res.statusText);
+  const user = await res.json();
+  return user;
 }
 
 export async function verifyOtp({ email, token }) {
-  const { data, error } = await supabase.auth.verifyOtp({
-    email,
-    token,
-    type: "email",
+  const res = await fetch(`${SERVER_BASE_URL}/verifyOtp`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, token }),
   });
 
-  if (error) throw new Error(error.message);
-  return data;
+  if (!res.ok) throw new Error(res.statusText);
+  const verify = await res.json();
+
+  if (!verify) throw new Error("Incorrect Code!");
+  return verify;
 }
 
 export async function updateUser({ email, password, ...options }) {
@@ -37,27 +40,29 @@ export async function updateUser({ email, password, ...options }) {
 }
 
 export async function login({ email, password }) {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
+  const res = await fetch(`${SERVER_BASE_URL}/signUp`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+    credentials: "include",
   });
 
-  if (error) throw new Error(error.message);
-  return data;
+  if (!res.ok) throw new Error(res.statusText);
+  const user = await res.json();
+
+  return user;
 }
 
 export async function getCurrentUser() {
-  const { data } = await supabase.auth.getSession();
+  // this will fetch session object from the server
+  const res = await fetch(`${SERVER_BASE_URL}/getUser`, {
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error(res.statusText);
+  const data = await res.json();
 
-  if (!data.session) return null;
-
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
-
-  if (error) throw new Error(error.message);
-  return user;
+  if (!data.user) return null;
+  return data.user;
 }
 export async function checkUser(email) {
   const res = await fetch(`${SERVER_BASE_URL}/checkUser`, {
@@ -73,8 +78,6 @@ export async function checkUser(email) {
 }
 
 export async function logout() {
-  const { error } = await supabase.auth.signOut();
-  if (error) throw new Error(error.message);
+  const res = await supabase.auth.signOut();
+  if (!res.ok) throw new Error(res.statusText);
 }
-
-// MONGO APIs Go Here
