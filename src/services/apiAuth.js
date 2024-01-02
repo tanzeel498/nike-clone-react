@@ -40,7 +40,7 @@ export async function updateUser({ email, password, ...options }) {
 }
 
 export async function login({ email, password }) {
-  const res = await fetch(`${SERVER_BASE_URL}/signUp`, {
+  const res = await fetch(`${SERVER_BASE_URL}/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -49,6 +49,7 @@ export async function login({ email, password }) {
 
   if (!res.ok) throw new Error(res.statusText);
   const user = await res.json();
+  if (!user) throw new Error("Password is Incorrect!");
 
   return user;
 }
@@ -78,6 +79,9 @@ export async function checkUser(email) {
 }
 
 export async function logout() {
-  const res = await supabase.auth.signOut();
+  const res = await fetch(`${SERVER_BASE_URL}/logout`, {
+    credentials: "include",
+    method: "POST",
+  });
   if (!res.ok) throw new Error(res.statusText);
 }

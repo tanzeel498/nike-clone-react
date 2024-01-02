@@ -12,7 +12,7 @@ export function useLogin() {
     error,
   } = useMutation({
     mutationFn: loginApi,
-    onSuccess: ({ user }) => {
+    onSuccess: (user) => {
       queryClient.setQueryData(["user"], user);
       navigate("/");
     },
