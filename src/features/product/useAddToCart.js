@@ -1,15 +1,12 @@
-import { useMutation } from "@tanstack/react-query";
-import { addToCart as addToCartApi } from "../../services/apiProducts";
-import { useNavigate } from "react-router-dom";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { addToCart as addToCartApi } from "../../services/apiCarts";
 
 function useAddToCart() {
-  const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const { mutate: addToCart, isPending } = useMutation({
     mutationFn: addToCartApi,
-    onSuccess: () => {
-      navigate("/cart");
-    },
+    onSuccess: () => queryClient.invalidateQueries(["user"]),
   });
 
   return { addToCart, isPending };

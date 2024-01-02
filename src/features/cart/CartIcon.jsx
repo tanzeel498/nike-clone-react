@@ -1,8 +1,17 @@
 import { IoBagOutline } from "react-icons/io5";
 import HeaderIcon from "../../ui/HeaderIcon";
+import useUser from "../authentication/useUser";
 
-function CartIcon({ itemsLen = 5 }) {
-  const numItems = itemsLen ? (itemsLen > 9 ? "9+" : itemsLen) : "";
+function CartIcon() {
+  const { user, isLoading } = useUser();
+
+  const cartNumItems = isLoading
+    ? 0
+    : user?.cart?.items?.reduce((sum, item) => {
+        return sum + item.quantity;
+      }, 0);
+  const numItems = cartNumItems ? (cartNumItems > 9 ? "9+" : cartNumItems) : "";
+
   return (
     <HeaderIcon to="/cart">
       <IoBagOutline className="text-2xl" />

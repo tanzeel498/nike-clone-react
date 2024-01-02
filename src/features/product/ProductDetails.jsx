@@ -25,7 +25,7 @@ function ProductDetails() {
     addToCart(
       { id: product._id, colorCode, size },
       {
-        onSuccess: (user) => console.log(user),
+        onSuccess: (user) => console.log("Cart updated!"),
       },
     );
   }

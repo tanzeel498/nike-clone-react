@@ -1,16 +1,21 @@
 import BagItem from "./BagItem";
 import LoginBox from "./LoginBox";
+import useCart from "./useCart";
 
 function Bag() {
-  //cart data will be fetched on cart page and then passed here through prop or through hook
+  const { cart, isLoading } = useCart();
+
+  if (isLoading) return;
+  console.log(cart);
   return (
     <div className="grow">
       <LoginBox />
       <div>
         <h2 className="hidden tablet:block">Bag</h2>
         <div className="divide-y">
-          <BagItem />
-          <BagItem />
+          {cart.map((item) => (
+            <BagItem key={item._id} data={item} />
+          ))}
         </div>
       </div>
     </div>

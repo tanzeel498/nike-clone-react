@@ -12,7 +12,7 @@ function useProduct() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: [`products/${productId}?color=${color}`],
+    queryKey: ["product", productId, color],
     queryFn: () => getProduct(productId, color),
   });
 

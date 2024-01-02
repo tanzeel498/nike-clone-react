@@ -7,7 +7,7 @@ function ProductColor() {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeColor = searchParams.get("color");
   const { isLoading, data: colors } = useQuery({
-    queryKey: [`product-colors/${id}`],
+    queryKey: ["product-colors", id],
     queryFn: () => getProductColors(id),
   });
 

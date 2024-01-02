@@ -25,17 +25,3 @@ export async function getProductColors(productId) {
   const colors = await res.json();
   return colors;
 }
-
-export async function addToCart(productData) {
-  const res = await fetch(`${SERVER_BASE_URL}/cart`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(productData),
-  });
-
-  if (!res) throw new Error(res.statusText);
-  const user = res.json();
-  return user;
-}
