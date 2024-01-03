@@ -2,8 +2,21 @@ import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/helpers";
 import { IoTrashOutline } from "react-icons/io5";
 import ButtonLink from "../../ui/ButtonLink";
+import useUpdateCartItem from "./useUpdateCartItem";
+import useDeleteCartItem from "./useDeleteCartItem";
 
 function BagItem({ data }) {
+  const { updateCartItem, isPending: isUpdatePending } = useUpdateCartItem();
+  const { deleteCartItem, isPending: isDeletePending } = useDeleteCartItem();
+
+  function handleUpdateItem(value) {
+    updateCartItem({ id: data._id, ...value });
+  }
+
+  function handleDeleteItem() {
+    deleteCartItem(data._id);
+  }
+
   return (
     <div className="py-6">
       <div className="flex w-full gap-8">
@@ -27,7 +40,7 @@ function BagItem({ data }) {
                   </h4>
                 )}
                 <h4 className="text-stone-900">
-                  {formatCurrency(data.currentPrice)}
+                  {formatCurrency(data.currentPrice * data.quantity)}
                 </h4>
               </div>
               <Link
@@ -42,18 +55,31 @@ function BagItem({ data }) {
             <div className="flex gap-4">
               <div>
                 <span>Size </span>
-                <select className="text-sm" value={data.size}>
-                  {Array.from({ length: 15 }).map((_, i) => (
-                    <option className="text-sm" key={i}>
-                      {(i + 8) / 2}
-                    </option>
-                  ))}
+                <select
+                  className="text-sm"
+                  value={data.size}
+                  onChange={(e) => handleUpdateItem({ size: e.target.value })}
+                >
+                  {data.skus.map(
+                    (sku) =>
+                      sku.available && (
+                        <option className="text-sm" key={sku._id}>
+                          {sku.size}
+                        </option>
+                      ),
+                  )}
                 </select>
               </div>
 
               <div>
                 <span>Quantity </span>
-                <select className="text-sm" value={data.quantity}>
+                <select
+                  className="text-sm"
+                  value={data.quantity}
+                  onChange={(e) =>
+                    handleUpdateItem({ quantity: e.target.value })
+                  }
+                >
                   {Array.from({ length: 10 }).map((_, i) => (
                     <option className="text-sm" key={i}>
                       {i + 1}
@@ -63,7 +89,10 @@ function BagItem({ data }) {
               </div>
             </div>
           </div>
-          <button className="text-2xl text-stone-900">
+          <button
+            className="text-2xl text-stone-900"
+            onClick={handleDeleteItem}
+          >
             <IoTrashOutline />
           </button>
         </div>

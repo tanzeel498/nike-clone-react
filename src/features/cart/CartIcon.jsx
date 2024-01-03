@@ -1,13 +1,13 @@
 import { IoBagOutline } from "react-icons/io5";
 import HeaderIcon from "../../ui/HeaderIcon";
-import useUser from "../authentication/useUser";
+import useCart from "./useCart";
 
 function CartIcon() {
-  const { user, isLoading } = useUser();
+  const { cart, isLoading } = useCart();
 
   const cartNumItems = isLoading
     ? 0
-    : user?.cart?.items?.reduce((sum, item) => {
+    : cart.reduce((sum, item) => {
         return sum + item.quantity;
       }, 0);
   const numItems = cartNumItems ? (cartNumItems > 9 ? "9+" : cartNumItems) : "";

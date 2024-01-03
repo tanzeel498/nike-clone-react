@@ -60,10 +60,10 @@ export async function getCurrentUser() {
     credentials: "include",
   });
   if (!res.ok) throw new Error(res.statusText);
-  const data = await res.json();
+  const user = await res.json();
 
-  if (!data.user) return null;
-  return data.user;
+  if (!user) return null;
+  return user;
 }
 export async function checkUser(email) {
   const res = await fetch(`${SERVER_BASE_URL}/checkUser`, {
@@ -74,7 +74,7 @@ export async function checkUser(email) {
 
   if (!res.ok) throw new Error(res.statusText);
   const user = await res.json();
-  if (user === null) throw new Error("User does not exists");
+  if (!user) throw new Error("User does not exists");
   return user;
 }
 

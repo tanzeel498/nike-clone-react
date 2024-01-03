@@ -21,6 +21,30 @@ export async function addToCart(productData) {
   });
 
   if (!res) throw new Error(res.statusText);
-  const user = res.json();
-  return user;
+  const response = await res.json();
+  return response;
+}
+
+export async function updateCartItem(data) {
+  const res = await fetch(`${SERVER_BASE_URL}/update-cart-item`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error(res.statusText);
+  const response = await res.json();
+  return response;
+}
+
+export async function deleteCartItem(id) {
+  const res = await fetch(`${SERVER_BASE_URL}/delete-cart-item`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id }),
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error(res.statusText);
+  const response = await res.json();
+  return response;
 }

@@ -2,8 +2,19 @@ import Button from "../../ui/Button";
 import ButtonFixedBottom from "../../ui/ButtonFixedBottom";
 import Collapsible from "../../ui/Collapsible";
 import { formatCurrency } from "../../utils/helpers";
+import useCart from "./useCart";
 
 function Summary() {
+  const { cart, isLoading } = useCart();
+
+  if (isLoading) return;
+  const cartTotal = cart.reduce(
+    (sum, item) => sum + item.currentPrice * item.quantity,
+    0,
+  );
+  const tax = 7;
+  const shipping = 12.99;
+
   return (
     <div className="w-full border-t-[1px] tablet:w-1/3 tablet:border-0">
       <h2 className="my-5 tablet:my-0">Summary</h2>
@@ -27,19 +38,19 @@ function Summary() {
 
         <div className="flex items-center justify-between">
           <h4>Subtotal</h4>
-          <p>{formatCurrency(219.97)}</p>
+          <p>{formatCurrency(cartTotal)}</p>
         </div>
         <div className="flex items-center justify-between">
           <h4>Estimated Shipping & Handling</h4>
-          <p>{formatCurrency(7)}</p>
+          <p>{formatCurrency(shipping)}</p>
         </div>
         <div className="flex items-center justify-between">
           <h4>Estimated Tax</h4>
-          <p>{formatCurrency(0)}</p>
+          <p>{formatCurrency(tax)}</p>
         </div>
         <div className="flex items-center justify-between border-y-[1px] border-stone-200 py-4">
           <h4>Total</h4>
-          <p>{formatCurrency(226.97)}</p>
+          <p>{formatCurrency(cartTotal + tax + shipping)}</p>
         </div>
       </div>
       <div className="hidden flex-col gap-3 tablet:flex">

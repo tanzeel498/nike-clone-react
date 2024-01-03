@@ -8,7 +8,7 @@ import Summary from "./Summary";
 function Checkout() {
   return (
     <div className="mx-auto flex max-w-[1200px] flex-col items-center px-6 text-sm font-semibold tablet:px-14">
-      <PageTitle title="Checkout" numItems={5} totalAmount={345.09} />
+      <PageTitle title="Checkout" />
       <div className="flex w-full flex-col gap-10 tablet:flex-row">
         <div className="w-full border-y-[1px] py-8 tablet:hidden">
           <Collapsible initialExpand={false}>
