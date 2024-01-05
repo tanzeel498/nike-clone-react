@@ -10,12 +10,12 @@ import ProductReviews from "./ProductReviews";
 import ProductDescription from "./ProductDescription";
 import SizeButton from "../../ui/SizeButton";
 import useProduct from "./useProduct";
-import useAddToCart from "./useAddToCart";
+import useAddToCart from "../cart/useAddToCart";
 
 function ProductDetails() {
   const { isLoading, product } = useProduct();
   const { addToCart, isPending } = useAddToCart();
-  const [size, setSize] = useState(null);
+  const [size, setSize] = useState(0);
 
   if (isLoading || isPending) return;
   const { descriptionPreview, sizeChartUrl } = product;

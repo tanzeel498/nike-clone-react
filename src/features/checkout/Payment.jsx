@@ -2,11 +2,15 @@ import Checkbox from "../../ui/Checkbox";
 import RadioButton from "../../ui/RadioButton";
 import AddCreditCardForm from "./AddCreditCardForm";
 import AddressItem from "./AddressItem";
+import useAddress from "./useAddress";
 
 function Payment() {
+  const { address, isLoading } = useAddress();
+
+  if (isLoading) return;
+
   return (
-    <div className="py-10">
-      <h3>Payment</h3>
+    <div className="mt-10">
       <span className="my-5 inline-block">Select Payment Method</span>
       <div className="mb-5 ml-5 flex flex-col text-base font-normal">
         <RadioButton id="debit" name="paymentMethod" checked={true}>
@@ -29,7 +33,7 @@ function Payment() {
         </Checkbox>
         <div className="my-5">
           {/* active address will be sent in the address prop */}
-          <AddressItem address={{}} />
+          <AddressItem address={address} />
         </div>
       </div>
     </div>

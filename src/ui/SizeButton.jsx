@@ -1,5 +1,8 @@
 function SizeButton({ size, selectedSize, available, perRow, onClick }) {
-  const sizeMatched = size === selectedSize;
+  let sizeMatched;
+  if (typeof selectedSize === "number") sizeMatched = size === selectedSize;
+  else sizeMatched = selectedSize.includes(size);
+
   return (
     <button
       className={`grow rounded-md border-[1px] py-2.5 font-medium ${

@@ -28,12 +28,11 @@ function SizeFilter() {
               <SizeButton
                 key={i}
                 perRow="25"
-                size={selectedSize}
-                item={size}
+                size={size.nikeSize}
+                selectedSize={selectedSize}
                 onClick={() => handleClick(size.nikeSize)}
-              >
-                {size.nikeSize}
-              </SizeButton>
+                available={true}
+              />
             ))}
           </div>
         </Collapsible.Group>
