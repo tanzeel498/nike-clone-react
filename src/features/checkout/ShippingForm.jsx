@@ -19,7 +19,7 @@ function ShippingForm({ setDeliveryAdded, deliveryAdded }) {
           <AddressItem
             address={address}
             setAddressAdded={setAddressAdded}
-            deliveryAdded={deliveryAdded}
+            border={!deliveryAdded}
           />
           {!deliveryAdded && (
             <div className="mt-10 flex justify-end">

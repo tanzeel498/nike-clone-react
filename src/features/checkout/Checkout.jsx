@@ -1,15 +1,16 @@
 import { useState } from "react";
+import { IoCheckmark } from "react-icons/io5";
 import Collapsible from "../../ui/Collapsible";
 import DeliveryOptions from "./DeliveryOptions";
 import OrderReview from "./OrderReview";
 import PageTitle from "./PageTitle";
-import Payment from "./Payment";
+import PaymentForm from "./PaymentForm";
+import PaymentDetails from "./PaymentDetails";
 import Summary from "./Summary";
-import { IoCheckmark } from "react-icons/io5";
 import ButtonLink from "../../ui/ButtonLink";
 
 function Checkout() {
-  const [deliveryAdded, setDeliveryAdded] = useState(false);
+  const [deliveryAdded, setDeliveryAdded] = useState(true);
   const [paymentAdded, setPaymentAdded] = useState(false);
 
   return (
@@ -26,9 +27,9 @@ function Checkout() {
             </Collapsible.Group>
           </Collapsible>
         </div>
-        <div className="grow divide-y">
-          <div className="pb-10">
-            <div className="flex items-center justify-between">
+        <div className="divide-y tablet:w-2/3">
+          <div className="mb-5">
+            <div className="mb-10 flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <h3>Delivery Options</h3>
                 {deliveryAdded && (
@@ -51,8 +52,8 @@ function Checkout() {
               deliveryAdded={deliveryAdded}
             />
           </div>
-          <div className="py-10">
-            <div className="flex items-center justify-between">
+          <div className="mb-5">
+            <div className="my-10 flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <h3>Payment</h3>
                 {paymentAdded && (
@@ -70,21 +71,12 @@ function Checkout() {
                 </ButtonLink>
               )}
             </div>
-            {deliveryAdded && <Payment />}
+            {deliveryAdded && <PaymentForm setPaymentAdded={setPaymentAdded} />}
+            {deliveryAdded && paymentAdded && <PaymentDetails />}
           </div>
 
-          <div className="py-10">
-            <div className="flex items-center justify-between">
-              <h3>Order Review</h3>
-              {paymentAdded && (
-                <ButtonLink
-                  border={true}
-                  onClick={() => setPaymentAdded(false)}
-                >
-                  Edit
-                </ButtonLink>
-              )}
-            </div>
+          <div className="mb-5">
+            <h3 className="my-10">Order Review</h3>
             {deliveryAdded && paymentAdded && <OrderReview />}
           </div>
         </div>

@@ -5,7 +5,7 @@ function Checkbox({
   id,
 }) {
   return (
-    <div className={className}>
+    <div className="checkbox-wrapper">
       <input type="checkbox" {...validation} id={id} />
       <label htmlFor={id}>
         <span>

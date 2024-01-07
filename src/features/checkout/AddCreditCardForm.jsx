@@ -1,30 +1,13 @@
-import { useForm } from "react-hook-form";
 import InputField from "../../ui/InputField";
 import Checkbox from "../../ui/Checkbox";
 import ButtonLink from "../../ui/ButtonLink";
 
-function AddCreditCardForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    mode: "all",
-  });
-
-  function handleFormSubmit(data) {
-    console.log(data);
-  }
-
+function AddCreditCardForm({ register, errors }) {
   return (
     <div className="rounded-xl border-2 p-5">
       <span>Add Card</span>
-      <form
-        onSubmit={handleSubmit(handleFormSubmit)}
-        noValidate
-        className="my-10 flex gap-2"
-      >
-        <div className="w-2/3">
+      <div className="my-7 flex flex-wrap gap-2 mobile:flex-nowrap">
+        <div className="w-full mobile:w-2/3">
           <InputField
             id="cardNumber"
             type="text"
@@ -53,13 +36,13 @@ function AddCreditCardForm() {
             required: "Please enter cvv",
           })}
         />
-      </form>
-      <div className="flex items-center justify-between">
-        <Checkbox id="saveInfo">
-          <span>Save credit card for later use</span>
-        </Checkbox>
+      </div>
+      <div className="my-4 flex justify-end">
         <ButtonLink underline={true}>Where is my CVV?</ButtonLink>
       </div>
+      <Checkbox id="saveInfo" validation={register("saveCardInfo")}>
+        <span>Save credit card for later use</span>
+      </Checkbox>
     </div>
   );
 }

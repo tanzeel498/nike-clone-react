@@ -1,13 +1,13 @@
 import ButtonLink from "../../ui/ButtonLink";
 
-function AddressItem({ address, setAddressAdded, deliveryAdded }) {
+function AddressItem({ address, setAddressAdded, border }) {
   return (
     <div
       className={`rounded-lg ${
-        deliveryAdded ? "border-0" : "border-2"
-      } border-stone-900 p-5`}
+        border ? "border-2 text-stone-900" : "border-0 text-stone-500"
+      } border-stone-900 p-5 font-medium`}
     >
-      {!deliveryAdded && (
+      {border && (
         <span className="float-right">
           <ButtonLink border={true} onClick={() => setAddressAdded(false)}>
             Edit
@@ -15,6 +15,9 @@ function AddressItem({ address, setAddressAdded, deliveryAdded }) {
         </span>
       )}
       <div className="flex flex-col gap-1">
+        {!border && (
+          <span className="font-semibold text-stone-900">Shipping Address</span>
+        )}
         <span>{address.firstName + " " + address.lastName}</span>
         <span>{address.address}</span>
         <span>{address.apt}</span>

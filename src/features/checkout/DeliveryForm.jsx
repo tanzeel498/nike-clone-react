@@ -15,7 +15,7 @@ function DeliveryForm({ address, setAddressAdded }) {
     register,
     unregister,
     handleSubmit,
-    formState: { errors, touchedFields },
+    formState: { errors },
   } = useForm({
     defaultValues: address,
     mode: "all",
@@ -165,13 +165,7 @@ function DeliveryForm({ address, setAddressAdded }) {
         />
       </div>
       <div className="flex justify-end">
-        <Button
-          disabled={
-            Object.keys(touchedFields).length > 0
-              ? Object.keys(errors).length !== 0
-              : true
-          }
-        >
+        <Button disabled={Object.keys(errors).length !== 0}>
           Save & Continue
         </Button>
       </div>
