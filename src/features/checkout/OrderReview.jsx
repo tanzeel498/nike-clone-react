@@ -3,7 +3,7 @@ import ButtonLink from "../../ui/ButtonLink";
 
 function OrderReview() {
   return (
-    <div className="pt-10 text-stone-600">
+    <div className="text-stone-600">
       <p className="leading-7">
         By Clicking the "Submit Payment" button, you confirm that you have read,
         understand, and accept our <ButtonLink>Terms of Use</ButtonLink>,{" "}

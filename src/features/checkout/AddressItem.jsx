@@ -1,6 +1,6 @@
 import ButtonLink from "../../ui/ButtonLink";
 
-function AddressItem({ address, setAddressAdded, border }) {
+function AddressItem({ address, setAddressAdded = () => {}, border }) {
   return (
     <div
       className={`rounded-lg ${

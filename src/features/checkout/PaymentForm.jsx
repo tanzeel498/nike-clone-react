@@ -6,10 +6,13 @@ import useAddress from "./useAddress";
 import { useState } from "react";
 import BillingForm from "./BillingForm";
 import Button from "../../ui/Button";
+import useAddPayment from "./useAddPayment";
 
 function PaymentForm({ setPaymentAdded }) {
   const [billingAddress, setBillingAddress] = useState(true);
   const { address, isLoading } = useAddress();
+  const { addPayment, isPending } = useAddPayment();
+
   const {
     register,
     handleSubmit,
@@ -23,32 +26,27 @@ function PaymentForm({ setPaymentAdded }) {
 
   function handleFormSubmit(data) {
     let modifiedData;
+    const { cardNumber, cvv, ...restData } = data;
+
     if (billingAddress) {
-      modifiedData = data;
-      modifiedData.billingAddress = address;
+      modifiedData = {
+        ...restData,
+        cardNumber: +cardNumber,
+        cvv: +cvv,
+        billingAddress: address,
+      };
     } else {
-      const {
-        firstName,
-        lastName,
-        address,
-        apt,
-        city,
-        state,
-        postalCode,
-        ...restData
-      } = data;
-      modifiedData = restData;
-      modifiedData.address = {
-        firstName,
-        lastName,
-        address,
-        apt,
-        city,
-        state,
-        postalCode: +postalCode,
+      const { expiryDate, saveCardInfo, ...billingAddress } = restData;
+      modifiedData = {
+        cardNumber: +cardNumber,
+        cvv: +cvv,
+        expiryDate,
+        saveCardInfo,
+        billingAddress,
       };
     }
-    setPaymentAdded(true);
+
+    addPayment(modifiedData, { onSuccess: () => setPaymentAdded(true) });
     console.log(modifiedData);
   }
 
@@ -57,20 +55,16 @@ function PaymentForm({ setPaymentAdded }) {
       <span className="my-5 inline-block">Select Payment Method</span>
       <form onSubmit={handleSubmit(handleFormSubmit)} noValidate>
         <div className="mb-5 ml-5 flex flex-col text-base font-normal">
-          <RadioButton
-            value="debit"
-            validation={register("paymentMethod")}
-            checked={true}
-          >
+          <RadioButton value="debit" checked={true} name="paymentMethod">
             <span>Credit or Debit Card</span>
           </RadioButton>
-          <RadioButton value="paypal" validation={register("paymentMethod")}>
+          <RadioButton value="paypal" name="paymentMethod">
             <span>Paypal</span>
           </RadioButton>
-          <RadioButton value="klarna" validation={register("paymentMethod")}>
+          <RadioButton value="klarna" name="paymentMethod">
             <span>Klarna</span>
           </RadioButton>
-          <RadioButton value="gPay" validation={register("paymentMethod")}>
+          <RadioButton value="gPay" name="paymentMethod">
             <span>Google Pay</span>
           </RadioButton>
         </div>

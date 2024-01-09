@@ -1,10 +1,11 @@
-function RadioButton({ children, value, checked = false, validation }) {
+function RadioButton({ children, value, checked = false, validation, name }) {
   return (
     <div className="radio-wrapper my-1 flex items-center gap-2">
       <label className="flex cursor-pointer items-center gap-3">
         <input
           value={value}
           type="radio"
+          name={name}
           className="peer hidden"
           defaultChecked={checked}
           {...validation}

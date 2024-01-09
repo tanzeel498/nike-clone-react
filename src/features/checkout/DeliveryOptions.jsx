@@ -5,41 +5,36 @@ import ShippingForm from "./ShippingForm";
 import PickUpForm from "./PickUpForm";
 import IconButton from "./IconButton";
 
-function DeliveryOptions({ setDeliveryAdded, deliveryAdded }) {
+function DeliveryOptions({ setDeliveryAdded }) {
   const [deliveryMode, setDeliveryMode] = useState("ship");
 
   return (
     <div className="mt-10">
-      {!deliveryAdded && (
-        <div className="mb-10 flex justify-between gap-4">
-          <IconButton
-            name="ship"
-            activeMode={deliveryMode}
-            onClick={() => setDeliveryMode("ship")}
-          >
-            <span className="text-2xl">
-              <LiaShippingFastSolid />
-            </span>
-            Ship
-          </IconButton>
-          <IconButton
-            name="pickUp"
-            activeMode={deliveryMode}
-            onClick={() => setDeliveryMode("pickUp")}
-          >
-            <span className="text-2xl">
-              <IoLocationOutline />
-            </span>
-            Pick Up
-          </IconButton>
-        </div>
-      )}
+      <div className="mb-10 flex justify-between gap-4">
+        <IconButton
+          name="ship"
+          activeMode={deliveryMode}
+          onClick={() => setDeliveryMode("ship")}
+        >
+          <span className="text-2xl">
+            <LiaShippingFastSolid />
+          </span>
+          Ship
+        </IconButton>
+        <IconButton
+          name="pickUp"
+          activeMode={deliveryMode}
+          onClick={() => setDeliveryMode("pickUp")}
+        >
+          <span className="text-2xl">
+            <IoLocationOutline />
+          </span>
+          Pick Up
+        </IconButton>
+      </div>
 
       {deliveryMode === "ship" && (
-        <ShippingForm
-          setDeliveryAdded={setDeliveryAdded}
-          deliveryAdded={deliveryAdded}
-        />
+        <ShippingForm setDeliveryAdded={setDeliveryAdded} />
       )}
       {deliveryMode === "pickUp" && <PickUpForm />}
     </div>

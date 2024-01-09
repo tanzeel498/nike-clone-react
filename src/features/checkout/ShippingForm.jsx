@@ -4,9 +4,10 @@ import AddressItem from "./AddressItem";
 import DeliveryForm from "./DeliveryForm";
 import useAddress from "./useAddress";
 
-function ShippingForm({ setDeliveryAdded, deliveryAdded }) {
+function ShippingForm({ setDeliveryAdded }) {
   const [addressAdded, setAddressAdded] = useState(false);
   const { address, isLoading } = useAddress();
+  // console.log("address called from ShippingForm");
 
   if (isLoading) return;
   return (
@@ -19,15 +20,13 @@ function ShippingForm({ setDeliveryAdded, deliveryAdded }) {
           <AddressItem
             address={address}
             setAddressAdded={setAddressAdded}
-            border={!deliveryAdded}
+            border={true}
           />
-          {!deliveryAdded && (
-            <div className="mt-10 flex justify-end">
-              <Button onClick={() => setDeliveryAdded(true)}>
-                Continue to Payment
-              </Button>
-            </div>
-          )}
+          <div className="mt-10 flex justify-end">
+            <Button onClick={() => setDeliveryAdded(true)}>
+              Continue to Payment
+            </Button>
+          </div>
         </>
       )}
     </>

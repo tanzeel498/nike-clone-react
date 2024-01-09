@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAddress } from "../../services/apiAddress";
+import { getAddress } from "../../services/apiCheckout";
 
 function useAddress() {
   const { data: address, isLoading } = useQuery({

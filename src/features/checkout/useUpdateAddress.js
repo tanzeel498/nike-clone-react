@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateAddress as updateAddressApi } from "../../services/apiAddress";
+import { updateAddress as updateAddressApi } from "../../services/apiCheckout";
 
 function useAddAddress() {
   const queryClient = useQueryClient();

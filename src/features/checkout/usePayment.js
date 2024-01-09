@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getPaymentDetails } from "../../services/apiPayments";
+import { getPaymentDetails } from "../../services/apiCheckout";
 
 function usePayment() {
   const { data: payment, isLoading } = useQuery({

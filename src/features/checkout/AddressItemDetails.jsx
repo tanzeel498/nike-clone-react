@@ -1,6 +1,6 @@
 function AddressItemDetails({ name, address }) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="my-5 flex flex-col gap-1 font-medium text-stone-500">
       <span className="font-semibold text-stone-900">{name}</span>
 
       <span>{address.firstName + " " + address.lastName}</span>

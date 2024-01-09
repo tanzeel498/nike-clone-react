@@ -8,9 +8,10 @@ import PaymentForm from "./PaymentForm";
 import PaymentDetails from "./PaymentDetails";
 import Summary from "./Summary";
 import ButtonLink from "../../ui/ButtonLink";
+import DeliveryDetails from "./DeliveryDetails";
 
 function Checkout() {
-  const [deliveryAdded, setDeliveryAdded] = useState(true);
+  const [deliveryAdded, setDeliveryAdded] = useState(false);
   const [paymentAdded, setPaymentAdded] = useState(false);
 
   return (
@@ -47,10 +48,11 @@ function Checkout() {
                 </ButtonLink>
               )}
             </div>
-            <DeliveryOptions
-              setDeliveryAdded={setDeliveryAdded}
-              deliveryAdded={deliveryAdded}
-            />
+            {deliveryAdded ? (
+              <DeliveryDetails />
+            ) : (
+              <DeliveryOptions setDeliveryAdded={setDeliveryAdded} />
+            )}
           </div>
           <div className="mb-5">
             <div className="my-10 flex items-center justify-between">
@@ -71,7 +73,9 @@ function Checkout() {
                 </ButtonLink>
               )}
             </div>
-            {deliveryAdded && <PaymentForm setPaymentAdded={setPaymentAdded} />}
+            {deliveryAdded && !paymentAdded && (
+              <PaymentForm setPaymentAdded={setPaymentAdded} />
+            )}
             {deliveryAdded && paymentAdded && <PaymentDetails />}
           </div>
 
@@ -80,7 +84,7 @@ function Checkout() {
             {deliveryAdded && paymentAdded && <OrderReview />}
           </div>
         </div>
-
+        {/* right side pane for desktop only */}
         <div className="hidden w-full tablet:block tablet:w-1/3">
           <Summary />
         </div>
