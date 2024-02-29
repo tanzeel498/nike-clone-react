@@ -1,8 +1,28 @@
-import { SERVER_BASE_URL } from "../utils/constants";
+import { SERVER_URL } from "../utils/constants";
 import supabase from "./supabase";
 
+export async function checkUser(email) {
+  const query = `
+    mutation Join($email: String!) {
+        join(email: $email)
+    }
+  `;
+  const res = await fetch(SERVER_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query, variables: { email } }),
+  });
+
+  if (!res.ok) throw new Error(res.statusText);
+  const response = await res.json();
+
+  // throw error if error is received in response
+  if (response.errors) throw new Error(response.errors.at(0).message);
+  return response.data;
+}
+
 export async function signUp(userData) {
-  const res = await fetch(`${SERVER_BASE_URL}/signUp`, {
+  const res = await fetch(`${SERVER_URL}/signUp`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(userData),
@@ -15,7 +35,7 @@ export async function signUp(userData) {
 }
 
 export async function verifyOtp({ email, token }) {
-  const res = await fetch(`${SERVER_BASE_URL}/verifyOtp`, {
+  const res = await fetch(`${SERVER_URL}/verifyOtp`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, token }),
@@ -40,7 +60,7 @@ export async function updateUser({ email, password, ...options }) {
 }
 
 export async function login({ email, password }) {
-  const res = await fetch(`${SERVER_BASE_URL}/login`, {
+  const res = await fetch(`${SERVER_URL}/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -56,7 +76,7 @@ export async function login({ email, password }) {
 
 export async function getCurrentUser() {
   // this will fetch session object from the server
-  const res = await fetch(`${SERVER_BASE_URL}/getUser`, {
+  const res = await fetch(`${SERVER_URL}/getUser`, {
     credentials: "include",
   });
   if (!res.ok) throw new Error(res.statusText);
@@ -65,21 +85,9 @@ export async function getCurrentUser() {
   if (!user) return null;
   return user;
 }
-export async function checkUser(email) {
-  const res = await fetch(`${SERVER_BASE_URL}/checkUser`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email }),
-  });
-
-  if (!res.ok) throw new Error(res.statusText);
-  const user = await res.json();
-  if (!user) throw new Error("User does not exists");
-  return user;
-}
 
 export async function logout() {
-  const res = await fetch(`${SERVER_BASE_URL}/logout`, {
+  const res = await fetch(`${SERVER_URL}/logout`, {
     credentials: "include",
     method: "POST",
   });

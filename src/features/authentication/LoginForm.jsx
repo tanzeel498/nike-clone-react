@@ -19,14 +19,13 @@ function LoginForm() {
 
   function handleFormSubmit({ email }) {
     checkUser(email, {
-      onSuccess: () => {
-        setEmail(email);
-        navigate("/accounts/password");
-      },
-      onError: (err) => {
-        if (err.message === "User does not exists") {
+      onSuccess: (response) => {
+        if (response.join === 200) {
           setEmail(email);
-          navigate("/accounts/signup");
+          navigate("/account/password");
+        } else if (response.join === 204) {
+          setEmail(email);
+          navigate("/account/signup");
         }
       },
     });

@@ -9,7 +9,7 @@ import Product from "./pages/Product.jsx";
 import Cart from "./pages/Cart.jsx";
 import Jordan from "./pages/Jordan.jsx";
 import Homepage from "./pages/Homepage.jsx";
-import Accounts from "./pages/Accounts.jsx";
+import Account from "./pages/Account.jsx";
 import LoginForm from "./features/authentication/LoginForm.jsx";
 import PasswordForm from "./features/authentication/PasswordForm.jsx";
 import SignUpForm from "./features/authentication/SignUpForm.jsx";
@@ -35,8 +35,8 @@ const router = createBrowserRouter([
   },
   { path: "jordan", element: <Jordan /> },
   {
-    path: "accounts",
-    element: <Accounts />,
+    path: "account",
+    element: <Account />,
     children: [
       { path: "join", element: <LoginForm /> },
       { path: "password", element: <PasswordForm /> },
