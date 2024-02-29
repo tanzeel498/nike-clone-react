@@ -20,10 +20,10 @@ function LoginForm() {
   function handleFormSubmit({ email }) {
     checkUser(email, {
       onSuccess: (response) => {
-        if (response.join === 200) {
+        if (response === 200) {
           setEmail(email);
           navigate("/account/password");
-        } else if (response.join === 204) {
+        } else if (response === 204) {
           setEmail(email);
           navigate("/account/signup");
         }

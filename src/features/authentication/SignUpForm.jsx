@@ -12,6 +12,7 @@ import useVerifyOtp from "./useVerifyOtp";
 import { useEmailAuth } from "../context/EmailAuthContext";
 // import useUpdateUser from "./useUpdateUser";
 import useSignUp from "./useSignUp";
+import { useEffect } from "react";
 
 function SignUpForm() {
   const navigate = useNavigate();
@@ -36,6 +37,13 @@ function SignUpForm() {
     mode: "all",
   });
 
+  useEffect(
+    function () {
+      if (!email) navigate("/account/join", { replace: true });
+    },
+    [email, navigate],
+  );
+
   const isPending = isSignUpPending || isVerifyPending;
   const authError = verifyError || isSignUpPending;
 
@@ -48,10 +56,9 @@ function SignUpForm() {
 
   function handleClearEmail() {
     setEmail(null);
-    navigate("/accounts/join");
+    navigate("/account/join");
   }
 
-  if (!email) return <h1>NADA!!!!!!!!</h1>;
   return (
     <div>
       <div className="mb-8">

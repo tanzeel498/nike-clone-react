@@ -14,6 +14,7 @@ export function useLogin() {
     mutationFn: loginApi,
     onSuccess: (user) => {
       queryClient.setQueryData(["user"], user);
+      localStorage.setItem("token", user.token);
       navigate("/");
     },
   });

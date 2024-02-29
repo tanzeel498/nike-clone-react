@@ -3,7 +3,7 @@ import supabase from "./supabase";
 
 export async function checkUser(email) {
   const query = `
-    mutation Join($email: String!) {
+    query Join($email: String!) {
         join(email: $email)
     }
   `;
@@ -18,7 +18,7 @@ export async function checkUser(email) {
 
   // throw error if error is received in response
   if (response.errors) throw new Error(response.errors.at(0).message);
-  return response.data;
+  return response.data.join;
 }
 
 export async function signUp(userData) {
@@ -60,18 +60,25 @@ export async function updateUser({ email, password, ...options }) {
 }
 
 export async function login({ email, password }) {
-  const res = await fetch(`${SERVER_URL}/login`, {
+  const query = `
+    query Login($email: String!, $password: String!) {
+      login(email: $email, password: $password) {
+        _id email firstName lastName token
+      }
+    }
+  `;
+  const res = await fetch(SERVER_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
-    credentials: "include",
+    body: JSON.stringify({ query, variables: { email, password } }),
   });
 
   if (!res.ok) throw new Error(res.statusText);
-  const user = await res.json();
-  if (!user) throw new Error("Password is Incorrect!");
+  const response = await res.json();
+  // throw error if error is received in response
+  if (response.errors) throw new Error(response.errors.at(0).message);
 
-  return user;
+  return response.data.login;
 }
 
 export async function getCurrentUser() {

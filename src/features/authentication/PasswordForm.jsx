@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useLogin } from "./useLogin";
 import Message from "../../ui/Message";
 import PasswordField from "./PasswordField";
+import { useEffect } from "react";
 
 function PasswordForm() {
   const navigate = useNavigate();
@@ -18,16 +19,21 @@ function PasswordForm() {
     formState: { errors },
   } = useForm({ mode: "all" });
 
+  useEffect(
+    function () {
+      if (!email) navigate("/account/join", { replace: true });
+    },
+    [email, navigate],
+  );
+
   function handleFormSubmit({ password }) {
     login({ email, password });
   }
 
   function handleClearEmail() {
     setEmail(null);
-    navigate("/accounts/join");
+    navigate("/account/join");
   }
-
-  if (!email) return <h1>NADA!!!!!!!!</h1>;
 
   return (
     <div>
