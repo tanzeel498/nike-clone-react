@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deleteCartItem as deleteCartItemApi } from "../../services/apiCarts";
+import { deleteCartItem as deleteCartItemApi } from "../../services/apiCart";
 
 function useDeleteCartItem() {
   const queryClient = useQueryClient();

@@ -10,7 +10,7 @@ function CarouselProduct() {
   if (isLoading) return;
 
   const { images } = product.colors.at(0);
-  const imagesLength = product.colors.at(0).images.length; // colors.at(0) because there will be only 1 color data rec from server
+  const imagesLength = product.colors.at(0).images.length;
 
   function handleNext() {
     setThumbActive((active) => {

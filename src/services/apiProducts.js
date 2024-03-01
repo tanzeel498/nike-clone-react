@@ -1,27 +1,78 @@
-import { SERVER_BASE_URL } from "../utils/constants";
+import { SERVER_URL } from "../utils/constants";
 
 export async function getProducts() {
-  const res = await fetch(`${SERVER_BASE_URL}/products`);
+  const query = `
+    query {
+        products {
+          _id
+          title
+          subtitle
+          colors {
+            colorCode
+            portraitUrl
+            squarishUrl
+            currentPrice
+          }
+        }
+    }
+  `;
+  const res = await fetch(SERVER_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query }),
+  });
 
   if (!res.ok) throw new Error(res.statusText);
-  const products = await res.json();
-  return products;
+  const response = await res.json();
+
+  // throw error if error is received in response
+  if (response.errors) throw new Error(response.errors.at(0).message);
+  console.log(response.data);
+  return response.data.products;
 }
 
-export async function getProduct(productId, color) {
-  const res = await fetch(
-    `${SERVER_BASE_URL}/products/${productId}?color=${color}`,
-  );
+export async function getProduct(id, color) {
+  const query = `
+    query Product($id: ID!, $color: String) {
+      product(id: $id, color: $color) {
+        _id title subtitle description descriptionPreview styleCode  colors { colorDescription fullPrice currentPrice portraitUrl squarishUrl colorCode images {src alt } skus { _id size available}} sizeChartUrl
+      } 
+    }
+  `;
+  const res = await fetch(SERVER_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query, variables: { id, color } }),
+  });
 
   if (!res.ok) throw new Error(res.statusText);
-  const product = await res.json();
-  return product;
+  const response = await res.json();
+
+  // throw error if error is received in response
+  if (response.errors) throw new Error(response.errors.at(0).message);
+  console.log(response.data);
+  return response.data.product;
 }
 
-export async function getProductColors(productId) {
-  const res = await fetch(`${SERVER_BASE_URL}/product-colors/${productId}`);
+export async function getProductColors(id) {
+  const query = `
+    query Product($id: ID!, $color: String) {
+      product(id: $id, color: $color) {
+        _id colors { squarishUrl colorCode }
+      } 
+    }
+  `;
+  const res = await fetch(SERVER_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query, variables: { id } }),
+  });
 
   if (!res.ok) throw new Error(res.statusText);
-  const colors = await res.json();
-  return colors;
+  const response = await res.json();
+
+  // throw error if error is received in response
+  if (response.errors) throw new Error(response.errors.at(0).message);
+  console.log(response.data);
+  return response.data.product.colors;
 }

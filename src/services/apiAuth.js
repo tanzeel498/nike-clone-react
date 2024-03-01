@@ -22,30 +22,25 @@ export async function checkUser(email) {
 }
 
 export async function signUp(userData) {
-  const res = await fetch(`${SERVER_URL}/signUp`, {
+  const query = `
+    mutation SignUp($user: UserData){
+      signup(user: $user) {
+        _id email firstName lastName token
+      }
+    }
+  `;
+  const res = await fetch(SERVER_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(userData),
-    credentials: "include",
+    body: JSON.stringify({ query, variables: { user: userData } }),
   });
 
   if (!res.ok) throw new Error(res.statusText);
-  const user = await res.json();
-  return user;
-}
+  const response = await res.json();
+  // throw error if error is received in response
+  if (response.errors) throw new Error(response.errors.at(0).message);
 
-export async function verifyOtp({ email, token }) {
-  const res = await fetch(`${SERVER_URL}/verifyOtp`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, token }),
-  });
-
-  if (!res.ok) throw new Error(res.statusText);
-  const verify = await res.json();
-
-  if (!verify) throw new Error("Incorrect Code!");
-  return verify;
+  return response.data.signup;
 }
 
 export async function updateUser({ email, password, ...options }) {

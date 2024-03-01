@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCart } from "../../services/apiCarts";
+import { getCart } from "../../services/apiCart";
 
 function useCart() {
   const { data: cart, isLoading } = useQuery({

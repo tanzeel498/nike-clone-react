@@ -5,13 +5,13 @@ import { getProductColors } from "../../services/apiProducts";
 function ProductColor() {
   const { id } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeColor = searchParams.get("color");
   const { isLoading, data: colors } = useQuery({
-    queryKey: ["product-colors", id],
+    queryKey: ["product", id],
     queryFn: () => getProductColors(id),
   });
 
   if (isLoading) return;
+  const activeColor = searchParams.get("color") || colors.at(0).colorCode;
 
   function handleSetColor(color) {
     searchParams.set("color", color);

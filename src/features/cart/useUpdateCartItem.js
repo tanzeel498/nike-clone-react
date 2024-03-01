@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateCartItem as updateCartItemApi } from "../../services/apiCarts";
+import { updateCartItem as updateCartItemApi } from "../../services/apiCart";
 
 function useUpdateCartItem() {
   const queryClient = useQueryClient();

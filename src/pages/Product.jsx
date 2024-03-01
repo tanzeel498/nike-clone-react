@@ -1,7 +1,5 @@
 import CarouselProduct from "../features/product/CarouselProduct";
 import ProductDetails from "../features/product/ProductDetails";
-
-// import { product } from "../features/product/productData";
 import ProductTitle from "../features/product/ProductTitle";
 
 function Product() {

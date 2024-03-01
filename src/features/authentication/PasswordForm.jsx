@@ -19,6 +19,7 @@ function PasswordForm() {
     formState: { errors },
   } = useForm({ mode: "all" });
 
+  // will redirect to join if this page is accessed directly i.e with no email
   useEffect(
     function () {
       if (!email) navigate("/account/join", { replace: true });

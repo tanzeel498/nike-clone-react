@@ -8,7 +8,6 @@ import PasswordField from "./PasswordField";
 import CodeCounter from "./CodeCounter";
 import Message from "../../ui/Message";
 import { useNavigate } from "react-router-dom";
-import useVerifyOtp from "./useVerifyOtp";
 import { useEmailAuth } from "../context/EmailAuthContext";
 // import useUpdateUser from "./useUpdateUser";
 import useSignUp from "./useSignUp";
@@ -17,17 +16,12 @@ import { useEffect } from "react";
 function SignUpForm() {
   const navigate = useNavigate();
   const { email, setEmail } = useEmailAuth();
-  const { isPending: isSignUpPending, signUp } = useSignUp();
+  const { isPending, signUp, error: signUpError } = useSignUp();
   // const {
   //   updateUser,
   //   isPending: isuserUpdatePending,
   //   error: userUpdateError,
   // } = useUpdateUser();
-  const {
-    verifyOtp,
-    isPending: isVerifyPending,
-    error: verifyError,
-  } = useVerifyOtp();
   const {
     register,
     handleSubmit,
@@ -37,6 +31,7 @@ function SignUpForm() {
     mode: "all",
   });
 
+  // will redirect to join if this page is accessed directly i.e with no email
   useEffect(
     function () {
       if (!email) navigate("/account/join", { replace: true });
@@ -44,14 +39,8 @@ function SignUpForm() {
     [email, navigate],
   );
 
-  const isPending = isSignUpPending || isVerifyPending;
-  const authError = verifyError || isSignUpPending;
-
-  function handleFormSubmit({ token, ...data }) {
-    verifyOtp(
-      { email, token },
-      { onSuccess: () => signUp({ email, ...data }) },
-    );
+  function handleFormSubmit(data) {
+    signUp({ ...data, code: +data.code, email });
   }
 
   function handleClearEmail() {
@@ -84,13 +73,13 @@ function SignUpForm() {
         noValidate
         className="flex flex-col gap-7"
       >
-        {authError && <Message type="error">{authError.message}</Message>}
+        {signUpError && <Message type="error">{signUpError.message}</Message>}
 
         <CodeCounter>
           <InputField
-            id="token"
-            error={errors?.token}
-            validation={register("token", { required: "Required" })}
+            id="code"
+            error={errors?.code}
+            validation={register("code", { required: "Required" })}
             label="Code"
           />
         </CodeCounter>

@@ -3,7 +3,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { getProduct } from "../../services/apiProducts";
 
 function useProduct() {
-  const { id: productId } = useParams();
+  const { id } = useParams();
   const [searchParams] = useSearchParams();
   const color = searchParams.get("color");
 
@@ -12,8 +12,8 @@ function useProduct() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["product", productId, color],
-    queryFn: () => getProduct(productId, color),
+    queryKey: ["product", id, color],
+    queryFn: () => getProduct(id, color),
   });
 
   return { product, isLoading, error };
