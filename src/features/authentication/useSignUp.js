@@ -14,6 +14,7 @@ function useSignUp() {
     mutationFn: signUpApi,
     onSuccess: (user) => {
       queryClient.setQueryData(["user"], user);
+      localStorage.setItem("token", user.token);
       navigate("/");
     },
   });

@@ -6,7 +6,7 @@ function useAddToCart() {
 
   const { mutate: addToCart, isPending } = useMutation({
     mutationFn: addToCartApi,
-    onSuccess: () => queryClient.invalidateQueries(["user"]),
+    onSuccess: () => queryClient.invalidateQueries(["numCartItems"]),
   });
 
   return { addToCart, isPending };

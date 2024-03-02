@@ -4,29 +4,36 @@ import { IoTrashOutline } from "react-icons/io5";
 import ButtonLink from "../../ui/ButtonLink";
 import useUpdateCartItem from "./useUpdateCartItem";
 import useDeleteCartItem from "./useDeleteCartItem";
+import useCartProduct from "./useCartProduct";
 
-function BagItem({ data }) {
+function BagItem({ data: { _id, size, colorCode, quantity, product } }) {
+  const { cartProduct, isLoading, error } = useCartProduct(
+    product._id,
+    colorCode,
+  );
   const { updateCartItem, isPending: isUpdatePending } = useUpdateCartItem();
   const { deleteCartItem, isPending: isDeletePending } = useDeleteCartItem();
 
   function handleUpdateItem(value) {
-    updateCartItem({ id: data._id, ...value });
+    updateCartItem({ id: _id, ...value });
   }
 
   function handleDeleteItem() {
-    deleteCartItem(data._id);
+    deleteCartItem(_id);
   }
+
+  if (isLoading) return;
 
   return (
     <div className="py-6">
       <div className="flex w-full gap-8">
         <Link
           className="max-w-[150px]"
-          to={`/products/${data.productId}?color=${data.colorCode}`}
+          to={`/products/${product._id}?color=${colorCode}`}
         >
           <img
             className="aspect-square max-w-[150px] object-cover"
-            src={data.squarishUrl}
+            src={cartProduct.colors.at(0).squarishUrl}
             alt="cart-img"
           />
         </Link>
@@ -34,33 +41,38 @@ function BagItem({ data }) {
           <div className="flex flex-col gap-1 font-medium text-stone-500">
             <div className="flex flex-col gap-1 mobile:flex-row-reverse mobile:justify-between">
               <div className="flex gap-3">
-                {data.fullPrice !== data.currentPrice && (
+                {cartProduct.colors.at(0).fullPrice !==
+                  cartProduct.colors.at(0).currentPrice && (
                   <h4 className="line-through">
-                    {formatCurrency(data.fullPrice)}
+                    {formatCurrency(cartProduct.colors.at(0).fullPrice)}
                   </h4>
                 )}
                 <h4 className="text-stone-900">
-                  {formatCurrency(data.currentPrice * data.quantity)}
+                  {formatCurrency(
+                    cartProduct.colors.at(0).currentPrice * quantity,
+                  )}
                 </h4>
               </div>
               <Link
                 className="text-stone-900"
-                to={`/products/${data.productId}?color=${data.colorCode}`}
+                to={`/products/${product._id}?color=${colorCode}`}
               >
-                <h4>{data.title}</h4>
+                <h4>{cartProduct.title}</h4>
               </Link>
             </div>
-            <span>{data.subtitle}</span>
-            <span className="hidden tablet:flex">{data.colorDescription}</span>
+            <span>{cartProduct.subtitle}</span>
+            <span className="hidden tablet:flex">
+              {cartProduct.colors.at(0).colorDescription}
+            </span>
             <div className="flex gap-4">
               <div>
                 <span>Size </span>
                 <select
                   className="text-sm"
-                  value={data.size}
-                  onChange={(e) => handleUpdateItem({ size: e.target.value })}
+                  value={size}
+                  onChange={(e) => handleUpdateItem({ size: +e.target.value })}
                 >
-                  {data.skus.map(
+                  {cartProduct.colors.at(0).skus.map(
                     (sku) =>
                       sku.available && (
                         <option className="text-sm" key={sku._id}>
@@ -75,9 +87,9 @@ function BagItem({ data }) {
                 <span>Quantity </span>
                 <select
                   className="text-sm"
-                  value={data.quantity}
+                  value={quantity}
                   onChange={(e) =>
-                    handleUpdateItem({ quantity: e.target.value })
+                    handleUpdateItem({ quantity: +e.target.value })
                   }
                 >
                   {Array.from({ length: 10 }).map((_, i) => (

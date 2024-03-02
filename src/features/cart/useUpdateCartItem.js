@@ -7,7 +7,7 @@ function useUpdateCartItem() {
   const { mutate: updateCartItem, isPending } = useMutation({
     mutationFn: updateCartItemApi,
     onSuccess: () => {
-      queryClient.invalidateQueries(["cart"]);
+      queryClient.invalidateQueries(["cart", "numCartItems"]);
     },
   });
   return { updateCartItem, isPending };

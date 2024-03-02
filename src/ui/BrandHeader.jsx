@@ -44,11 +44,11 @@ function BrandHeader() {
       ) : (
         <ul className="flex items-center gap-3 text-xs font-semibold">
           <li className="hover:opacity-60">
-            <Link to="/accounts/join">Join Us</Link>
+            <Link to="/account/join">Join Us</Link>
           </li>
           <li>|</li>
           <li className="hover:opacity-60">
-            <Link to="/accounts/join">Sign In</Link>
+            <Link to="/account/join">Sign In</Link>
           </li>
         </ul>
       )}

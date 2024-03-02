@@ -5,13 +5,14 @@ import { formatCurrency } from "../../utils/helpers";
 import useCart from "./useCart";
 
 function Summary() {
-  const { cart, isLoading } = useCart();
+  const { cart, isLoading, error } = useCart();
 
   if (isLoading) return;
-  const cartTotal = cart.reduce(
-    (sum, item) => sum + item.currentPrice * item.quantity,
-    0,
-  );
+  // const cartTotal = cart.items.reduce(
+  //   (sum, item) => sum + item.currentPrice * item.quantity,
+  //   0,
+  // );
+  const cartTotal = 400;
   const tax = 7;
   const shipping = 12.99;
 

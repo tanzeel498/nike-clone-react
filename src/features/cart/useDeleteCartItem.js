@@ -7,7 +7,7 @@ function useDeleteCartItem() {
   const { mutate: deleteCartItem, isPending } = useMutation({
     mutationFn: deleteCartItemApi,
     onSuccess: () => {
-      queryClient.invalidateQueries(["cart"]);
+      queryClient.invalidateQueries(["cart", "numCartItems"]);
     },
   });
   return { deleteCartItem, isPending };

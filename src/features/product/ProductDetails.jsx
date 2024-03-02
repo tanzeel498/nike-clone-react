@@ -15,19 +15,26 @@ import useAddToCart from "../cart/useAddToCart";
 function ProductDetails() {
   const { isLoading, product } = useProduct();
   const { addToCart, isPending } = useAddToCart();
-  const [size, setSize] = useState(0);
+  const [size, setSize] = useState({ value: 0, error: null });
 
   if (isLoading || isPending) return;
   const { descriptionPreview, sizeChartUrl } = product;
   const { skus, colorCode, colorDescription } = product.colors.at(0);
 
   function handleAddToCart() {
-    addToCart(
-      { id: product._id, colorCode, size },
-      {
-        onSuccess: (user) => console.log("Cart updated!"),
-      },
-    );
+    if (!size.value) {
+      setSize((s) => ({ ...s, error: true }));
+    } else {
+      addToCart(
+        { id: product._id, colorCode, size: size.value },
+        {
+          onSuccess: (user) => {
+            setSize({ value: 0, error: null });
+            console.log("Cart updated!");
+          },
+        },
+      );
+    }
   }
 
   return (
@@ -43,18 +50,27 @@ function ProductDetails() {
             Size Guide
           </Link>
         </div>
-        <div className="flex flex-wrap justify-between gap-2">
+        <div
+          className={`flex flex-wrap justify-between gap-2 rounded-lg border-[1px] ${
+            size.error ? "border-red-600" : "border-none"
+          }`}
+        >
           {skus.map((sku) => (
             <SizeButton
               key={sku._id}
               size={sku.size}
-              selectedSize={size}
+              selectedSize={size.value}
               available={sku.available}
               perRow="17"
-              onClick={() => setSize(sku.size)}
+              onClick={() => setSize((s) => ({ value: sku.size, error: null }))}
             />
           ))}
         </div>
+        {size.error && (
+          <p className="ml-4 mt-2 text-sm font-semibold text-red-600">
+            Please select a size.
+          </p>
+        )}
       </div>
 
       <div className="my-10">

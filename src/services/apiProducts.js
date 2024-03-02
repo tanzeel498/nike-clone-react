@@ -27,7 +27,6 @@ export async function getProducts() {
 
   // throw error if error is received in response
   if (response.errors) throw new Error(response.errors.at(0).message);
-  console.log(response.data);
   return response.data.products;
 }
 
@@ -50,7 +49,6 @@ export async function getProduct(id, color) {
 
   // throw error if error is received in response
   if (response.errors) throw new Error(response.errors.at(0).message);
-  console.log(response.data);
   return response.data.product;
 }
 
@@ -73,6 +71,5 @@ export async function getProductColors(id) {
 
   // throw error if error is received in response
   if (response.errors) throw new Error(response.errors.at(0).message);
-  console.log(response.data);
   return response.data.product.colors;
 }

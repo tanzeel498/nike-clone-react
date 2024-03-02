@@ -77,15 +77,27 @@ export async function login({ email, password }) {
 }
 
 export async function getCurrentUser() {
-  // this will fetch session object from the server
-  const res = await fetch(`${SERVER_URL}/getUser`, {
-    credentials: "include",
+  const query = `
+    query {
+        user { _id firstName lastName email }
+      }
+  `;
+  const token = localStorage.getItem("token");
+  const res = await fetch(SERVER_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ query }),
   });
-  if (!res.ok) throw new Error(res.statusText);
-  const user = await res.json();
 
-  if (!user) return null;
-  return user;
+  if (!res.ok) throw new Error(res.statusText);
+  const response = await res.json();
+  // throw error if error is received in response
+  if (response.errors) throw new Error(response.errors.at(0).message);
+
+  return response.data.user;
 }
 
 export async function logout() {
