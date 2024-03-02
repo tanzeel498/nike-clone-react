@@ -1,4 +1,4 @@
-import { SERVER_BASE_URL, SERVER_URL } from "../utils/constants";
+import { SERVER_URL } from "../utils/constants";
 
 export async function getNumCartItems() {
   const query = `
@@ -37,6 +37,7 @@ export async function getCart() {
             colorCode
             size
             product { _id } 
+            currentPrice
           }
         }
       }
@@ -85,16 +86,19 @@ export async function getCartProduct(id, color) {
   return response.data.product;
 }
 
-export async function addToCart({ id, colorCode, size }) {
+export async function addToCart({ id, colorCode, size, currentPrice }) {
   const query = `
-    mutation AddToCart($id: ID!, $colorCode: String!, $size: Float!) {
-      addToCart(id: $id, colorCode: $colorCode, size: $size)
+    mutation AddToCart($id: ID!, $colorCode: String!, $size: Float!, $currentPrice: Float!) {
+      addToCart(id: $id, colorCode: $colorCode, size: $size, currentPrice: $currentPrice)
     }
   `;
   const res = await fetch(SERVER_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query, variables: { id, colorCode, size } }),
+    body: JSON.stringify({
+      query,
+      variables: { id, colorCode, size, currentPrice },
+    }),
   });
 
   if (!res.ok) throw new Error(res.statusText);

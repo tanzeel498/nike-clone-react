@@ -7,11 +7,10 @@ function PageTitle({ title }) {
   const { numCartItems, isLoading: numCartIsLoading } = useNumCartItems();
 
   if (cartIsLoading || numCartIsLoading) return;
-  // const cartTotal = cart.reduce(
-  //   (sum, item) => sum + item.currentPrice * item.quantity,
-  //   0,
-  // );
-  const cartTotal = 480;
+  const cartTotal = cart.items.reduce(
+    (sum, item) => sum + item.currentPrice * item.quantity,
+    0,
+  );
 
   return (
     <div className="my-14 flex flex-col items-center gap-2">

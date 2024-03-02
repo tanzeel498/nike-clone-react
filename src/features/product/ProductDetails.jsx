@@ -19,14 +19,15 @@ function ProductDetails() {
 
   if (isLoading || isPending) return;
   const { descriptionPreview, sizeChartUrl } = product;
-  const { skus, colorCode, colorDescription } = product.colors.at(0);
+  const { skus, colorCode, colorDescription, currentPrice } =
+    product.colors.at(0);
 
   function handleAddToCart() {
     if (!size.value) {
       setSize((s) => ({ ...s, error: true }));
     } else {
       addToCart(
-        { id: product._id, colorCode, size: size.value },
+        { id: product._id, colorCode, size: size.value, currentPrice },
         {
           onSuccess: (user) => {
             setSize({ value: 0, error: null });
