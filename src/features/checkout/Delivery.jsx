@@ -4,18 +4,17 @@ import AddressItem from "./AddressItem";
 import DeliveryForm from "./DeliveryForm";
 import useAddress from "./useAddress";
 
-function ShippingForm({ setDeliveryAdded }) {
+function Delivery({ deliveryAdded, setDeliveryAdded }) {
   const [addressAdded, setAddressAdded] = useState(false);
   const { address, isLoading } = useAddress();
-  // console.log("address called from ShippingForm");
 
   if (isLoading) return;
   return (
     <>
-      {!addressAdded && (
+      {!deliveryAdded && !addressAdded && (
         <DeliveryForm address={address} setAddressAdded={setAddressAdded} />
       )}
-      {addressAdded && (
+      {!deliveryAdded && addressAdded && (
         <>
           <AddressItem
             address={address}
@@ -29,8 +28,11 @@ function ShippingForm({ setDeliveryAdded }) {
           </div>
         </>
       )}
+      {deliveryAdded && addressAdded && (
+        <AddressItem address={address} border={false} />
+      )}
     </>
   );
 }
 
-export default ShippingForm;
+export default Delivery;

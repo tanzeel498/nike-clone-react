@@ -4,8 +4,10 @@ function AddressItem({ address, setAddressAdded = () => {}, border }) {
   return (
     <div
       className={`rounded-lg ${
-        border ? "border-2 text-stone-900" : "border-0 text-stone-500"
-      } border-stone-900 p-5 font-medium`}
+        border
+          ? "border-2 p-5 text-stone-900"
+          : "border-0 p-5 pt-0 text-stone-500"
+      } border-stone-900 font-medium`}
     >
       {border && (
         <span className="float-right">

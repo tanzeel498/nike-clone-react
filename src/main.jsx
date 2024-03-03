@@ -18,6 +18,7 @@ import Tunnel from "./features/checkout/Tunnel.jsx";
 import Checkout from "./features/checkout/Checkout.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import ConfirmOrder from "./features/Order/ConfirmOrder.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 100 } },
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: "products", element: <Products /> },
       { path: "products/:id", element: <Product /> },
       { path: "cart", element: <Cart /> },
+      { path: "confirmOrder", element: <ConfirmOrder /> },
     ],
   },
   { path: "jordan", element: <Jordan /> },

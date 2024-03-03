@@ -8,7 +8,7 @@ function Summary() {
   const { cart, isLoading } = useCart();
 
   if (isLoading) return;
-  const cartTotal = cart.reduce(
+  const cartTotal = cart.items.reduce(
     (sum, item) => sum + item.currentPrice * item.quantity,
     0,
   );
@@ -39,7 +39,7 @@ function Summary() {
       <div className="flex flex-col flex-wrap gap-5 text-sm font-medium">
         <span className="mt-7 tablet:mt-0">Arrives by Tue, Nov 7</span>
         <div className="flex flex-wrap justify-between gap-5">
-          {cart.map((item) => (
+          {cart.items.map((item) => (
             <OrderItem key={item._id} data={item} />
           ))}
         </div>
