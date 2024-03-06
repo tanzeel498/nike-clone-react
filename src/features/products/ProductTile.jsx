@@ -10,7 +10,7 @@ function ProductTile({ product }) {
     <div className="col-span-1 mb-10">
       <Link
         className={`${colorsLength > 1 ? "group" : ""}`}
-        to={`/products/${product._id}?color=${
+        to={`/product/${product._id}?color=${
           product.colors.at(activeColor).colorCode
         }`}
       >

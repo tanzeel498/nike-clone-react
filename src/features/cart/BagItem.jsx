@@ -29,7 +29,7 @@ function BagItem({ data: { _id, size, colorCode, quantity, product } }) {
       <div className="flex w-full gap-8">
         <Link
           className="max-w-[150px]"
-          to={`/products/${product._id}?color=${colorCode}`}
+          to={`/product/${product._id}?color=${colorCode}`}
         >
           <img
             className="aspect-square max-w-[150px] object-cover"
@@ -55,7 +55,7 @@ function BagItem({ data: { _id, size, colorCode, quantity, product } }) {
               </div>
               <Link
                 className="text-stone-900"
-                to={`/products/${product._id}?color=${colorCode}`}
+                to={`/product/${product._id}?color=${colorCode}`}
               >
                 <h4>{cartProduct.title}</h4>
               </Link>
