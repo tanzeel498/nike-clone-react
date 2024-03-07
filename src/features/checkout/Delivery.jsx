@@ -3,13 +3,16 @@ import Button from "../../ui/Button";
 import AddressItem from "./AddressItem";
 import DeliveryForm from "./DeliveryForm";
 import useAddress from "./useAddress";
+import Spinner from "../../ui/Spinner";
 
 function Delivery({ deliveryAdded, setDeliveryAdded }) {
   const [addressAdded, setAddressAdded] = useState(false);
-  const { address, isLoading } = useAddress();
+  const { address, isLoading, error } = useAddress();
+  console.log(error);
 
-  if (isLoading) return;
-  return (
+  return isLoading && !error ? (
+    <Spinner />
+  ) : (
     <>
       {!deliveryAdded && !addressAdded && (
         <DeliveryForm address={address} setAddressAdded={setAddressAdded} />

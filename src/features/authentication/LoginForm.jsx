@@ -83,8 +83,8 @@ function LoginForm() {
           </ButtonLink>
         </p>
         <div className="flex justify-end">
-          <Button>
-            {isPending ? <span className="loader"></span> : "Continue"}
+          <Button disabled={isPending}>
+            {isPending ? <div className="spinner-mini"></div> : "Continue"}
           </Button>
         </div>
       </form>

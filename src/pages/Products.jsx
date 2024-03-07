@@ -15,8 +15,8 @@ function Products() {
   const title = "Men's Shoes and Snickers";
   const { products, isLoading } = useProducts();
   const resultCount = products?.length;
-  // const { title, resultCount, data } = products;
-  if (isLoading) return;
+
+  // if (isLoading) return;
 
   return (
     <div className="relative w-full max-w-[1920px]">
@@ -37,7 +37,7 @@ function Products() {
             document.body,
           )}
 
-        <ProductsGrid products={products} />
+        <ProductsGrid showFilters={showFilters} />
       </div>
     </div>
   );

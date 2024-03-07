@@ -34,7 +34,31 @@ export async function getProduct(id, color) {
   const query = `
     query Product($id: ID!, $color: String) {
       product(id: $id, color: $color) {
-        _id title subtitle description descriptionPreview styleCode  colors { colorDescription fullPrice currentPrice portraitUrl squarishUrl colorCode images {src alt } skus { _id size available}} sizeChartUrl
+        _id
+        title
+        subtitle
+        description
+        descriptionPreview
+        styleCode
+        colors {
+          colorDescription
+          fullPrice
+          currentPrice
+          portraitUrl
+          squarishUrl
+          colorCode
+          images {
+            src
+            alt
+            srcThumbnail
+          }
+          skus {
+            _id
+            size
+            available
+          }
+        }
+        sizeChartUrl
       } 
     }
   `;
@@ -56,7 +80,7 @@ export async function getProductColors(id) {
   const query = `
     query Product($id: ID!, $color: String) {
       product(id: $id, color: $color) {
-        _id colors { squarishUrl colorCode }
+        _id title subtitle colors { squarishUrl colorCode }
       } 
     }
   `;
@@ -71,5 +95,5 @@ export async function getProductColors(id) {
 
   // throw error if error is received in response
   if (response.errors) throw new Error(response.errors.at(0).message);
-  return response.data.product.colors;
+  return response.data.product;
 }

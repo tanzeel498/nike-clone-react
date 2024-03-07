@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ProductTitle from "./ProductTitle";
 import ProductColor from "./ProductColor";
@@ -11,16 +11,25 @@ import ProductDescription from "./ProductDescription";
 import SizeButton from "../../ui/SizeButton";
 import useProduct from "./useProduct";
 import useAddToCart from "../cart/useAddToCart";
+import ProductDetailsBlank from "./ProductDetailsBlank";
 
 function ProductDetails() {
   const { isLoading, product } = useProduct();
   const { addToCart, isPending } = useAddToCart();
   const [size, setSize] = useState({ value: 0, error: null });
+  const [initialPageLoaded, setInitialPageLoaded] = useState(false); // using this hook to not show <CarouselProductBlank /> again if user chooses another color
 
-  if (isLoading || isPending) return;
-  const { descriptionPreview, sizeChartUrl } = product;
+  useEffect(
+    function () {
+      if (initialPageLoaded) return;
+      if (!isLoading) setInitialPageLoaded(true);
+    },
+    [isLoading, initialPageLoaded],
+  );
+
+  const { descriptionPreview, sizeChartUrl } = product ?? {};
   const { skus, colorCode, colorDescription, currentPrice } =
-    product.colors.at(0);
+    product?.colors.at(0) ?? {};
 
   function handleAddToCart() {
     if (!size.value) {
@@ -37,8 +46,9 @@ function ProductDetails() {
       );
     }
   }
-
-  return (
+  return isLoading && !initialPageLoaded ? (
+    <ProductDetailsBlank />
+  ) : (
     <div className="w-full px-6 tablet:max-w-[400px] tablet:px-0">
       <div className="hidden tablet:block">
         <ProductTitle />
@@ -56,16 +66,27 @@ function ProductDetails() {
             size.error ? "border-red-600" : "border-none"
           }`}
         >
-          {skus.map((sku) => (
-            <SizeButton
-              key={sku._id}
-              size={sku.size}
-              selectedSize={size.value}
-              available={sku.available}
-              perRow="17"
-              onClick={() => setSize((s) => ({ value: sku.size, error: null }))}
-            />
-          ))}
+          {isLoading ? (
+            <div className="flex flex-wrap justify-between gap-2 rounded-lg">
+              {Array.from({ length: 20 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="h-9 w-16 cursor-pointer rounded-md bg-stone-200 tablet:w-[70px]"
+                />
+              ))}
+            </div>
+          ) : (
+            skus?.map((sku) => (
+              <SizeButton
+                key={sku._id}
+                size={sku.size}
+                selectedSize={size.value}
+                available={sku.available}
+                perRow="17"
+                onClick={() => setSize({ value: sku.size, error: null })}
+              />
+            ))
+          )}
         </div>
         {size.error && (
           <p className="ml-4 mt-2 text-sm font-semibold text-red-600">
@@ -75,8 +96,8 @@ function ProductDetails() {
       </div>
 
       <div className="my-10">
-        <Button size="large" onClick={handleAddToCart}>
-          Add to Bag
+        <Button size="large" onClick={handleAddToCart} disabled={isPending}>
+          {isPending ? <span className="spinner-mini"></span> : "Add to Bag"}
         </Button>
       </div>
 

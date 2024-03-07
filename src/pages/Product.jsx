@@ -5,12 +5,10 @@ import ProductTitle from "../features/product/ProductTitle";
 function Product() {
   return (
     <>
-      <div className="mx-auto my-12 hidden justify-center gap-10 tablet:flex">
-        <CarouselProduct />
-        <ProductDetails />
-      </div>
-      <div className="flex w-full flex-col tablet:hidden">
-        <ProductTitle />
+      <div className="mx-auto flex flex-col tablet:my-12 tablet:w-auto tablet:flex-row tablet:justify-center tablet:gap-10">
+        <div className="tablet:hidden">
+          <ProductTitle />
+        </div>
         <CarouselProduct />
         <ProductDetails />
       </div>

@@ -16,7 +16,7 @@ function OrderDetails({ id }) {
         <Table columns="3fr 2fr 1fr 1fr 1fr 1fr">
           <Table.Header type="secondary">
             <div>product</div>
-            <div>color</div>
+            <div>color-code</div>
             <div>size</div>
             <div>Price</div>
             <div>quantity</div>

@@ -9,7 +9,6 @@ import CodeCounter from "./CodeCounter";
 import Message from "../../ui/Message";
 import { useNavigate } from "react-router-dom";
 import { useEmailAuth } from "../context/EmailAuthContext";
-// import useUpdateUser from "./useUpdateUser";
 import useSignUp from "./useSignUp";
 import { useEffect } from "react";
 
@@ -17,11 +16,7 @@ function SignUpForm() {
   const navigate = useNavigate();
   const { email, setEmail } = useEmailAuth();
   const { isPending, signUp, error: signUpError } = useSignUp();
-  // const {
-  //   updateUser,
-  //   isPending: isuserUpdatePending,
-  //   error: userUpdateError,
-  // } = useUpdateUser();
+
   const {
     register,
     handleSubmit,
@@ -203,8 +198,12 @@ function SignUpForm() {
         </div>
 
         <div className="flex justify-end">
-          <Button>
-            {isPending ? <span className="loader"></span> : "Create Account"}
+          <Button disabled={isPending}>
+            {isPending ? (
+              <span className="spinner-mini"></span>
+            ) : (
+              "Create Account"
+            )}
           </Button>
         </div>
       </form>

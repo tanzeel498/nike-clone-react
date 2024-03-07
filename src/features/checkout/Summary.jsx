@@ -8,12 +8,12 @@ function Summary() {
   const { cart, isLoading } = useCart();
 
   if (isLoading) return;
-  const cartTotal = cart.items.reduce(
+  const cartTotal = cart?.items?.reduce(
     (sum, item) => sum + item.currentPrice * item.quantity,
     0,
   );
-  const tax = 7;
-  const shipping = 12.99;
+  const tax = 0;
+  const shipping = 0;
 
   return (
     <div className="flex w-full flex-col-reverse gap-5 tablet:flex-col">

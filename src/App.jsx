@@ -6,9 +6,11 @@ function App() {
   return (
     <>
       <ScrollRestoration />
-      <Header />
-      <Outlet />
-      <Footer />
+      <div className="min-h-screen">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
     </>
   );
 }

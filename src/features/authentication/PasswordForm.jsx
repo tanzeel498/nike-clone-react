@@ -76,9 +76,8 @@ function PasswordForm() {
           </ButtonLink>
         </p>
         <div className="flex justify-end">
-          <Button>
-            {" "}
-            {isPending ? <span className="loader"></span> : "Sign In"}
+          <Button disabled={isPending}>
+            {isPending ? <span className="spinner-mini"></span> : "Sign In"}
           </Button>
         </div>
       </form>
