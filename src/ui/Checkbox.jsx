@@ -1,11 +1,11 @@
 function Checkbox({
   children,
   validation,
-  className = "checkbox-wrapper",
+  customClassName = "checkbox-wrapper",
   id,
 }) {
   return (
-    <div className="checkbox-wrapper">
+    <div className={customClassName}>
       <input type="checkbox" {...validation} id={id} />
       <label htmlFor={id}>
         <span>
