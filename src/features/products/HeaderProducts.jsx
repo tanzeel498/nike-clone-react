@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { LuSettings2 } from "react-icons/lu";
 import Button from "../../ui/Button";
-function HeaderProducts({ title, resultCount, showFilters, setShowFilters }) {
-  const [sortBy, setSortBy] = useState("");
+import useProducts from "./useProducts";
+import { useSearchParams } from "react-router-dom";
+
+function HeaderProducts({ title, showFilters, setShowFilters }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { numProducts } = useProducts();
   const [reduceHeader, setReduceHeader] = useState(false);
 
   useEffect(function () {
@@ -13,6 +17,13 @@ function HeaderProducts({ title, resultCount, showFilters, setShowFilters }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // if (isLoading) return;
+
+  function handleSortBy(e) {
+    searchParams.set("sortBy", e.target.value);
+    setSearchParams(searchParams);
+  }
 
   return (
     <>
@@ -29,7 +40,7 @@ function HeaderProducts({ title, resultCount, showFilters, setShowFilters }) {
           className="duration-200"
         >
           {title}{" "}
-          <span className="hidden tablet:inline-block">({resultCount})</span>
+          <span className="hidden tablet:inline-block">({numProducts})</span>
         </h2>
 
         <div className="hidden items-center gap-4 tablet:flex">
@@ -51,9 +62,9 @@ function HeaderProducts({ title, resultCount, showFilters, setShowFilters }) {
 
             <select
               className="text-stone-600 outline-none"
-              value={sortBy}
+              value={searchParams.get("sortBy")}
               id="sort"
-              onChange={(e) => setSortBy(e.target.value)}
+              onChange={handleSortBy}
             >
               <option value="featured">Featured</option>
               <option value="newest">Newest</option>
@@ -64,7 +75,7 @@ function HeaderProducts({ title, resultCount, showFilters, setShowFilters }) {
         </div>
       </div>
       <div className="flex items-center justify-between border-t-[1px] px-6 py-4 tablet:hidden">
-        <h4 className="text-stone-600">{resultCount} Results</h4>
+        <h4 className="text-stone-600">{numProducts} Results</h4>
         <Button
           type="secondary"
           size="small"

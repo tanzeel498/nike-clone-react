@@ -1,5 +1,4 @@
 import { SERVER_URL } from "../utils/constants";
-import supabase from "./supabase";
 
 export async function checkUser(email) {
   const query = `
@@ -43,16 +42,7 @@ export async function signUp(userData) {
   return response.data.signup;
 }
 
-export async function updateUser({ email, password, ...options }) {
-  const { data, error } = await supabase.auth.updateUser({
-    email,
-    password,
-    data: { ...options },
-  });
-
-  if (error) throw new Error(error.message);
-  return data;
-}
+export async function updateUser({ email, password, ...options }) {}
 
 export async function login({ email, password }) {
   const query = `

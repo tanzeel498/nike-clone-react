@@ -1,25 +1,28 @@
 import { SERVER_URL } from "../utils/constants";
 
-export async function getProducts() {
+export async function getProducts(sortBy, filter) {
   const query = `
-    query {
-        products {
-          _id
-          title
-          subtitle
-          colors {
-            colorCode
-            portraitUrl
-            squarishUrl
-            currentPrice
+    query GetProducts($sortBy: String!, $filter: String) {
+        products(sortBy: $sortBy, filter: $filter) {
+          products {
+            _id
+            title
+            subtitle
+            colors {
+              colorCode
+              portraitUrl
+              squarishUrl
+              currentPrice
+            }
           }
+          numProducts
         }
     }
   `;
   const res = await fetch(SERVER_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query }),
+    body: JSON.stringify({ query, variables: { sortBy, filter } }),
   });
 
   if (!res.ok) throw new Error(res.statusText);
