@@ -1,8 +1,8 @@
 import Checkbox from "./Checkbox";
 
-function ColorCheckbox({ children, validation, id }) {
+function ColorCheckbox({ children, ...props }) {
   return (
-    <Checkbox id={id} customClassName="color-wrapper">
+    <Checkbox customClassName="color-wrapper" {...props}>
       <span className="text-xs font-medium">{children}</span>
     </Checkbox>
   );

@@ -3,10 +3,11 @@ function Checkbox({
   validation,
   customClassName = "checkbox-wrapper",
   id,
+  ...props
 }) {
   return (
     <div className={customClassName}>
-      <input type="checkbox" {...validation} id={id} />
+      <input type="checkbox" {...validation} id={id} {...props} />
       <label htmlFor={id}>
         <span>
           <svg width="12px" height="10px" viewBox="0 0 12 10">

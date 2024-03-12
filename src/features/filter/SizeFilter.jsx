@@ -1,19 +1,32 @@
 import { useState } from "react";
 import SizeButton from "../../ui/SizeButton";
 import Collapsible from "../../ui/Collapsible";
+import { useSearchParams } from "react-router-dom";
 
 function SizeFilter() {
-  const [selectedSize, setSelectedSize] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedSize, setSelectedSize] = useState(
+    searchParams
+      .get("size")
+      ?.split("+")
+      .map((s) => +s) || [],
+  );
 
-  const sizes = Array.from({ length: 34 }, (_, i) => {
-    return { nikeSize: (i + 2) / 2, available: true };
+  const sizes = Array.from({ length: 22 }, (_, i) => {
+    return i <= 18 ? (i + 7) / 2 : i - 6;
   });
 
   function handleClick(value) {
-    setSelectedSize((s) => {
-      if (s.includes(value)) return s.filter((size) => value !== size);
-      return [...s, value];
-    });
+    let sizeArray = [...selectedSize];
+    if (sizeArray.includes(value))
+      sizeArray = sizeArray.filter((size) => value !== size);
+    else {
+      sizeArray.push(value);
+    }
+    searchParams.set("size", sizeArray.join("+"));
+    setSearchParams(searchParams);
+
+    setSelectedSize(sizeArray);
   }
 
   return (
@@ -28,9 +41,9 @@ function SizeFilter() {
               <SizeButton
                 key={i}
                 perRow="25"
-                size={size.nikeSize}
+                size={size}
                 selectedSize={selectedSize}
-                onClick={() => handleClick(size.nikeSize)}
+                onClick={() => handleClick(size)}
                 available={true}
               />
             ))}

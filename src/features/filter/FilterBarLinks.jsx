@@ -1,55 +1,112 @@
+import { useSearchParams } from "react-router-dom";
 import ButtonLink from "../../ui/ButtonLink";
 
 function FilterBarLinks() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  function handleClick(category) {
+    searchParams.set("category", category);
+    setSearchParams(searchParams);
+  }
+
   return (
     <div className="mb-8 flex flex-col gap-1">
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Jordan")}
+      >
         Jordan
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Lifestyle")}
+      >
         Lifestyle
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Running")}
+      >
         Running
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Basketball")}
+      >
         Basketball
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Training & Gym")}
+      >
         Training & Gym
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Walking")}
+      >
         Walking
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Soccer")}
+      >
         Soccer
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Skateboarding")}
+      >
         Skateboarding
       </ButtonLink>
-
-      <ButtonLink border={false} to="/">
-        ACG
-      </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Football")}
+      >
         Football
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Tennis")}
+      >
         Tennis
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Golf")}
+      >
         Golf
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Baseball")}
+      >
         Baseball
       </ButtonLink>
-      <ButtonLink border={false} to="/">
-        Boots
-      </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Sandals & Slides")}
+      >
         Sandals & Slides
       </ButtonLink>
-      <ButtonLink border={false} to="/">
+      <ButtonLink
+        style={{ textAlign: "left" }}
+        border={false}
+        onClick={() => handleClick("Track & Field")}
+      >
         Track & Field
       </ButtonLink>
     </div>

@@ -2,7 +2,7 @@ import { SERVER_URL } from "../utils/constants";
 
 export async function getProducts(sortBy, filter) {
   const query = `
-    query GetProducts($sortBy: String!, $filter: String) {
+    query GetProducts($sortBy: String!, $filter: Filter) {
         products(sortBy: $sortBy, filter: $filter) {
           products {
             _id

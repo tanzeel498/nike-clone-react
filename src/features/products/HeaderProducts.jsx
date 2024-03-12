@@ -62,7 +62,7 @@ function HeaderProducts({ title, showFilters, setShowFilters }) {
 
             <select
               className="text-stone-600 outline-none"
-              value={searchParams.get("sortBy")}
+              value={searchParams.get("sortBy") || "featured"}
               id="sort"
               onChange={handleSortBy}
             >

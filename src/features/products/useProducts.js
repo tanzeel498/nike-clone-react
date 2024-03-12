@@ -4,10 +4,11 @@ import { useSearchParams } from "react-router-dom";
 
 function useProducts() {
   const [searchParams] = useSearchParams();
-  const sortBy = searchParams.get("sortBy");
-  const filter = searchParams.get("filter");
-
-  console.log({ sortBy, filter });
+  const sortBy = searchParams.get("sortBy") || "featured";
+  const filter = {};
+  for (const [key, value] of searchParams.entries()) {
+    filter[key] = value;
+  }
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["products", sortBy, filter],
@@ -16,7 +17,7 @@ function useProducts() {
 
   if (isLoading) return { isLoading };
 
-  const { products, numProducts } = data;
+  const { products, numProducts } = data || {};
   return { products, numProducts, isLoading, error };
 }
 
