@@ -98,16 +98,9 @@ function FilterBarLinks() {
       <ButtonLink
         style={{ textAlign: "left" }}
         border={false}
-        onClick={() => handleClick("Sandals & Slides")}
+        onClick={() => handleClick("Slides")}
       >
         Sandals & Slides
-      </ButtonLink>
-      <ButtonLink
-        style={{ textAlign: "left" }}
-        border={false}
-        onClick={() => handleClick("Track & Field")}
-      >
-        Track & Field
       </ButtonLink>
     </div>
   );

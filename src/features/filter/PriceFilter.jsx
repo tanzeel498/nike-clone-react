@@ -66,9 +66,10 @@ function PriceFilter() {
               <span>$100 - $150</span>
             </Checkbox>
             <Checkbox
-              id="150-"
+              id="150-500"
               checked={
-                searchParams.get("price")?.split("+").includes("150-") || false
+                searchParams.get("price")?.split("+").includes("150-500") ||
+                false
               }
               onChange={handleChange}
             >

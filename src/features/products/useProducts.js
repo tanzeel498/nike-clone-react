@@ -7,7 +7,7 @@ function useProducts() {
   const sortBy = searchParams.get("sortBy") || "featured";
   const filter = {};
   for (const [key, value] of searchParams.entries()) {
-    filter[key] = value;
+    if (key !== "sortBy") filter[key] = value;
   }
 
   const { data, isLoading, error } = useQuery({

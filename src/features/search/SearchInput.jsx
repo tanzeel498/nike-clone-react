@@ -1,9 +1,11 @@
 import { IoClose, IoSearch } from "react-icons/io5";
 import HeaderIcon from "../../ui/HeaderIcon";
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SearchInput({ searchTerm, setSearchTerm }) {
   const inputRef = useRef();
+  const navigate = useNavigate();
 
   // for escape press
   useEffect(
@@ -21,8 +23,17 @@ function SearchInput({ searchTerm, setSearchTerm }) {
     [setSearchTerm],
   );
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (searchTerm.length > 2) {
+      navigate(`/products?q=${searchTerm}`);
+      setSearchTerm("");
+      inputRef.current.blur();
+    }
+  }
+
   return (
-    <div className="group relative flex items-center">
+    <form className="group relative flex items-center" onSubmit={handleSubmit}>
       <input
         ref={inputRef}
         type="text"
@@ -41,7 +52,7 @@ function SearchInput({ searchTerm, setSearchTerm }) {
           )}
         </HeaderIcon>
       </span>
-    </div>
+    </form>
   );
 }
 

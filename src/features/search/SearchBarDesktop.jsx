@@ -14,7 +14,7 @@ function SearchBarDesktop() {
   return (
     <div ref={ref} className="relative">
       <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      {searchTerm.length > 0 && (
+      {searchTerm.length > 2 && (
         <SearchResults
           searchTerm={searchTerm}
           onItemClick={handleSearchClear}

@@ -37,18 +37,18 @@ function GenderFilter() {
         <Collapsible.Group>
           <div className="mb-8 flex flex-col gap-3 tablet:gap-1">
             <Checkbox
-              id="men"
+              id="MEN"
               checked={
-                searchParams.get("gender")?.split("+").includes("men") || false
+                searchParams.get("gender")?.split("+").includes("MEN") || false
               }
               onChange={handleChange}
             >
               <span>Men</span>
             </Checkbox>
             <Checkbox
-              id="women"
+              id="WOMEN"
               checked={
-                searchParams.get("gender")?.split("+").includes("women") ||
+                searchParams.get("gender")?.split("+").includes("WOMEN") ||
                 false
               }
               onChange={handleChange}

@@ -2,7 +2,7 @@ import { SERVER_URL } from "../utils/constants";
 
 export async function getProducts(sortBy, filter) {
   const query = `
-    query GetProducts($sortBy: String!, $filter: Filter) {
+    query GetProducts($sortBy: String!, $filter: ProductFilter) {
         products(sortBy: $sortBy, filter: $filter) {
           products {
             _id
@@ -33,6 +33,35 @@ export async function getProducts(sortBy, filter) {
   return response.data.products;
 }
 
+export async function getSearchProducts(q) {
+  const query = `
+    query GetSearchProducts($q: String!) {
+        searchProducts(q: $q) {
+          _id
+          title
+          subtitle
+          colors {
+            colorCode
+            squarishUrl
+            currentPrice
+          }
+        }
+      }
+    `;
+  const res = await fetch(SERVER_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query, variables: { q } }),
+  });
+
+  if (!res.ok) throw new Error(res.statusText);
+  const response = await res.json();
+
+  // throw error if error is received in response
+  if (response.errors) throw new Error(response.errors.at(0).message);
+  return response.data.searchProducts;
+}
+
 export async function getProduct(id, color) {
   const query = `
     query Product($id: ID!, $color: String) {
@@ -58,6 +87,7 @@ export async function getProduct(id, color) {
           skus {
             _id
             size
+            localizedSize
             available
           }
         }
