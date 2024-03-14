@@ -57,9 +57,11 @@ function ProductDetails() {
       <div className="mb-10">
         <div className="my-4 flex items-center justify-between">
           <p className="font-medium">Select Size</p>
-          <Link to={sizeChartUrl} className="text-stone-500" target="_blank">
-            Size Guide
-          </Link>
+          {sizeChartUrl && (
+            <Link to={sizeChartUrl} className="text-stone-500" target="_blank">
+              Size Guide
+            </Link>
+          )}
         </div>
         <div
           className={`flex flex-wrap justify-between gap-2 rounded-lg border-[1px] ${

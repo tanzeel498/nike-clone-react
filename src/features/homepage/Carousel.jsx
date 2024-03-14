@@ -10,6 +10,19 @@ import { Link } from "react-router-dom";
 const buttonContainerStyle =
   "absolute z-10 top-0 md:flex h-full w-32 flex items-center hidden ";
 
+const imagesData = [
+  { to: "/products?q=Air%20Jordan%201" },
+  { to: "/products?q=dunk" },
+  { to: "/products?q=Air%20Force%201" },
+  { to: "/products?q=Air%20Max" },
+  { to: "/products?q=Blazer" },
+  { to: "/products?q=Air%20Max" },
+  { to: "/products?q=Lebron" },
+  { to: "/products?q=Pegasus" },
+  { to: "/products?q=Metcon" },
+  { to: "/products?q=Air%20Max" },
+];
+
 function Carousel() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -38,8 +51,8 @@ function Carousel() {
       >
         {Array.from({ length: 10 }).map((_, i) => (
           <SwiperSlide key={i}>
-            <Link to="/product">
-              <img src={`images/carousel${i}.webp`} alt="carousel" />
+            <Link to={imagesData.at(i).to}>
+              <img src={`images/carousel${i}.jpg`} alt="carousel" />
             </Link>
           </SwiperSlide>
         ))}

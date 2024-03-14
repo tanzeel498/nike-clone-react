@@ -14,31 +14,37 @@ const imagesData = [
     src: "basketball.webp",
     title: "Nike Basketball",
     tagline: "Styles made for your game.",
+    to: "/products?category=Basketball",
   },
   {
     src: "running.webp",
     title: "Nike Running",
     tagline: "Everything you'll need for your every mile.",
+    to: "/products?category=Running",
   },
   {
     src: "golf.webp",
     title: "Nike Golf",
     tagline: "Conquer any sports in life.",
+    to: "/products?category=Golf",
   },
   {
     src: "football.webp",
     title: "Nike Football",
     tagline: "Command the field in game-ready gear.",
+    to: "/products?category=Football",
   },
   {
     src: "soccer.webp",
     title: "Nike Soccer",
     tagline: "Bring mad style to the pitch with latest gear.",
+    to: "/products?category=Soccer",
   },
   {
     src: "baseball.webp",
     title: "Nike Baseball",
     tagline: "Step up to the plate in style.",
+    to: "/products?category=Baseball",
   },
 ];
 
@@ -104,11 +110,11 @@ function CarouselLarge() {
                 <h3 className="mb-1 mt-3">{image.title}</h3>
                 <p className="pb-7">{image.tagline}</p>
                 <div className="relative z-10">
-                  <ButtonLink to="/products">Shop</ButtonLink>
+                  <ButtonLink to={image.to}>Shop</ButtonLink>
                 </div>
               </figcaption>
               <Link
-                to="/product"
+                to={image.to}
                 className="absolute left-0 top-0 h-full w-full bg-transparent"
               />
             </figure>

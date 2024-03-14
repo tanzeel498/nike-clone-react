@@ -9,5 +9,10 @@ export default {
       },
     },
   },
+  variants: {
+    extend: {
+      animation: ["group-hover"],
+    },
+  },
   plugins: [],
 };

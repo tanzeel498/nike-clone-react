@@ -5,6 +5,9 @@ import SearchBarDesktop from "../features/search/SearchBarDesktop";
 import CartIcon from "../features/cart/CartIcon";
 import DesktopMenuItem from "./DesktopMenuItem";
 import SearchIcon from "../features/search/SearchIcon";
+import MenLinks from "./MenLinks";
+import WomenLinks from "./WomenLinks";
+import KidsLinks from "./AccessoriesLinks";
 
 function Navbar() {
   return (
@@ -15,15 +18,17 @@ function Navbar() {
 
       <div className="flex grow items-center justify-center duration-200 tablet:col-span-5">
         <ul className="hidden items-center justify-center font-semibold tablet:flex">
-          <li className="group h-16">
-            <DesktopMenuItem title="Men" to="/men" />
-          </li>
-          <li className="group h-16">
-            <DesktopMenuItem title="Women" to="/women" />
-          </li>
-          <li className="group h-16">
-            <DesktopMenuItem title="Kids" to="/kids" />
-          </li>
+          <DesktopMenuItem title="Men" to="products?gender=MEN">
+            <MenLinks />
+          </DesktopMenuItem>
+
+          <DesktopMenuItem title="Women" to="/products?gender=WOMEN">
+            <WomenLinks />
+          </DesktopMenuItem>
+
+          <DesktopMenuItem title="Accessories" to="/products?category=APPAREL">
+            <KidsLinks />
+          </DesktopMenuItem>
         </ul>
       </div>
 

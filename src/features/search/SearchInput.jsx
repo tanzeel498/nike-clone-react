@@ -16,9 +16,9 @@ function SearchInput({ searchTerm, setSearchTerm }) {
           setSearchTerm("");
         }
       }
-      window.addEventListener("keydown", handleCloseSearch);
+      document.addEventListener("keydown", handleCloseSearch);
 
-      return () => window.removeEventListener("keydown", handleCloseSearch);
+      return () => document.removeEventListener("keydown", handleCloseSearch);
     },
     [setSearchTerm],
   );

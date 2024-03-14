@@ -23,7 +23,7 @@ function SearchResults({ searchTerm, onItemClick }) {
             ))}
           </div>
 
-          <Link to="/products" onClick={onItemClick}>
+          <Link to={`/products?q=${searchTerm}`} onClick={onItemClick}>
             <span className="font-semibold uppercase underline">{`see all '${searchTerm}'`}</span>
           </Link>
         </div>
