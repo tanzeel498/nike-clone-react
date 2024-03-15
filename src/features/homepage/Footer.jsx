@@ -6,7 +6,7 @@ function Footer() {
       <div className="mb-16 flex justify-center gap-5 mobile:mb-10">
         <Link>
           <span>Your Privacy Choices</span>
-          <img className="ml-2 inline w-10" src="opt-out.svg" alt="opt-out" />
+          <img className="ml-2 inline w-10" src="/opt-out.svg" alt="opt-out" />
         </Link>
         |<Link>Privacy Policy</Link>|<Link>Terms and Conditions</Link>
       </div>

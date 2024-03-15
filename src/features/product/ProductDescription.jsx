@@ -1,26 +1,40 @@
 import { formatCurrency } from "../../utils/helpers";
 import parse from "html-react-parser";
 import useProduct from "./useProduct";
+import HeaderIcon from "../../ui/HeaderIcon";
+import { IoClose } from "react-icons/io5";
+import { forwardRef } from "react";
 
-function ProductDescription() {
+const ProductDescription = forwardRef(function ({ onClick }, ref) {
   const { isLoading, product } = useProduct();
 
   if (isLoading) return;
   const { description, title } = product;
-  const { currentPrice, squarishUrl } = product.colors.at(0);
+  const { currentPrice, squarishUrl, alt } = product.colors.at(0);
 
   return (
-    <div>
-      <div className="mb-8 flex items-end gap-5">
-        <img className="h-16 w-16 rounded-md" src={squarishUrl} alt="" />
-        <div>
-          <p>{title}</p>
-          <p>{formatCurrency(currentPrice)}</p>
-        </div>
+    <div
+      ref={ref}
+      className="fixed left-1/2 top-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white px-8 py-6 shadow-xl duration-300 tablet:w-1/2 tablet:min-w-[900px]"
+    >
+      <div className="absolute right-4 top-3">
+        <HeaderIcon onClick={onClick}>
+          <IoClose className="text-2xl" />
+        </HeaderIcon>
       </div>
-      {parse(description)}
+
+      <div>
+        <div className="mb-8 flex items-end gap-5">
+          <img className="h-16 w-16 rounded-md" src={squarishUrl} alt={alt} />
+          <div>
+            <p>{title}</p>
+            <p>{formatCurrency(currentPrice)}</p>
+          </div>
+        </div>
+        {parse(description)}
+      </div>
     </div>
   );
-}
+});
 
 export default ProductDescription;

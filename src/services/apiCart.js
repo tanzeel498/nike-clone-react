@@ -8,9 +8,13 @@ export async function getNumCartItems() {
         }
     }
   `;
+  const token = localStorage.getItem("token");
   const res = await fetch(SERVER_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify({ query }),
   });
 
@@ -27,7 +31,6 @@ export async function getNumCartItems() {
 }
 
 export async function getCart() {
-  // ask for userId in cart if needed
   const query = `
     query {
         cart {
@@ -42,9 +45,13 @@ export async function getCart() {
         }
       }
   `;
+  const token = localStorage.getItem("token");
   const res = await fetch(SERVER_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify({ query }),
   });
 
@@ -67,14 +74,19 @@ export async function getCartProduct(id, color) {
           fullPrice
           currentPrice
           squarishUrl
-          skus { _id size available}
+          skus { _id size localizedSize available}
         }
       } 
     }
   `;
+
+  const token = localStorage.getItem("token");
   const res = await fetch(SERVER_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify({ query, variables: { id, color } }),
   });
 
@@ -88,13 +100,18 @@ export async function getCartProduct(id, color) {
 
 export async function addToCart({ id, colorCode, size, currentPrice }) {
   const query = `
-    mutation AddToCart($id: ID!, $colorCode: String!, $size: Float!, $currentPrice: Float!) {
+    mutation AddToCart($id: ID!, $colorCode: String!, $size: String!, $currentPrice: Float!) {
       addToCart(id: $id, colorCode: $colorCode, size: $size, currentPrice: $currentPrice)
     }
   `;
+
+  const token = localStorage.getItem("token");
   const res = await fetch(SERVER_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify({
       query,
       variables: { id, colorCode, size, currentPrice },
@@ -115,9 +132,14 @@ export async function updateCartItem({ id, ...data }) {
       updateCartItem(id: $id, data: $data)
     }
   `;
+
+  const token = localStorage.getItem("token");
   const res = await fetch(SERVER_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify({ query, variables: { id, data } }),
   });
 
@@ -135,9 +157,14 @@ export async function deleteCartItem(id) {
       deleteCartItem(id: $id)
     }
   `;
+
+  const token = localStorage.getItem("token");
   const res = await fetch(SERVER_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify({ query, variables: { id } }),
   });
 

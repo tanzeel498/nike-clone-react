@@ -12,12 +12,16 @@ import SizeButton from "../../ui/SizeButton";
 import useProduct from "./useProduct";
 import useAddToCart from "../cart/useAddToCart";
 import ProductDetailsBlank from "./ProductDetailsBlank";
+import useUser from "../authentication/useUser";
+import CartPopup from "./CartPopup";
 
 function ProductDetails() {
+  const { user } = useUser();
   const { isLoading, product } = useProduct();
   const { addToCart, isPending } = useAddToCart();
-  const [size, setSize] = useState({ value: 0, error: null });
+  const [size, setSize] = useState({ value: "", error: null });
   const [initialPageLoaded, setInitialPageLoaded] = useState(false); // using this hook to not show <CarouselProductBlank /> again if user chooses another color
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(
     function () {
@@ -32,24 +36,43 @@ function ProductDetails() {
     product?.colors.at(0) ?? {};
 
   function handleAddToCart() {
+    if (!user) {
+      setIsPopupOpen(true);
+      return;
+    }
+
     if (!size.value) {
       setSize((s) => ({ ...s, error: true }));
     } else {
       addToCart(
         { id: product._id, colorCode, size: size.value, currentPrice },
         {
-          onSuccess: (user) => {
-            setSize({ value: 0, error: null });
+          onSuccess: () => {
+            setIsPopupOpen(true);
             console.log("Cart updated!");
           },
         },
       );
     }
   }
+
+  function handleClosePopup() {
+    setIsPopupOpen(false);
+    if (user) setSize({ value: "", error: null });
+  }
+
   return isLoading && !initialPageLoaded ? (
     <ProductDetailsBlank />
   ) : (
     <div className="w-full px-6 tablet:max-w-[400px] tablet:px-0">
+      {isPopupOpen && (
+        <CartPopup
+          user={user}
+          onClose={handleClosePopup}
+          product={product}
+          size={size.value}
+        />
+      )}
       <div className="hidden tablet:block">
         <ProductTitle />
       </div>
@@ -81,11 +104,15 @@ function ProductDetails() {
             skus?.map((sku) => (
               <SizeButton
                 key={sku._id}
-                size={sku.size}
+                size={
+                  sku.size === sku.localizedSize ? sku.size : sku.localizedSize
+                }
                 selectedSize={size.value}
                 available={sku.available}
-                perRow="17"
-                onClick={() => setSize({ value: sku.size, error: null })}
+                perRow={sku.size === sku.localizedSize ? "17" : "40"}
+                onClick={() =>
+                  setSize({ value: sku.localizedSize, error: null })
+                }
               />
             ))
           )}

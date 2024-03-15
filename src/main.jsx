@@ -15,11 +15,11 @@ import PasswordForm from "./features/authentication/PasswordForm.jsx";
 import SignUpForm from "./features/authentication/SignUpForm.jsx";
 import CheckoutLayout from "./pages/CheckoutLayout.jsx";
 import Tunnel from "./features/checkout/Tunnel.jsx";
-import Checkout from "./features/checkout/Checkout.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import ConfirmPayment from "./pages/ConfirmPayment.jsx";
 import Orders from "./pages/Orders.jsx";
+import ProtectedRoute from "./ui/ProtectedRoute.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 100 } },
@@ -32,9 +32,24 @@ const router = createBrowserRouter([
       { path: "/", element: <Homepage /> },
       { path: "products", element: <Products /> },
       { path: "product/:id", element: <Product /> },
-      { path: "cart", element: <Cart /> },
+      {
+        path: "cart",
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
+      },
       { path: "confirmPayment", element: <ConfirmPayment /> },
-      { path: "orders", element: <Orders /> },
+      {
+        path: "orders",
+        element: (
+          <ProtectedRoute>
+            <Orders />
+          </ProtectedRoute>
+        ),
+      },
+      { path: "tunnel", element: <Tunnel /> },
     ],
   },
   { path: "jordan", element: <Jordan /> },
@@ -47,14 +62,7 @@ const router = createBrowserRouter([
       { path: "signup", element: <SignUpForm /> },
     ],
   },
-  {
-    element: <CheckoutLayout />,
-    path: "checkout",
-    children: [
-      { path: "", element: <Checkout /> },
-      { path: "tunnel", element: <Tunnel /> },
-    ],
-  },
+  { element: <CheckoutLayout />, path: "checkout" },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -60,12 +60,12 @@ export async function getClientSecret() {
       createPaymentIntent
     }
   `;
-  // const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   const res = await fetch(SERVER_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ query }),
   });

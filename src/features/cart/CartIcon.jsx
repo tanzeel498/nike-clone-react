@@ -3,9 +3,9 @@ import HeaderIcon from "../../ui/HeaderIcon";
 import useNumCartItems from "./useNumCartItems";
 
 function CartIcon() {
-  const { numCartItems, isLoading } = useNumCartItems();
+  const { numCartItems, isLoading, error } = useNumCartItems();
 
-  const totalCartItems = isLoading ? 0 : numCartItems;
+  const totalCartItems = isLoading || error ? 0 : numCartItems;
   const numItemsString = totalCartItems
     ? totalCartItems > 9
       ? "9+"

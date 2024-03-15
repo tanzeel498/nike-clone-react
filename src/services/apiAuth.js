@@ -85,7 +85,7 @@ export async function getCurrentUser() {
   if (!res.ok) throw new Error(res.statusText);
   const response = await res.json();
   // throw error if error is received in response
-  if (response.errors) throw new Error(response.errors.at(0).message);
+  if (response.errors?.at(0)?.message === "No User found!") return null;
 
   return response.data.user;
 }

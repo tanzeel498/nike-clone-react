@@ -34,7 +34,7 @@ function CarouselProduct() {
   return isLoading ? (
     <CarouselProductBlank />
   ) : (
-    <div className="top-16 flex h-[700px] gap-4 tablet:sticky tablet:w-2/5 tablet:justify-end">
+    <div className="flex h-[700px] gap-4 tablet:sticky tablet:w-2/5 tablet:justify-end">
       <div className="thumbsContainer hidden w-16 flex-shrink-0 flex-col gap-2 overflow-y-auto tablet:flex">
         {images?.map((img, index) => (
           <img

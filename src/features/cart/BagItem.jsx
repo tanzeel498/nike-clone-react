@@ -76,15 +76,15 @@ function BagItem({ data: { _id, size, colorCode, quantity, product } }) {
                   <select
                     className="text-sm"
                     value={size}
-                    onChange={(e) =>
-                      handleUpdateItem({ size: +e.target.value })
-                    }
+                    onChange={(e) => handleUpdateItem({ size: e.target.value })}
                   >
                     {cartProduct.colors.at(0).skus.map(
                       (sku) =>
                         sku.available && (
                           <option className="text-sm" key={sku._id}>
-                            {sku.size}
+                            {sku.size === sku.localizedSize
+                              ? sku.size
+                              : sku.localizedSize}
                           </option>
                         ),
                     )}

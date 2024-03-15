@@ -1,31 +1,20 @@
 import { Link } from "react-router-dom";
-import LogoJordan from "./LogoJordan";
 import useUser from "../features/authentication/useUser";
 import { FiUser } from "react-icons/fi";
 import ButtonLink from "./ButtonLink";
-import useLogout from "../features/authentication/useLogout";
+import { useQueryClient } from "@tanstack/react-query";
 
-function BrandHeader() {
+function AuthNavbar() {
   const { user } = useUser();
-  const { logout } = useLogout();
+  const queryClient = useQueryClient();
+
+  function handleLogout() {
+    localStorage.removeItem("token");
+    queryClient.invalidateQueries(["user", "numCartItems"]);
+  }
 
   return (
-    <div className="hidden items-center justify-between bg-stone-100 px-14 py-2 tablet:flex">
-      <ul className="flex gap-7">
-        <li>
-          <LogoJordan />
-        </li>
-        <li>
-          <a href="https://www.nike.com/w/converse-shoes-akmjxzy7ok">
-            <img
-              className="h-6 w-6 hover:opacity-60"
-              src="converse.svg"
-              alt="converse"
-            />
-          </a>
-        </li>
-      </ul>
-
+    <div className="relative z-50 hidden items-center justify-end bg-stone-100 px-14 py-2 tablet:flex">
       {user ? (
         <ul className="flex items-center gap-3 text-xs font-semibold">
           <li>
@@ -36,7 +25,7 @@ function BrandHeader() {
           </li>
           <li>|</li>
           <li>
-            <ButtonLink border={false} onClick={() => logout()}>
+            <ButtonLink border={false} onClick={handleLogout}>
               Logout
             </ButtonLink>
           </li>
@@ -56,4 +45,4 @@ function BrandHeader() {
   );
 }
 
-export default BrandHeader;
+export default AuthNavbar;

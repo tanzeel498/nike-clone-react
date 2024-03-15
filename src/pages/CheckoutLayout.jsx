@@ -1,13 +1,17 @@
-import { Outlet, ScrollRestoration } from "react-router-dom";
+import { ScrollRestoration } from "react-router-dom";
 import CheckoutHeader from "../features/checkout/CheckoutHeader";
+import ProtectedRoute from "../ui/ProtectedRoute";
+import Checkout from "../features/checkout/Checkout";
 
 function CheckoutLayout() {
   return (
-    <div>
+    <>
       <ScrollRestoration />
       <CheckoutHeader />
-      <Outlet />
-    </div>
+      <ProtectedRoute>
+        <Checkout />
+      </ProtectedRoute>
+    </>
   );
 }
 

@@ -11,7 +11,7 @@ export default {
   },
   variants: {
     extend: {
-      animation: ["group-hover"],
+      groupHover: ["hover"],
     },
   },
   plugins: [],

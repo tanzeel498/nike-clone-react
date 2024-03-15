@@ -1,7 +1,8 @@
 function SizeButton({ size, selectedSize, available, perRow, onClick }) {
   let sizeMatched;
-  if (typeof selectedSize === "number") sizeMatched = size === selectedSize;
-  else sizeMatched = selectedSize.includes(size);
+  if (typeof selectedSize === "object")
+    sizeMatched = selectedSize.includes(size);
+  else sizeMatched = size === selectedSize;
 
   return (
     <button

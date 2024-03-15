@@ -1,10 +1,10 @@
-import BrandHeader from "./BrandHeader";
+import AuthNavbar from "./AuthNavbar";
 import Navbar from "./Navbar";
 
 function Header() {
   return (
     <>
-      <BrandHeader />
+      <AuthNavbar />
       <Navbar />
     </>
   );
