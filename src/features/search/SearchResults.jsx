@@ -7,13 +7,13 @@ function SearchResults({ searchTerm, onItemClick }) {
   const { isLoading, products } = useSearchProducts(searchTerm);
 
   return (
-    <div className="results-wrapper right-0 top-[135%] flex gap-5 px-16 py-5 tablet:absolute tablet:w-96 tablet:bg-white tablet:px-8 tablet:shadow-xl">
+    <div className="right-0 top-[135%] flex flex-col px-12 py-5 mobile:px-28 tablet:absolute tablet:w-96 tablet:bg-white tablet:px-8 tablet:shadow-xl">
       {isLoading ? (
         <Spinner scale={60} className="w-full" />
       ) : (
-        <div className="products h-full">
-          <h3 className="mb-5">Products</h3>
-          <div className="mb-7 flex flex-wrap justify-between gap-5 tablet:flex-col">
+        <>
+          <h3 className="my-10 tablet:mb-5 tablet:mt-0">Products</h3>
+          <div className="mb-10 flex flex-wrap justify-between gap-10 tablet:flex-col tablet:gap-5">
             {products?.map((product) => (
               <SearchResultItem
                 key={product._id}
@@ -26,7 +26,7 @@ function SearchResults({ searchTerm, onItemClick }) {
           <Link to={`/products?q=${searchTerm}`} onClick={onItemClick}>
             <span className="font-semibold uppercase underline">{`see all '${searchTerm}'`}</span>
           </Link>
-        </div>
+        </>
       )}
     </div>
   );

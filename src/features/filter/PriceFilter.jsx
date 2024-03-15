@@ -4,6 +4,7 @@ import Collapsible from "../../ui/Collapsible";
 
 function PriceFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const price = searchParams.get("price");
 
   function handleChange(e) {
     if (e.target.checked) {
@@ -31,46 +32,35 @@ function PriceFilter() {
       <Collapsible>
         <Collapsible.Trigger>
           <h4 className="py-4">
-            Shop by Price ({searchParams.get("price")?.split("+").length || 0})
+            Shop by Price ({price ? price.split("+").length : 0})
           </h4>
         </Collapsible.Trigger>
         <Collapsible.Group>
           <div className="mb-8 flex flex-col gap-3 tablet:gap-1">
             <Checkbox
               id="25-50"
-              checked={
-                searchParams.get("price")?.split("+").includes("25-50") || false
-              }
+              checked={price?.split("+").includes("25-50") || false}
               onChange={handleChange}
             >
               <span>$25 - $50</span>
             </Checkbox>
             <Checkbox
               id="50-100"
-              checked={
-                searchParams.get("price")?.split("+").includes("50-100") ||
-                false
-              }
+              checked={price?.split("+").includes("50-100") || false}
               onChange={handleChange}
             >
               <span>$50 - $100</span>
             </Checkbox>
             <Checkbox
               id="100-150"
-              checked={
-                searchParams.get("price")?.split("+").includes("100-150") ||
-                false
-              }
+              checked={price?.split("+").includes("100-150") || false}
               onChange={handleChange}
             >
               <span>$100 - $150</span>
             </Checkbox>
             <Checkbox
               id="150-500"
-              checked={
-                searchParams.get("price")?.split("+").includes("150-500") ||
-                false
-              }
+              checked={price?.split("+").includes("150-500") || false}
               onChange={handleChange}
             >
               <span>Over $150</span>

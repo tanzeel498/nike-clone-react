@@ -4,6 +4,7 @@ import Collapsible from "../../ui/Collapsible";
 
 function GenderFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const gender = searchParams.get("gender");
 
   function handleChange(e) {
     if (e.target.checked) {
@@ -31,33 +32,28 @@ function GenderFilter() {
       <Collapsible>
         <Collapsible.Trigger>
           <h4 className="py-4">
-            Genders ({searchParams.get("gender")?.split("+").length || 0})
+            Genders ({gender ? gender.split("+").length : 0})
           </h4>
         </Collapsible.Trigger>
         <Collapsible.Group>
           <div className="mb-8 flex flex-col gap-3 tablet:gap-1">
             <Checkbox
               id="MEN"
-              checked={
-                searchParams.get("gender")?.split("+").includes("MEN") || false
-              }
+              checked={gender?.split("+").includes("MEN") || false}
               onChange={handleChange}
             >
               <span>Men</span>
             </Checkbox>
             <Checkbox
               id="WOMEN"
-              checked={
-                searchParams.get("gender")?.split("+").includes("WOMEN") ||
-                false
-              }
+              checked={gender?.split("+").includes("WOMEN") || false}
               onChange={handleChange}
             >
               <span>Women</span>
             </Checkbox>
             <Checkbox
               id="unisex"
-              checked={searchParams.get("gender")?.includes("unisex") || false}
+              checked={gender?.includes("unisex") || false}
               onChange={handleChange}
             >
               <span>Unisex</span>
