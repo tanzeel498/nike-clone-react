@@ -21,7 +21,6 @@ import ConfirmPayment from "./pages/ConfirmPayment.jsx";
 import Orders from "./pages/Orders.jsx";
 import ProtectedRoute from "./ui/ProtectedRoute.jsx";
 import UnProtectedRoute from "./ui/UnProtectedRoute.jsx";
-import SlideMenu from "./ui/SlideMenu.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 100 } },
@@ -34,7 +33,6 @@ const router = createBrowserRouter([
       { path: "/", element: <Homepage /> },
       { path: "products", element: <Products /> },
       { path: "product/:id", element: <Product /> },
-      { path: "slide-menu", element: <SlideMenu /> },
       {
         path: "cart",
         element: (
