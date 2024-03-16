@@ -49,7 +49,7 @@ function PaymentMessage() {
   return (
     <>
       <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-stone-900">
-        <span className="loader"></span>
+        <span className="spinner-mini"></span>
       </div>
       <Message>{message}</Message>
     </>

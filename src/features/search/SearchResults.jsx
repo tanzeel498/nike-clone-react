@@ -7,7 +7,7 @@ function SearchResults({ searchTerm, onItemClick }) {
   const { isLoading, products } = useSearchProducts(searchTerm);
 
   return (
-    <div className="right-0 top-[135%] flex flex-col px-12 py-5 mobile:px-28 tablet:absolute tablet:w-96 tablet:bg-white tablet:px-8 tablet:shadow-xl">
+    <div className="right-0 top-[135%] flex flex-col px-12 py-5 mobile:px-20 tablet:absolute tablet:w-96 tablet:bg-white tablet:px-8 tablet:shadow-xl">
       {isLoading ? (
         <Spinner scale={60} className="w-full" />
       ) : (

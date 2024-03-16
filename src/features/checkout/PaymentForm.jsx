@@ -42,7 +42,7 @@ export default function PaymentForm() {
       <PaymentElement options={{ layout: "tabs" }} />
       <div className="mt-5 flex justify-end">
         <Button disabled={isLoading || !stripe || !elements}>
-          {isLoading ? <span className="loader"></span> : "Pay Now"}
+          {isLoading ? <span className="spinner-mini"></span> : "Pay Now"}
         </Button>
       </div>
     </form>

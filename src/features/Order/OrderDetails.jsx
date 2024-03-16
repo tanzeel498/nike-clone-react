@@ -13,7 +13,7 @@ function OrderDetails({ id }) {
     <div className="border-b-[1px]">
       <div className="mx-auto mb-8 w-4/5">
         <h2 className="mb-2 text-lg">Order Items</h2>
-        <Table columns="3fr 2fr 1fr 1fr 1fr 1fr">
+        <Table columns="3fr 1.5fr 2fr 1fr 1fr 1fr">
           <Table.Header type="secondary">
             <div>product</div>
             <div>color-code</div>

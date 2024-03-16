@@ -6,14 +6,13 @@ import Button from "../../ui/Button";
 import useAddAddress from "./useUpdateAddress";
 
 function DeliveryForm({ address, setAddressAdded }) {
-  const [showManualAdress, setShowManualAddress] = useState(
-    address ? true : false,
-  );
+  // const [showManualAdress, setShowManualAddress] = useState(
+  //   address ? true : false,
+  // );
   const { updateAddress, isPending } = useAddAddress();
 
   const {
     register,
-    unregister,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -21,11 +20,11 @@ function DeliveryForm({ address, setAddressAdded }) {
     mode: "all",
   });
 
-  function handleManualAddress(e) {
-    e.preventDefault();
-    unregister("autoAddress");
-    setShowManualAddress(true);
-  }
+  // function handleManualAddress(e) {
+  //   e.preventDefault();
+  //   unregister("autoAddress");
+  //   setShowManualAddress(true);
+  // }
 
   function handleFormSubmit(data) {
     const updatedData = { ...data, postalCode: +data.postalCode };
@@ -59,7 +58,7 @@ function DeliveryForm({ address, setAddressAdded }) {
         />
       </div>
 
-      {!showManualAdress && (
+      {/* {!showManualAdress && (
         <>
           <InputField
             id="autoAddress"
@@ -81,59 +80,59 @@ function DeliveryForm({ address, setAddressAdded }) {
             </ButtonLink>
           </div>
         </>
-      )}
-      {showManualAdress && (
-        <>
-          <InputField
-            id="address"
-            label="Address*"
-            validation={register("address", {
-              required: "Please enter a valid address",
-            })}
-            type="text"
-            error={errors?.address}
-          />
-          <InputField
-            id="apt"
-            label="Add Company, C/O, Apt, Suite, Unit"
-            type="text"
-            validation={register("apt")}
-          />
-          <div className="flex gap-4">
-            <InputField
-              id="city"
-              label="City*"
-              validation={register("city", {
-                required: "Please enter a valid city",
-              })}
-              type="text"
-              error={errors?.city}
-            />
-            <InputField
-              id="state"
-              label="State*"
-              validation={register("state", {
-                required: "Please enter a valid city",
-              })}
-              type="text"
-              error={errors?.state}
-            />
-            <InputField
-              id="postalCode"
-              label="Postal Code*"
-              validation={register("postalCode", {
-                required: "Please enter your postal code",
-                pattern: {
-                  value: /^[0-9]{5}(?:-[0-9]{4})?$/,
-                  message: "Please enter a valid zip code",
-                },
-              })}
-              type="text"
-              error={errors?.postalCode}
-            />
-          </div>
-        </>
-      )}
+      )} */}
+      {/* {showManualAdress && (
+        <> */}
+      <InputField
+        id="address"
+        label="Address*"
+        validation={register("address", {
+          required: "Please enter a valid address",
+        })}
+        type="text"
+        error={errors?.address}
+      />
+      <InputField
+        id="apt"
+        label="Add Company, C/O, Apt, Suite, Unit"
+        type="text"
+        validation={register("apt")}
+      />
+      <div className="flex gap-4">
+        <InputField
+          id="city"
+          label="City*"
+          validation={register("city", {
+            required: "Please enter a valid city",
+          })}
+          type="text"
+          error={errors?.city}
+        />
+        <InputField
+          id="state"
+          label="State*"
+          validation={register("state", {
+            required: "Please enter a valid city",
+          })}
+          type="text"
+          error={errors?.state}
+        />
+        <InputField
+          id="postalCode"
+          label="Postal Code*"
+          validation={register("postalCode", {
+            required: "Please enter your postal code",
+            pattern: {
+              value: /^[0-9]{5}(?:-[0-9]{4})?$/,
+              message: "Please enter a valid zip code",
+            },
+          })}
+          type="text"
+          error={errors?.postalCode}
+        />
+      </div>
+      {/* </>
+      )} */}
 
       <div className="flex gap-4">
         <InputField
@@ -165,8 +164,12 @@ function DeliveryForm({ address, setAddressAdded }) {
         />
       </div>
       <div className="flex justify-end">
-        <Button disabled={Object.keys(errors).length !== 0}>
-          Save & Continue
+        <Button disabled={Object.keys(errors).length !== 0 || isPending}>
+          {isPending ? (
+            <span className="spinner-mini"></span>
+          ) : (
+            "Save & Continue"
+          )}
         </Button>
       </div>
     </form>

@@ -1,13 +1,14 @@
-import Logo from "./Logo";
-import { FiMenu, FiUser } from "react-icons/fi";
-import HeaderIcon from "./HeaderIcon";
-import SearchBarDesktop from "../features/search/SearchBarDesktop";
-import CartIcon from "../features/cart/CartIcon";
+import Logo from "../../ui/Logo";
+import { FiUser } from "react-icons/fi";
+import HeaderIcon from "../../ui/HeaderIcon";
+import SearchBarDesktop from "../search/SearchBarDesktop";
+import CartIcon from "../cart/CartIcon";
 import DesktopMenuItem from "./DesktopMenuItem";
-import SearchIcon from "../features/search/SearchIcon";
+import SearchIcon from "../search/SearchIcon";
 import MenLinks from "./MenLinks";
 import WomenLinks from "./WomenLinks";
 import KidsLinks from "./AccessoriesLinks";
+import MenuIcon from "./MenuIcon";
 
 function Navbar() {
   return (
@@ -40,13 +41,11 @@ function Navbar() {
         <SearchIcon />
         <CartIcon />
 
-        <HeaderIcon to="accounts/join" hideAfterTablet={true}>
+        <HeaderIcon to="account/join" hideAfterTablet={true}>
           <FiUser className="text-2xl" />
         </HeaderIcon>
 
-        <HeaderIcon to="/" hideAfterTablet={true}>
-          <FiMenu className="text-2xl" />
-        </HeaderIcon>
+        <MenuIcon />
       </div>
     </header>
   );

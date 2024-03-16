@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import useUser from "../features/authentication/useUser";
+import useUser from "../authentication/useUser";
 import { FiUser } from "react-icons/fi";
-import ButtonLink from "./ButtonLink";
+import ButtonLink from "../../ui/ButtonLink";
 import { useQueryClient } from "@tanstack/react-query";
 
 function AuthNavbar() {

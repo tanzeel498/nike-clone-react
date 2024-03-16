@@ -65,11 +65,13 @@ function Summary() {
           </Button>
         </span>
       </div>
-      <ButtonFixedBottom>
-        <Button size="large" to="/checkout">
-          Go to Checkout
-        </Button>
-      </ButtonFixedBottom>
+      {cart?.items?.length > 0 && (
+        <ButtonFixedBottom>
+          <Button size="large" to="/checkout">
+            Go to Checkout
+          </Button>
+        </ButtonFixedBottom>
+      )}
     </div>
   );
 }

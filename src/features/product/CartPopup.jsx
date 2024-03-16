@@ -27,7 +27,7 @@ function CartPopup({ user, onClose, product, size }) {
 
   return (
     <>
-      {/* <ScrollRestoration /> */}
+      <ScrollRestoration />
 
       <div className="fixed inset-0 z-30 bg-neutral-900 bg-opacity-80">
         <div

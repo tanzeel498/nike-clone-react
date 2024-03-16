@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SportsLinks from "./SportsLinks";
 
 function AccessoriesLinks({ onClick }) {
   return (
@@ -45,36 +46,7 @@ function AccessoriesLinks({ onClick }) {
           Jordan
         </Link>
       </div>
-      <div className="flex flex-col gap-2 text-sm text-stone-600">
-        <Link
-          onClick={onClick}
-          to="/products?gender=MEN"
-          className="mr-4 text-base font-bold text-stone-900"
-        >
-          Shop by Sport
-        </Link>
-        <Link onClick={onClick} to="/products?category=Basketball">
-          Basketball
-        </Link>
-        <Link onClick={onClick} to="/products?category=Golf">
-          Golf
-        </Link>
-        <Link onClick={onClick} to="/products?category=Soccerr">
-          Soccerr
-        </Link>
-        <Link onClick={onClick} to="/products?category=Running">
-          Running
-        </Link>
-        <Link onClick={onClick} to="/products?category=Tennis">
-          Tennis
-        </Link>
-        <Link onClick={onClick} to="/products?category=Football">
-          Football
-        </Link>
-        <Link onClick={onClick} to="/products?category=Training+%26+Gym">
-          Training & Gym
-        </Link>
-      </div>
+      <SportsLinks onClick={onClick} />
     </div>
   );
 }

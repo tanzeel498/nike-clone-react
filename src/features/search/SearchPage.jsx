@@ -26,7 +26,7 @@ function SearchPage({ showSearchPage, hideSearchPage }) {
       <div className="w-3/4 mobile:w-4/5">
         <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
-      {searchTerm.length > 0 && (
+      {searchTerm.length > 2 && (
         <SearchResults
           searchTerm={searchTerm}
           onItemClick={handleHideSearchPage}

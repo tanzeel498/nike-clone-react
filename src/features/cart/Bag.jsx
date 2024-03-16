@@ -1,6 +1,5 @@
 import Spinner from "../../ui/Spinner";
 import BagItem from "./BagItem";
-import LoginBox from "./LoginBox";
 import useCart from "./useCart";
 
 function Bag() {
@@ -13,14 +12,11 @@ function Bag() {
         <Spinner />
       ) : (
         <div>
-          <LoginBox />
-          <div>
-            <h2 className="hidden tablet:block">Bag</h2>
-            <div className="divide-y">
-              {cart?.items.map((item) => (
-                <BagItem key={item._id} data={item} />
-              ))}
-            </div>
+          <h2 className="hidden tablet:block">Bag</h2>
+          <div className="divide-y">
+            {cart?.items.map((item) => (
+              <BagItem key={item._id} data={item} />
+            ))}
           </div>
         </div>
       )}

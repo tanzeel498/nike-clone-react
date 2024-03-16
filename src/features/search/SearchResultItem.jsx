@@ -6,7 +6,7 @@ function SearchResultItem({ onItemClick, product }) {
     <Link
       to={`/product/${product._id}?color=${product.colors.at(0).colorCode}`}
       onClick={onItemClick}
-      className="flex gap-5"
+      className="flex max-w-[48%] gap-5"
     >
       <div>
         <img

@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import useProductColors from "./useProductColors";
 
 function ProductColor() {
@@ -23,15 +23,16 @@ function ProductColor() {
             ></div>
           ))
         : product?.colors?.map((color) => (
-            <img
+            <Link
+              preventScrollReset={true}
               key={color.colorCode}
-              className={`w-28 cursor-pointer rounded-md tablet:w-[70px] ${
+              onClick={() => handleSetColor(color.colorCode)}
+              className={`w-28 cursor-pointer overflow-hidden rounded-md tablet:w-[70px] ${
                 color.colorCode === activeColor ? "border-[1px]" : ""
               } border-stone-900`}
-              src={color.squarishUrl}
-              alt="color-img"
-              onClick={() => handleSetColor(color.colorCode)}
-            />
+            >
+              <img src={color.squarishUrl} alt="color-img" />
+            </Link>
           ))}
     </div>
   );
