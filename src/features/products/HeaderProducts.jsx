@@ -77,7 +77,7 @@ function HeaderProducts({ title, showFilters, setShowFilters }) {
       <div className="flex items-center justify-between border-t-[1px] px-6 py-4 tablet:hidden">
         <h4 className="text-stone-600">{numProducts} Results</h4>
         <Button
-          type="secondary"
+          color="secondary"
           size="small"
           onClick={() => setShowFilters((c) => !c)}
         >

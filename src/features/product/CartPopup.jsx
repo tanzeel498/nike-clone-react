@@ -73,7 +73,7 @@ function CartPopup({ user, onClose, product, size }) {
                 </div>
               </div>
               <div className="mt-8 flex justify-center gap-6">
-                <Button type="secondary" to="/cart">
+                <Button color="secondary" to="/cart">
                   View Bag ({numCartItems})
                 </Button>
                 <Button to="/checkout">Checkout</Button>

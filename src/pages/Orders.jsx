@@ -1,10 +1,14 @@
 import OrderTable from "../features/Order/OrderTable";
+import OrderTableMobile from "../features/Order/OrderTableMobile";
 
 function Orders() {
   return (
-    <div className="mx-auto mb-28 flex w-2/3 flex-col items-center">
+    <div className="mb-28 flex w-full flex-col items-center px-4 tablet:mx-auto tablet:w-2/3">
       <h2 className="my-14 text-3xl">Orders</h2>
-      <OrderTable />
+      <div className="hidden mobile:block">
+        <OrderTable />
+      </div>
+      <OrderTableMobile />
     </div>
   );
 }

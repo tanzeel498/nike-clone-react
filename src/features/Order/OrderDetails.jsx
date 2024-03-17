@@ -1,17 +1,19 @@
+import Message from "../../ui/Message";
 import Table from "../../ui/Table";
 import { formatCurrency } from "../../utils/helpers";
-import OrderItemRow from "./OrderItemRow";
+import OrderItem from "./OrderItem";
 import useOrder from "./useOrder";
 
 function OrderDetails({ id }) {
   const { order, isLoading, error } = useOrder(id);
 
   if (isLoading) return;
+  if (error) return <Message type="error">{error.message}</Message>;
   const { address, items, totalAmount } = order;
 
   return (
     <div className="border-b-[1px]">
-      <div className="mx-auto mb-8 w-4/5">
+      <div className="mx-auto mb-8 w-11/12">
         <h2 className="mb-2 text-lg">Order Items</h2>
         <Table columns="3fr 1.5fr 2fr 1fr 1fr 1fr">
           <Table.Header type="secondary">
@@ -24,7 +26,7 @@ function OrderDetails({ id }) {
           </Table.Header>
           <Table.Body
             data={items}
-            render={(item) => <OrderItemRow item={item} />}
+            render={(item, i) => <OrderItem key={i} item={item} />}
           />
         </Table>
 

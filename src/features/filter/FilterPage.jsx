@@ -26,7 +26,7 @@ function FilterPage({ showFilters, setShowFilters }) {
       }`}
     >
       <div
-        className={`right-10 top-7 ${
+        className={`right-4 top-7 mobile:right-10 ${
           showFilters ? "fixed opacity-100" : "static opacity-0"
         } duration-200`}
       >

@@ -1,3 +1,4 @@
+import Spinner from "../../ui/Spinner";
 import Table from "../../ui/Table";
 import OrderRow from "./OrderRow";
 import useOrders from "./useOrders";
@@ -5,12 +6,11 @@ import useOrders from "./useOrders";
 function OrderTable() {
   const { orders, isLoading } = useOrders();
 
-  if (isLoading) return;
+  if (isLoading) return <Spinner />;
   return (
-    <Table columns="0.6fr 2fr 2fr 1.5fr 1fr 1.5fr">
+    <Table columns="0.6fr 2fr 1.5fr 1fr 1.5fr">
       <Table.Header>
         <div>Sr.</div>
-        <div>id</div>
         <div>Date</div>
         <div>total</div>
         <div>status</div>

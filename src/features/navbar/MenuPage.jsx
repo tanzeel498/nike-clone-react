@@ -3,11 +3,13 @@ import { useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
 import { Link } from "react-router-dom";
 import CartIcon from "../cart/CartIcon";
-import { FiUser } from "react-icons/fi";
+import { FiPackage, FiUser } from "react-icons/fi";
 import ShoesLinks from "./ShoesLinks";
 import SportsLinks from "./SportsLinks";
+import useUser from "../authentication/useUser";
 
 function MenuPage({ showMenuPage, hideMenuPage }) {
+  const { user, isLoading } = useUser();
   const [forwardMenu, setForwardMenu] = useState("");
   const ref = useOutsideClick(handleClose);
 
@@ -73,12 +75,20 @@ function MenuPage({ showMenuPage, hideMenuPage }) {
               <span className="text-xl font-medium">Bag</span>
             </Link>
             <Link
-              className="flex items-center gap-5 px-2"
+              className="mb-4 flex items-center gap-5 px-2"
               to="/account"
               onClick={handleClose}
             >
               <FiUser className="text-2xl" />
               <span className="text-xl font-medium">Account</span>
+            </Link>
+            <Link
+              className="flex items-center gap-5 px-2"
+              to="/orders"
+              onClick={handleClose}
+            >
+              <FiPackage className="text-2xl" />
+              <span className="text-xl font-medium">Orders</span>
             </Link>
           </div>
         </div>

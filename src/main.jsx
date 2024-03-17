@@ -7,7 +7,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Products from "./pages/Products.jsx";
 import Product from "./pages/Product.jsx";
 import Cart from "./pages/Cart.jsx";
-import Jordan from "./pages/Jordan.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import Account from "./pages/Account.jsx";
 import LoginForm from "./features/authentication/LoginForm.jsx";
@@ -23,12 +22,14 @@ import ProtectedRoute from "./ui/ProtectedRoute.jsx";
 import UnProtectedRoute from "./ui/UnProtectedRoute.jsx";
 import Profile from "./features/authentication/Profile.jsx";
 import ResetPasswordForm from "./features/authentication/ResetPasswordForm.jsx";
+import ErrorPage from "./ui/ErrorPage.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 100 } },
 });
 
 const router = createBrowserRouter([
+  { errorElement: <ErrorPage /> },
   {
     element: <App />,
     children: [
@@ -63,7 +64,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  { path: "jordan", element: <Jordan /> },
   {
     path: "account",
     element: <Account />,

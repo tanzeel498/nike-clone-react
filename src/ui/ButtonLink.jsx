@@ -15,17 +15,10 @@ function ButtonLink({
     border ? "border-b-[1px] border-stone-900" : ""
   } duration-300 hover:opacity-60`;
 
-  if (to)
-    return (
-      <Link to={to} className={style} {...props}>
-        {children}
-      </Link>
-    );
-
   return (
-    <button className={style} onClick={onClick} {...props}>
+    <Link to={to} className={style} onClick={onClick} {...props}>
       {children}
-    </button>
+    </Link>
   );
 }
 

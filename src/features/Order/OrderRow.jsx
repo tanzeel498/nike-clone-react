@@ -11,15 +11,12 @@ function OrderRow({ order, index }) {
     <>
       <Table.Row isOpen={isOpen}>
         <div>{index + 1}</div>
-        <div>{order._id}</div>
         <div>{order.createdAt}</div>
         <div>{formatCurrency(order.totalAmount)}</div>
         <div>{order.status}</div>
         <div>
           <Button onClick={() => setIsOpen((s) => !s)}>
-            <span className="text-base">
-              {isOpen ? "Hide Details" : "View Details"}
-            </span>
+            {isOpen ? "Hide Details" : "View Details"}
           </Button>
         </div>
       </Table.Row>

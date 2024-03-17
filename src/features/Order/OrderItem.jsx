@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Table from "../../ui/Table";
 import { formatCurrency } from "../../utils/helpers";
 
-function OrderItemRow({ item }) {
+function OrderItem({ item }) {
   return (
     <Table.Row>
       <Link
@@ -20,4 +20,4 @@ function OrderItemRow({ item }) {
   );
 }
 
-export default OrderItemRow;
+export default OrderItem;
