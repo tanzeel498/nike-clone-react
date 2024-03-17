@@ -21,6 +21,7 @@ function DesktopMenuItem({ title, to, children }) {
           isDropdownOpen ? "border-b-2" : ""
         }`}
         to={to}
+        onClick={handleCloseDropdown}
       >
         {title}
       </Link>

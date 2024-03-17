@@ -3,12 +3,12 @@ import { FiUser } from "react-icons/fi";
 import HeaderIcon from "../../ui/HeaderIcon";
 import SearchBarDesktop from "../search/SearchBarDesktop";
 import CartIcon from "../cart/CartIcon";
-import DesktopMenuItem from "./DesktopMenuItem";
 import SearchIcon from "../search/SearchIcon";
 import MenLinks from "./MenLinks";
 import WomenLinks from "./WomenLinks";
-import KidsLinks from "./AccessoriesLinks";
 import MenuIcon from "./MenuIcon";
+import AccessoriesLinks from "./AccessoriesLinks";
+import DesktopMenuItem from "./DesktopMenuItem";
 
 function Navbar() {
   return (
@@ -28,7 +28,7 @@ function Navbar() {
           </DesktopMenuItem>
 
           <DesktopMenuItem title="Accessories" to="/products?category=APPAREL">
-            <KidsLinks />
+            <AccessoriesLinks />
           </DesktopMenuItem>
         </ul>
       </div>

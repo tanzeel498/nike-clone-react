@@ -60,7 +60,7 @@ function Summary() {
         </Button>
 
         <span className="hidden tablet:block">
-          <Button size="large" type="secondary">
+          <Button size="large" color="secondary">
             <img className="w-16" src="/paypal.svg" alt="paypal" />
           </Button>
         </span>

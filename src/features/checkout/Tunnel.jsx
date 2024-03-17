@@ -10,8 +10,10 @@ function Tunnel() {
       </h2>
 
       <div className="flex flex-col gap-5 mobile:flex-row tablet:mt-5">
-        <Button to="/account/join">Login</Button>
-        <Button to="/account/join">Sign Up</Button>
+        <Button to="/account/join">Join Us</Button>
+        <Button color="secondary" to="/account/join">
+          Sign In
+        </Button>
       </div>
     </div>
   );

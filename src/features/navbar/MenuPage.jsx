@@ -1,15 +1,19 @@
 import { IoChevronBack, IoChevronForward, IoClose } from "react-icons/io5";
 import { useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CartIcon from "../cart/CartIcon";
 import { FiPackage, FiUser } from "react-icons/fi";
 import ShoesLinks from "./ShoesLinks";
 import SportsLinks from "./SportsLinks";
 import useUser from "../authentication/useUser";
+import Button from "../../ui/Button";
+import { useQueryClient } from "@tanstack/react-query";
 
 function MenuPage({ showMenuPage, hideMenuPage }) {
-  const { user, isLoading } = useUser();
+  const { user } = useUser();
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const [forwardMenu, setForwardMenu] = useState("");
   const ref = useOutsideClick(handleClose);
 
@@ -17,8 +21,14 @@ function MenuPage({ showMenuPage, hideMenuPage }) {
     hideMenuPage();
     setForwardMenu("");
   }
+
   function handleForwardClick(value) {
     setForwardMenu(value);
+  }
+
+  function handleLogout() {
+    localStorage.removeItem("token");
+    queryClient.invalidateQueries(["user", "numCartItems"]);
   }
 
   return (
@@ -65,15 +75,31 @@ function MenuPage({ showMenuPage, hideMenuPage }) {
               <IoChevronForward className="text-xl text-stone-600" />
             </Link>
           </div>
+          {!user && (
+            <div className="my-16">
+              <span className="mb-8 inline-block px-2 text-lg font-semibold text-stone-500">
+                Become a Nike Member for the best products, inspiration and
+                stories in sport.
+              </span>
+              <div className="flex justify-center gap-4">
+                <Button to="/account/join">Join Us</Button>
+                <Button color="secondary" to="/account/join">
+                  Sign In
+                </Button>
+              </div>
+            </div>
+          )}
           <div className="mt-16">
-            <Link
+            <div
               className="mb-4 flex items-center gap-5"
-              to="/cart"
-              onClick={handleClose}
+              onClick={() => {
+                handleClose();
+                navigate("/cart");
+              }}
             >
               <CartIcon />
               <span className="text-xl font-medium">Bag</span>
-            </Link>
+            </div>
             <Link
               className="mb-4 flex items-center gap-5 px-2"
               to="/account"
@@ -91,6 +117,13 @@ function MenuPage({ showMenuPage, hideMenuPage }) {
               <span className="text-xl font-medium">Orders</span>
             </Link>
           </div>
+          {user && (
+            <div className="mt-24 w-full">
+              <Button color="secondary" size="large" onClick={handleLogout}>
+                Logout
+              </Button>
+            </div>
+          )}
         </div>
         <div
           className={`${

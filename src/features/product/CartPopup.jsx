@@ -41,8 +41,10 @@ function CartPopup({ user, onClose, product, size }) {
               </h3>
 
               <div className="flex justify-center gap-4">
-                <Button to="/account/join">Login</Button>
-                <Button to="/account/join">Sign Up</Button>
+                <Button to="/account/join">Join Us</Button>
+                <Button color="secondary" to="/account/join">
+                  Sign In
+                </Button>
               </div>
             </>
           ) : (

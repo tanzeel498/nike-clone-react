@@ -36,7 +36,7 @@ function LoginForm() {
   return (
     <div>
       <h2 className="mb-8 tracking-tight">
-        Enter your email to sign in or join us.
+        Enter your email to join us or sign in.
       </h2>
 
       <form
