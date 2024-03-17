@@ -18,7 +18,7 @@ function AuthNavbar() {
       {user ? (
         <ul className="flex items-center gap-3 text-xs font-semibold">
           <li>
-            <Link to="accounts/join" className="flex items-center gap-2">
+            <Link to="account" className="flex items-center gap-2">
               <span>Hi, {user.firstName} </span>
               <FiUser className="text-lg" />
             </Link>

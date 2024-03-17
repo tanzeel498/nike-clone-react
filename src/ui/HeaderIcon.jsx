@@ -7,7 +7,7 @@ function HeaderIcon({ children, to, hideAfterTablet = false, onClick }) {
 
   if (to)
     return (
-      <Link className={styles} to={to}>
+      <Link className={styles} to={to} as="button">
         {children}
       </Link>
     );

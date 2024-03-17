@@ -4,9 +4,10 @@ function Button({
   children,
   to,
   disabled,
-  type = "primary",
+  color = "primary",
   onClick = () => {},
   size = "medium",
+  ...props
 }) {
   const sizeStyle = {
     large: " w-full py-3.5",
@@ -22,19 +23,19 @@ function Button({
   const style =
     "rounded-full font-semibold duration-200 flex justify-center items-center" +
     sizeStyle[size] +
-    typeStyle[type];
+    typeStyle[color];
 
   if (to)
     return (
       <Link className="rounded-full" to={to}>
-        <button disabled={disabled} className={style}>
+        <button disabled={disabled} className={style} {...props}>
           {children}
         </button>
       </Link>
     );
 
   return (
-    <button onClick={onClick} disabled={disabled} className={style}>
+    <button onClick={onClick} disabled={disabled} className={style} {...props}>
       {children}
     </button>
   );

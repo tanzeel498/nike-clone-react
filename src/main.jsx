@@ -21,6 +21,8 @@ import ConfirmPayment from "./pages/ConfirmPayment.jsx";
 import Orders from "./pages/Orders.jsx";
 import ProtectedRoute from "./ui/ProtectedRoute.jsx";
 import UnProtectedRoute from "./ui/UnProtectedRoute.jsx";
+import Profile from "./features/authentication/Profile.jsx";
+import ResetPasswordForm from "./features/authentication/ResetPasswordForm.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 100 } },
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
         ),
       },
       { path: "tunnel", element: <Tunnel /> },
+      {
+        path: "account",
+        element: (
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
   { path: "jordan", element: <Jordan /> },
@@ -68,6 +78,7 @@ const router = createBrowserRouter([
       },
       { path: "password", element: <PasswordForm /> },
       { path: "signup", element: <SignUpForm /> },
+      { path: "reset-password", element: <ResetPasswordForm /> },
     ],
   },
   { element: <CheckoutLayout />, path: "checkout" },

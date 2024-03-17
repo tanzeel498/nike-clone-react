@@ -13,8 +13,9 @@ function useSignUp() {
   } = useMutation({
     mutationFn: signUpApi,
     onSuccess: (user) => {
-      queryClient.setQueryData(["user"], user);
-      localStorage.setItem("token", user.token);
+      const { token, userData } = user;
+      queryClient.setQueryData(["user"], userData);
+      localStorage.setItem("token", token);
       navigate("/");
     },
   });

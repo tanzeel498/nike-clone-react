@@ -32,18 +32,18 @@ function BagItem({ data: { _id, size, colorCode, quantity, product } }) {
       {isLoading ? (
         <Spinner scale={50} />
       ) : (
-        <div className="flex w-full gap-8">
+        <div className="flex w-full gap-2 mobile:gap-8">
           <Link
             className="max-w-[150px]"
             to={`/product/${product._id}?color=${colorCode}`}
           >
             <img
-              className="aspect-square max-w-[150px] object-cover"
+              className="aspect-square max-w-36 object-cover"
               src={cartProduct.colors.at(0).squarishUrl}
               alt="cart-img"
             />
           </Link>
-          <div className="flex grow flex-col justify-between">
+          <div className="flex grow flex-col justify-between gap-1">
             <div className="flex flex-col gap-1 font-medium text-stone-500">
               <div className="flex flex-col gap-1 mobile:flex-row-reverse mobile:justify-between">
                 <div className="flex gap-3">
@@ -70,7 +70,7 @@ function BagItem({ data: { _id, size, colorCode, quantity, product } }) {
               <span className="hidden tablet:flex">
                 {cartProduct.colors.at(0).colorDescription}
               </span>
-              <div className="flex gap-4">
+              <div className="flex flex-col mobile:flex-row mobile:gap-4">
                 <div>
                   <span>Size </span>
                   <select

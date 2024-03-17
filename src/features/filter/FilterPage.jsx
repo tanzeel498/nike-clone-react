@@ -25,9 +25,13 @@ function FilterPage({ showFilters, setShowFilters }) {
         showFilters ? "top-0" : "top-full"
       }`}
     >
-      <div className="absolute right-6 top-5">
+      <div
+        className={`right-10 top-7 ${
+          showFilters ? "fixed opacity-100" : "static opacity-0"
+        } duration-200`}
+      >
         <HeaderIcon onClick={() => setShowFilters(false)}>
-          <IoClose className="text-2xl" />
+          <IoClose className="rounded-full bg-stone-900 p-1.5 text-4xl text-white" />
         </HeaderIcon>
       </div>
       <h3>Filter</h3>

@@ -28,7 +28,7 @@ function MenuPage({ showMenuPage, hideMenuPage }) {
       ></div>
       <div
         ref={ref}
-        className={`fixed bottom-0 top-0 z-[500] flex h-screen w-2/5 flex-col overflow-hidden bg-white p-8 duration-200 ${
+        className={`fixed bottom-0 top-0 z-[500] flex h-screen w-4/5 flex-col overflow-hidden bg-white p-8 duration-200 mobile:w-2/5 ${
           showMenuPage ? "right-0" : "-right-full"
         }`}
       >

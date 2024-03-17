@@ -8,11 +8,17 @@ import { useLogin } from "./useLogin";
 import Message from "../../ui/Message";
 import PasswordField from "./PasswordField";
 import { useEffect } from "react";
+import useForgotPassword from "./useForgotPassword";
 
 function PasswordForm() {
   const navigate = useNavigate();
-  const { email, setEmail } = useEmailAuth();
-  const { login, isPending, error: loginError } = useLogin();
+  const { email } = useEmailAuth();
+  const { login, isPending: isLoginPending, error: loginError } = useLogin();
+  const {
+    forgotPassword,
+    error: forgotPasswordError,
+    isPending: isForgotPasswordPending,
+  } = useForgotPassword();
   const {
     register,
     handleSubmit,
@@ -27,14 +33,22 @@ function PasswordForm() {
     [email, navigate],
   );
 
+  function handleForgotPassword(e) {
+    e?.preventDefault();
+    forgotPassword(email, {
+      onSuccess: () => navigate("/account/reset-password"),
+    });
+  }
+
   function handleFormSubmit({ password }) {
     login({ email, password });
   }
 
-  function handleClearEmail() {
-    setEmail(null);
+  function handleEditEmail() {
     navigate("/account/join");
   }
+
+  const isPending = isForgotPasswordPending || isLoginPending;
 
   return (
     <div>
@@ -46,7 +60,7 @@ function PasswordForm() {
         <ButtonLink
           color="stone-500"
           underline={true}
-          onClick={handleClearEmail}
+          onClick={handleEditEmail}
         >
           Edit
         </ButtonLink>
@@ -58,6 +72,9 @@ function PasswordForm() {
         className="flex flex-col gap-7"
       >
         {loginError && <Message type="error">{loginError.message}</Message>}
+        {forgotPasswordError && (
+          <Message type="error">{forgotPasswordError.message}</Message>
+        )}
 
         <PasswordField>
           <InputField
@@ -71,7 +88,11 @@ function PasswordForm() {
         </PasswordField>
 
         <p className="w-96 text-sm font-medium leading-6 text-stone-500">
-          <ButtonLink underline={true} to="/" color="stone-500">
+          <ButtonLink
+            underline={true}
+            onClick={handleForgotPassword}
+            color="stone-500"
+          >
             Forgot Password?
           </ButtonLink>
         </p>

@@ -2,17 +2,33 @@ import { cloneElement, useEffect, useState } from "react";
 import { FiRefreshCw } from "react-icons/fi";
 import { useEmailAuth } from "../context/EmailAuthContext";
 import useCheckUser from "./useCheckUser";
+import useForgotPassword from "./useForgotPassword";
 
-function CodeCounter({ children }) {
+function CodeCounter({ children, type = "join" }) {
   const [count, setCount] = useState(30);
   const { email } = useEmailAuth();
-  const { checkUser, isPending, error: checkUserError } = useCheckUser();
+  const {
+    checkUser,
+    isPending: checkUserPending,
+    error: checkUserError,
+  } = useCheckUser();
+  const {
+    forgotPassword,
+    error: forgotPasswordError,
+    isPending: isForgotPasswordPending,
+  } = useForgotPassword();
 
   function handleClick(e) {
-    e.preventDefault();
-    checkUser(email, {
-      onSuccess: () => setCount(30),
-    });
+    e?.preventDefault();
+    if (type === "join") {
+      checkUser(email, {
+        onSuccess: () => setCount(30),
+      });
+    } else if (type === "forgotPassword") {
+      forgotPassword(email, {
+        onSuccess: () => setCount(30),
+      });
+    }
   }
 
   useEffect(
@@ -28,6 +44,7 @@ function CodeCounter({ children }) {
     [count],
   );
 
+  const isPending = checkUserPending || isForgotPasswordPending;
   return (
     <div className="relative">
       {cloneElement(children, {
@@ -41,12 +58,13 @@ function CodeCounter({ children }) {
           </button>
         ),
       })}
-      {checkUserError && (
-        <span className="absolute -bottom-5 left-3 right-3 text-right text-xs font-semibold text-red-600">
-          Resending code Failed!
-        </span>
-      )}
-      {count >= 0 && !checkUserError && (
+      {checkUserError ||
+        (forgotPasswordError && (
+          <span className="absolute -bottom-5 left-3 right-3 text-right text-xs font-semibold text-red-600">
+            Resending code Failed!
+          </span>
+        ))}
+      {count >= 0 && (!checkUserError || !forgotPasswordError) && (
         <span className="absolute -bottom-5 left-3 right-3 text-right text-xs font-semibold text-stone-500">
           Resend code in {count}s
         </span>

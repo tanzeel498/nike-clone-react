@@ -10,12 +10,12 @@ import { useEffect, useState } from "react";
 
 function CartPopup({ user, onClose, product, size }) {
   const { numCartItems } = useNumCartItems();
-  const [count, setCount] = useState(5);
   const ref = useOutsideClick(onClose);
+  const [count, setCount] = useState(5);
 
   useEffect(
     function () {
-      if (!user) return; //no timeout will run when the user is not logged in i.e popup will stay
+      if (!user) return;
       const timeout = setTimeout(() => {
         if (count > 0) return setCount((c) => c - 1);
         onClose();
@@ -31,7 +31,7 @@ function CartPopup({ user, onClose, product, size }) {
 
       <div className="fixed inset-0 z-30 bg-neutral-900 bg-opacity-80">
         <div
-          className="absolute right-10 top-12 flex w-96 flex-col justify-center rounded-md bg-white px-7 pb-8 pt-16"
+          className="absolute left-0 right-0 top-6 flex flex-col justify-center bg-white px-7 pb-8 pt-16 mobile:left-auto mobile:right-10 mobile:top-12 mobile:w-96 mobile:rounded-md"
           ref={ref}
         >
           {!user ? (

@@ -4,9 +4,12 @@ const EmailContext = createContext();
 
 function EmailAuthProvider({ children }) {
   const [email, setEmail] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
 
   return (
-    <EmailContext.Provider value={{ email, setEmail }}>
+    <EmailContext.Provider
+      value={{ email, setEmail, successMessage, setSuccessMessage }}
+    >
       {children}
     </EmailContext.Provider>
   );

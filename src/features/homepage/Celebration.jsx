@@ -31,7 +31,7 @@ function Celebration() {
             <br />
             To stay up-to-date on it all, make sure you have the Nike App.
           </p>
-          <div className="flex justify-center gap-1">
+          <div className="flex flex-wrap gap-1 mobile:justify-center">
             <Button to="/products">Shop the Collection</Button>
             <Button to="/products">Explore the Calender</Button>
             <Button to="/products">Download the Nike App</Button>

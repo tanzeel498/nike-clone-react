@@ -6,16 +6,18 @@ import Message from "../../ui/Message";
 import { useNavigate } from "react-router-dom";
 import { useEmailAuth } from "../context/EmailAuthContext";
 import useCheckUser from "./useCheckUser";
+import useTimeout from "../../hooks/useTimeout";
 
 function LoginForm() {
   const { checkUser, isPending, error: checkUserError } = useCheckUser();
-  const { setEmail } = useEmailAuth();
+  const { email, setEmail, successMessage, setSuccessMessage } = useEmailAuth();
+  useTimeout(successMessage, () => setSuccessMessage(""));
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: "all" });
+  } = useForm({ mode: "all", defaultValues: { email } });
 
   function handleFormSubmit({ email }) {
     checkUser(email, {
@@ -23,7 +25,7 @@ function LoginForm() {
         if (response === 200) {
           setEmail(email);
           navigate("/account/password");
-        } else if (response === 204) {
+        } else if (response === 201) {
           setEmail(email);
           navigate("/account/signup");
         }
@@ -43,6 +45,9 @@ function LoginForm() {
         onSubmit={handleSubmit(handleFormSubmit)}
         noValidate
       >
+        {successMessage !== "" && (
+          <Message type="success">{successMessage}</Message>
+        )}
         {checkUserError && (
           <Message type="error">{checkUserError.message}</Message>
         )}

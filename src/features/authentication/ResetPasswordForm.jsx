@@ -1,22 +1,20 @@
-import Button from "../../ui/Button";
-import { useForm } from "react-hook-form";
+import { useEffect } from "react";
 import ButtonLink from "../../ui/ButtonLink";
+import { useEmailAuth } from "../context/EmailAuthContext";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import Message from "../../ui/Message";
+import CodeCounter from "./CodeCounter";
 import InputField from "../../ui/InputField";
 import { FiCheck, FiX } from "react-icons/fi";
-import Checkbox from "../../ui/Checkbox";
 import PasswordField from "./PasswordField";
-import CodeCounter from "./CodeCounter";
-import Message from "../../ui/Message";
-import { useNavigate } from "react-router-dom";
-import { useEmailAuth } from "../context/EmailAuthContext";
-import useSignUp from "./useSignUp";
-import { useEffect } from "react";
+import Button from "../../ui/Button";
+import useResetPassword from "./useResetPassword";
 
-function SignUpForm() {
+function ResetPasswordForm() {
+  const { email, setSuccessMessage } = useEmailAuth();
+  const { resetPassword, isPending, error } = useResetPassword();
   const navigate = useNavigate();
-  const { email } = useEmailAuth();
-  const { isPending, signUp, error: signUpError } = useSignUp();
-
   const {
     register,
     handleSubmit,
@@ -34,19 +32,27 @@ function SignUpForm() {
     [email, navigate],
   );
 
-  function handleFormSubmit(data) {
-    signUp({ ...data, code: +data.code, email });
-  }
-
   function handleEditEmail() {
     navigate("/account/join");
+  }
+
+  function handleFormSubmit(data) {
+    resetPassword(
+      { code: +data.code, newPassword: data.password, email },
+      {
+        onSuccess: () => {
+          setSuccessMessage("Password reset successfull");
+          navigate("/account/join", { replace: true });
+        },
+      },
+    );
   }
 
   return (
     <div>
       <div className="mb-8">
         <h2 className="mb-3 tracking-tight">
-          Now let's make you a Nike Member.
+          Verify your email and enter a new password.
         </h2>
         <p className="mr-2 inline-block text-sm font-medium tracking-tight text-stone-900">
           We've sent a code to
@@ -67,34 +73,16 @@ function SignUpForm() {
         noValidate
         className="flex flex-col gap-7"
       >
-        {signUpError && <Message type="error">{signUpError.message}</Message>}
+        {error && <Message type="error">{error.message}</Message>}
 
-        <CodeCounter>
+        <CodeCounter type="forgotPassword">
           <InputField
             id="code"
             error={errors?.code}
             validation={register("code", { required: "Required" })}
-            label="Code"
+            label="Code*"
           />
         </CodeCounter>
-
-        <div className="flex justify-between gap-4">
-          <InputField
-            id="firstName"
-            error={errors?.firstName}
-            validation={register("firstName", { required: "Required" })}
-            label="First Name"
-            type="text"
-          />
-
-          <InputField
-            id="lastName"
-            type="text"
-            label="Last Name"
-            error={errors?.lastName}
-            validation={register("lastName", { required: "Required" })}
-          />
-        </div>
 
         <div className="mb-2">
           <PasswordField>
@@ -105,7 +93,7 @@ function SignUpForm() {
                 pattern: /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])/,
                 minLength: 8,
               })}
-              label="Password"
+              label="New Password*"
             />
           </PasswordField>
           {errors?.password?.types.required && (
@@ -155,54 +143,12 @@ function SignUpForm() {
           </div>
         </div>
 
-        <InputField
-          validation={register("dob", { required: "Required" })}
-          id="dob"
-          error={errors?.dob}
-          type="date"
-          label="Date of Birth"
-        />
-
-        {/* 2x Checkbox */}
-        <div className="my-5 flex flex-col gap-5">
-          <Checkbox id="emailSignUp" validation={register("emailSignUp")}>
-            <span className="w-11/12">
-              Sign up for emails to get updates from Nike on products, offers
-              and your Member benefits.
-            </span>
-          </Checkbox>
-
-          <Checkbox id="tos" validation={register("tos", { required: true })}>
-            <span
-              className={`w-11/12 ${
-                errors.tos ? "text-red-600" : "text-stone-900"
-              }`}
-            >
-              I agree to Nike's{" "}
-              <ButtonLink
-                color={errors.tos ? "text-red-600" : "text-stone-900"}
-                underline={true}
-              >
-                Privacy Policy
-              </ButtonLink>{" "}
-              and{" "}
-              <ButtonLink
-                color={errors.tos ? "text-red-600" : "text-stone-900"}
-                underline={true}
-              >
-                Terms of Use.
-              </ButtonLink>
-            </span>
-          </Checkbox>
-        </div>
-
-        <div className="flex justify-end">
-          <Button disabled={isPending}>
-            {isPending ? (
-              <span className="spinner-mini"></span>
-            ) : (
-              "Create Account"
-            )}
+        <div className="flex justify-end gap-7">
+          <Button color="secondary" to="/">
+            Cancel
+          </Button>
+          <Button>
+            {isPending ? <span className="spinner-mini"></span> : "Save"}
           </Button>
         </div>
       </form>
@@ -210,4 +156,4 @@ function SignUpForm() {
   );
 }
 
-export default SignUpForm;
+export default ResetPasswordForm;
