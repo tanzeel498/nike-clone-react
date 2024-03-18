@@ -55,19 +55,23 @@ function Summary() {
         </div>
       </div>
       <div className="hidden flex-col gap-3 tablet:flex">
-        <Button size="large" to="/checkout">
+        <Button size="large" to="/checkout" disabled={cart?.items?.length <= 0}>
           Checkout
         </Button>
 
-        <span className="hidden tablet:block">
+        {/* <span className="hidden tablet:block">
           <Button size="large" color="secondary">
             <img className="w-16" src="/paypal.svg" alt="paypal" />
           </Button>
-        </span>
+        </span> */}
       </div>
       {cart?.items?.length > 0 && (
         <ButtonFixedBottom>
-          <Button size="large" to="/checkout">
+          <Button
+            size="large"
+            to="/checkout"
+            disabled={cart?.items?.length <= 0}
+          >
             Go to Checkout
           </Button>
         </ButtonFixedBottom>

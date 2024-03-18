@@ -19,16 +19,19 @@ function ShoesLinks({ onClick, gender = "" }) {
       <Link onClick={onClick} to={`/products?gender=${gender}&category=Jordan`}>
         Jordan
       </Link>
-      <Link onClick={onClick} to={`/products?gender=${gender}&q=Air%20Max`}>
+      <Link
+        onClick={onClick}
+        to={`/products?gender=${gender}&category=Air%20Max`}
+      >
         Air Max
       </Link>
       <Link
         onClick={onClick}
-        to={`/products?gender=${gender}&q=Air%20Force%201`}
+        to={`/products?gender=${gender}&category=Air%20Force%201`}
       >
         Air Force 1
       </Link>
-      <Link onClick={onClick} to={`/products?gender=${gender}&q=Dunk`}>
+      <Link onClick={onClick} to={`/products?gender=${gender}&category=Dunk`}>
         Dunk
       </Link>
       <Link
