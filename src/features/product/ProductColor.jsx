@@ -1,9 +1,18 @@
 import { Link, useSearchParams } from "react-router-dom";
 import useProductColors from "./useProductColors";
+import { useEffect } from "react";
 
 function ProductColor() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { product, isLoading: colorsIsLoading } = useProductColors();
+
+  useEffect(
+    function () {
+      if (product) document.title = `${product.title} ${product.subtitle}`;
+      return () => (document.title = "Nike");
+    },
+    [product],
+  );
 
   const activeColor =
     searchParams.get("color") || product?.colors?.at(0)?.colorCode;
@@ -24,6 +33,7 @@ function ProductColor() {
           ))
         : product?.colors?.map((color) => (
             <Link
+              replace={true}
               preventScrollReset={true}
               key={color.colorCode}
               onClick={() => handleSetColor(color.colorCode)}

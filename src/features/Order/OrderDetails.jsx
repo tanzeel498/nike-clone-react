@@ -3,11 +3,12 @@ import Table from "../../ui/Table";
 import { formatCurrency } from "../../utils/helpers";
 import OrderItem from "./OrderItem";
 import useOrder from "./useOrder";
+import Spinner from "../../ui/Spinner";
 
 function OrderDetails({ id }) {
   const { order, isLoading, error } = useOrder(id);
 
-  if (isLoading) return;
+  if (isLoading) return <Spinner scale={60} />;
   if (error) return <Message type="error">{error.message}</Message>;
   const { address, items, totalAmount } = order;
 

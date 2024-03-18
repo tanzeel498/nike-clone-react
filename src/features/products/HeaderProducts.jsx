@@ -4,10 +4,23 @@ import Button from "../../ui/Button";
 import useProducts from "./useProducts";
 import { useSearchParams } from "react-router-dom";
 
-function HeaderProducts({ title, showFilters, setShowFilters }) {
+function HeaderProducts({ showFilters, setShowFilters }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const { numProducts } = useProducts();
   const [reduceHeader, setReduceHeader] = useState(false);
+
+  const gender = searchParams.get("gender")?.split("+");
+  // console.log({ gender, length: gender?.length });
+  let title;
+  if (gender?.length) {
+    if (gender.length > 1) title = "Shoes";
+    else if (gender.includes("MEN")) title = "Men's Shoes and Snickers";
+    else title = "Women's Shoes and Snickers";
+  } else {
+    title = "Nike Shoes and Snickers";
+  }
+  if (searchParams.get("category")?.includes("EQUIPMENT"))
+    title = "Accessories & Equipment";
 
   useEffect(function () {
     function handleScroll() {

@@ -14,7 +14,7 @@ function useCreateOrder() {
     mutationFn: createOrderApi,
     onSuccess: () => {
       queryClient.invalidateQueries(["numCartItems"]);
-      navigate("/orders");
+      navigate("/orders", { replace: true });
     },
   });
   return { createOrder, isPending, error };

@@ -1,4 +1,5 @@
 import Message from "../../ui/Message";
+import Spinner from "../../ui/Spinner";
 import { formatCurrency } from "../../utils/helpers";
 import OrderItemMobile from "./OrderItemMobile";
 import useOrder from "./useOrder";
@@ -6,7 +7,7 @@ import useOrder from "./useOrder";
 function OrderDetailsMobile({ id }) {
   const { order, isLoading, error } = useOrder(id);
 
-  if (isLoading) return;
+  if (isLoading) return <Spinner scale={50} />;
   if (error) return <Message type="error">{error.message}</Message>;
 
   const { address, items, totalAmount } = order;

@@ -10,12 +10,10 @@ function Products() {
   const [showFilters, setShowFilters] = useState(
     windowsWidth.current > 960 ? true : false,
   );
-  const title = "Men's Shoes and Snickers";
 
   return (
     <div className="relative w-full max-w-[1920px]">
       <HeaderProducts
-        title={title}
         showFilters={showFilters}
         setShowFilters={setShowFilters}
       />
