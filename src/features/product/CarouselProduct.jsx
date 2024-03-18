@@ -2,8 +2,8 @@ import { useState } from "react";
 import CarouselButton from "../homepage/CarouselButton";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import useProduct from "./useProduct";
-import CarouselProductBlank from "./CarouselProductBlank";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Spinner from "../../ui/Spinner";
 import "swiper/css";
 
 function CarouselProduct() {
@@ -33,9 +33,7 @@ function CarouselProduct() {
     return;
   }
 
-  return isLoading ? (
-    <CarouselProductBlank />
-  ) : (
+  return (
     <>
       <div className="top-16 hidden h-[700px] gap-4 tablet:sticky tablet:flex tablet:w-2/5 tablet:justify-end">
         <div className="thumbsContainer flex w-16 flex-shrink-0 flex-col gap-2 overflow-y-auto">
@@ -52,14 +50,18 @@ function CarouselProduct() {
           ))}
         </div>
 
-        <div className="imageContainer relative flex w-screen min-w-[600px] grow items-center justify-center overflow-clip tablet:w-full tablet:rounded-lg">
-          <img
-            src={images?.at(thumbActive).src}
-            alt={images?.at(thumbActive).alt}
-            className={`h-full w-full object-cover ${
-              isLoading ? "hidden" : "block"
-            }`}
-          />
+        <div className="imageContainer relative flex w-screen min-w-[600px] grow items-center justify-center overflow-clip bg-stone-100 tablet:w-full tablet:rounded-lg">
+          {!isLoading ? (
+            <img
+              src={images?.at(thumbActive).src}
+              alt={images?.at(thumbActive).alt}
+              className={`h-full w-full object-cover ${
+                isLoading ? "hidden" : "block"
+              }`}
+            />
+          ) : (
+            <Spinner />
+          )}
           <div className="absolute flex w-11/12 justify-between tablet:bottom-6 tablet:right-5 tablet:w-[15%]">
             <div className="scale-105 opacity-70 duration-200 hover:opacity-100 tablet:scale-90">
               <CarouselButton onClick={handlePrev}>
@@ -74,18 +76,22 @@ function CarouselProduct() {
           </div>
         </div>
       </div>
-      <div className="w-full tablet:hidden">
-        <Swiper slidesPerView={1} loop={true}>
-          {images.map((image, i) => (
-            <SwiperSlide key={i}>
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="aspect-square object-cover"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="flex aspect-square w-full items-center justify-center bg-stone-100 tablet:hidden">
+        {!isLoading ? (
+          <Swiper slidesPerView={1} loop={true}>
+            {images?.map((image, i) => (
+              <SwiperSlide key={i}>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="aspect-square object-cover"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <Spinner />
+        )}
       </div>
     </>
   );

@@ -33,8 +33,7 @@ function Celebration() {
           </p>
           <div className="flex flex-wrap gap-1 mobile:justify-center">
             <Button to="/products">Shop the Collection</Button>
-            <Button to="/products">Explore the Calender</Button>
-            <Button to="/products">Download the Nike App</Button>
+            <Button to="/">Download the Nike App</Button>
           </div>
         </figcaption>
       </figure>

@@ -3,7 +3,7 @@ import useProductColors from "./useProductColors";
 
 function ProductColor() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const { product, isLoading } = useProductColors();
+  const { product, isLoading: colorsIsLoading } = useProductColors();
 
   const activeColor =
     searchParams.get("color") || product?.colors?.at(0)?.colorCode;
@@ -15,7 +15,7 @@ function ProductColor() {
 
   return (
     <div className="my-6 flex w-[400px] flex-wrap gap-2">
-      {isLoading
+      {colorsIsLoading
         ? Array.from({ length: 4 })?.map((_, index) => (
             <div
               key={index}

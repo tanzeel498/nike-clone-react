@@ -20,8 +20,6 @@ export async function createOrder(paymentIntent) {
   const response = await res.json();
   // throw error if error is received in response
   if (response.errors) throw new Error(response.errors.at(0).message);
-
-  console.log(response.data.createOrder);
   return response.data.createOrder;
 }
 

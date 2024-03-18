@@ -52,9 +52,14 @@ function ShoesLinks({ onClick, gender = "" }) {
       >
         Running
       </Link>
-      <Link onClick={onClick} to={`/products?gender=${gender}&category=Slides`}>
-        Sandals & Slides
-      </Link>
+      {gender !== "MEN" && (
+        <Link
+          onClick={onClick}
+          to={`/products?gender=${gender}&category=Slides`}
+        >
+          Sandals & Slides
+        </Link>
+      )}
       <Link onClick={onClick} to={`/products?gender=${gender}&price=0-100`}>
         Shoes $100 & Under
       </Link>

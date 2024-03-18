@@ -4,7 +4,7 @@ import ShoesLinks from "./ShoesLinks";
 
 function MenLinks({ onClick }) {
   return (
-    <div className="flex justify-center gap-24 py-14 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+    <div className="flex justify-center gap-24 py-14">
       <div className="flex transform flex-col gap-2 text-sm text-stone-600">
         <Link
           onClick={onClick}

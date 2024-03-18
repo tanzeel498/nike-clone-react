@@ -8,7 +8,6 @@ import Spinner from "../../ui/Spinner";
 function Delivery({ deliveryAdded, setDeliveryAdded }) {
   const [addressAdded, setAddressAdded] = useState(false);
   const { address, isLoading, error } = useAddress();
-  console.log(error);
 
   return isLoading && !error ? (
     <Spinner />

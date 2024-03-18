@@ -22,7 +22,6 @@ export async function getAddress() {
 
   if (!res.ok) throw new Error(res.statusText);
   const response = await res.json();
-  console.log("Address received!!!");
   // throw error if error is received in response
   if (response.errors) throw new Error(response.errors.at(0).message);
   return response.data.user.shippingAddress;

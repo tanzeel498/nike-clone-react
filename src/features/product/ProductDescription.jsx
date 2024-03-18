@@ -15,7 +15,7 @@ const ProductDescription = forwardRef(function ({ onClick }, ref) {
   return (
     <div
       ref={ref}
-      className="fixed left-1/2 top-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white px-8 py-6 shadow-xl duration-300 tablet:w-1/2 tablet:min-w-[900px]"
+      className="fixed h-5/6 w-5/6 overflow-y-auto rounded-lg bg-white p-4 shadow-xl duration-300 mobile:px-8 mobile:py-6 tablet:w-1/2 tablet:min-w-[900px]"
     >
       <div className="absolute right-4 top-3">
         <HeaderIcon onClick={onClick}>

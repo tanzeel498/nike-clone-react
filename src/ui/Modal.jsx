@@ -40,11 +40,23 @@ function Window({ children, name }) {
     },
     [name, openName],
   );
+  // for escape press
+  useEffect(
+    function () {
+      function handleCloseSearch(e) {
+        if (e.keyCode === 27) close();
+      }
+      document.addEventListener("keydown", handleCloseSearch);
+
+      return () => document.removeEventListener("keydown", handleCloseSearch);
+    },
+    [close],
+  );
 
   if (name !== openName) return null;
 
   return createPortal(
-    <div className="fixed left-0 top-0 z-50 h-screen w-screen bg-neutral-900 bg-opacity-80">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900 bg-opacity-80">
       {cloneElement(children, { ref: modalRef, onClick: close })}
     </div>,
     document.body,

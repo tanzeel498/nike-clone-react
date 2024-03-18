@@ -11,9 +11,9 @@ import Message from "../../ui/Message";
 export default function PaymentForm() {
   const stripe = useStripe();
   const elements = useElements();
-
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const homeUrl = window.location.origin;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ export default function PaymentForm() {
 
     const { error } = await stripe.confirmPayment({
       elements,
-      confirmParams: { return_url: "http://localhost:5173/confirmPayment" },
+      confirmParams: { return_url: `${homeUrl}/confirmPayment` },
     });
 
     // This point will only be reached if there is an immediate error when confirming the payment. Otherwise, your customer will be redirected to your `return_url`

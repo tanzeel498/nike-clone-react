@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 import ProductTitle from "./ProductTitle";
 import ProductColor from "./ProductColor";
-import ButtonLink from "../../ui/ButtonLink";
 import Button from "../../ui/Button";
 import Modal from "../../ui/Modal";
 import ProductReviews from "./ProductReviews";
@@ -21,18 +20,20 @@ function ProductDetails() {
   const { addToCart, isPending } = useAddToCart();
   const [size, setSize] = useState({ value: "", error: null });
   const [initialPageLoaded, setInitialPageLoaded] = useState(false); // using this hook to not show <CarouselProductBlank /> again if user chooses another color
+  const [productSkus, setProductSkus] = useState([]); // stroign them here so that they don't cause a blip during isLoading
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(
     function () {
-      if (initialPageLoaded) return;
-      if (!isLoading) setInitialPageLoaded(true);
+      if (!isLoading)
+        setProductSkus(product.colors ? product.colors.at(0).skus : []);
+      if (!initialPageLoaded && !isLoading) setInitialPageLoaded(true);
     },
-    [isLoading, initialPageLoaded],
+    [isLoading, initialPageLoaded, product?.colors],
   );
 
   const { descriptionPreview, sizeChartUrl } = product ?? {};
-  const { skus, colorCode, colorDescription, currentPrice } =
+  const { colorCode, colorDescription, currentPrice } =
     product?.colors.at(0) ?? {};
 
   function handleAddToCart() {
@@ -91,31 +92,18 @@ function ProductDetails() {
             size.error ? "border-red-600" : "border-none"
           }`}
         >
-          {isLoading ? (
-            <div className="flex flex-wrap justify-between gap-2 rounded-lg">
-              {Array.from({ length: 20 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="h-9 w-16 cursor-pointer rounded-md bg-stone-200 tablet:w-[70px]"
-                />
-              ))}
-            </div>
-          ) : (
-            skus?.map((sku) => (
-              <SizeButton
-                key={sku._id}
-                size={
-                  sku.size === sku.localizedSize ? sku.size : sku.localizedSize
-                }
-                selectedSize={size.value}
-                available={sku.available}
-                perRow={sku.size === sku.localizedSize ? "17" : "40"}
-                onClick={() =>
-                  setSize({ value: sku.localizedSize, error: null })
-                }
-              />
-            ))
-          )}
+          {productSkus?.map((sku) => (
+            <SizeButton
+              key={sku._id}
+              size={
+                sku.size === sku.localizedSize ? sku.size : sku.localizedSize
+              }
+              selectedSize={size.value}
+              available={sku.available}
+              perRow={sku.size === sku.localizedSize ? "17" : "40"}
+              onClick={() => setSize({ value: sku.localizedSize, error: null })}
+            />
+          ))}
         </div>
         {size.error && (
           <p className="ml-4 mt-2 text-sm font-semibold text-red-600">
@@ -141,7 +129,9 @@ function ProductDetails() {
 
         <Modal>
           <Modal.Open opens="description">
-            <ButtonLink>View Product Details</ButtonLink>
+            <span className="cursor-pointer border-b-[1px] border-stone-900 font-semibold duration-300 hover:opacity-60">
+              View Product Details
+            </span>
           </Modal.Open>
           <Modal.Window name="description">
             <ProductDescription />

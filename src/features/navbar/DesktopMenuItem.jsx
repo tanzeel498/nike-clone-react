@@ -17,9 +17,7 @@ function DesktopMenuItem({ title, to, children }) {
       onMouseLeave={handleCloseDropdown}
     >
       <Link
-        className={`flex h-full items-center border-stone-900 px-3 ${
-          isDropdownOpen ? "border-b-2" : ""
-        }`}
+        className="flex h-full items-center border-stone-900 px-3 hover:border-b-2"
         to={to}
         onClick={handleCloseDropdown}
       >
