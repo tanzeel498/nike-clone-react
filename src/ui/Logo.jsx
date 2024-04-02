@@ -6,8 +6,8 @@ function Logo() {
       <Link to="/">
         <img
           className={`aspect-square h-16 hover:opacity-60`}
-          src="/nike.svg"
-          alt="nike-logo"
+          src="/TDev.svg"
+          alt="TDev-logo"
         />
       </Link>
     </div>

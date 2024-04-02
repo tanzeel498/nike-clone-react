@@ -10,7 +10,7 @@ function Footer() {
         </Link>
         |<Link>Privacy Policy</Link>|<Link>Terms and Conditions</Link>
       </div>
-      <span>&copy; {new Date().getFullYear()} Duzz Nike, Inc.</span>
+      <span>&copy; {new Date().getFullYear()} T.Dev, Inc.</span>
     </footer>
   );
 }
